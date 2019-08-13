@@ -122,4 +122,7 @@ python путь/к/файлу/code.py
 1. Отправляем ветку на сервер:
     1. Консоль: `git push origin alexander-lesson-01`
     1. PyCharm: VCS > Git > Push
-1. Заходим в GitHub, находим там свою ветку, жмём 
+1. Заходим в GitHub, находим [там](https://github.com/tgrx/Z19/branches) свою ветку, жмём "New pull request"
+    - Выбираем base: `master`
+    - Пишем, что именно сделали
+    - Жмём "Create pull request"
