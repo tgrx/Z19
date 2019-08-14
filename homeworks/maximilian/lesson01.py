@@ -15,7 +15,7 @@ def print_info():
 
 
 def print_sys_info():
-    print("System: ", platform.platform(), "\r\n")
+    print("System: ", platform.system(), "\r\n")
 
 
 def print_username():
