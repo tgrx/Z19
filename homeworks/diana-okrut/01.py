@@ -11,6 +11,6 @@ elif e == 2:
     print("My name is Diana. I am 25 years old. I am a student of python courses in school Teach Me Skills. "
           "My english is very bad.")
 elif e == 3:
-    print(os.name)
+    print(os.name())
 else:
     print("Некорректные данные")
