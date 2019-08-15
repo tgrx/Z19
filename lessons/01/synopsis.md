@@ -105,8 +105,10 @@ python путь/к/файлу/code.py
     1. Консоль: `git checkout -b alexander-lesson-01`
     1. PyCharm: VCS > Git > Branches > New branch
 1. Создаём папку со своим именем (логин из Github, имя-фамилия, никнейм из Телеграмма - лишь бы уникальное, малленькими латинскими буквами с подчёркиваниями вместо пробелов) внутри `Z19/homeworks`:
-    1. Консоль: `mkdir Z19/homeworks/alexander`
-    1. PyCharm: правый клик по `Z19` > New > Directory
+    1. Консоль:
+        1. `cd homeworks`
+        1. `mkdir alexander`
+    1. PyCharm: правый клик по `Z19/homeworks` > New > Directory
 1. Создаём модуль Python, где будем писать код:
     1. Консоль:
         - Windows: `notepad Z19\homeworks\alexander\lesson01.py`
