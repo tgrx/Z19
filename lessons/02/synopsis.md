@@ -113,20 +113,18 @@ _"base-branch"_ в качестве базовой ветки, это:
     1. подтверждаем
 1. Пьём кофе, отдыхаем, работа выполнена
 
-Обучающие видосы:
-
-- [раз: типичный процесс, 3 минуты](https://www.youtube.com/watch?v=e8PGuOyZ3YU)
-- [два: про ветки, 6 минут](https://www.youtube.com/watch?v=Ao1beK2rEIY)
-- [три: целый плейлист](https://www.youtube.com/watch?v=M-O8ZNW9icQ&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O)
-- [четыре: плейлист на русском](https://www.youtube.com/playlist?list=PLDyvV36pndZHkDRik6kKF6gSb0N0W995h)
-
-Пример: [организация работы с Git в Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) - там вообще своё собственное решение, но кто интересуется, можно проанализировать идеи.
-
 ## Ресурсы
-
-Видео: [What is Git?](https://git-scm.com/video/what-is-version-control)
-
-Ещё видео: [тысячи их](https://git-scm.com/videos)
 
 Шпаргалка по командам (на английском): [PDF](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
 
+Пример workflow: [организация работы с Git в Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) - там вообще своё собственное решение, но кто интересуется, можно проанализировать идеи.
+
+Видео:
+
+- [раз: What is Git?](https://git-scm.com/video/what-is-version-control)
+- [два: типичный процесс, 3 минуты](https://www.youtube.com/watch?v=e8PGuOyZ3YU)
+- [три: про ветки, 6 минут](https://www.youtube.com/watch?v=Ao1beK2rEIY)
+- [четыре: целый плейлист](https://www.youtube.com/watch?v=M-O8ZNW9icQ&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O)
+- [пять: плейлист на русском](https://www.youtube.com/playlist?list=PLDyvV36pndZHkDRik6kKF6gSb0N0W995h)
+
+Ещё видео: [тысячи их](https://git-scm.com/videos)
