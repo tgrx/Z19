@@ -54,6 +54,7 @@ Pull request (Merge request) - запрос к Git на слияние одно�
 - [раз: типичный процесс, 3 минуты](https://www.youtube.com/watch?v=e8PGuOyZ3YU)
 - [два: про ветки, 6 минут](https://www.youtube.com/watch?v=Ao1beK2rEIY)
 - [три: целый плейлист](https://www.youtube.com/watch?v=M-O8ZNW9icQ&list=PLyCj4RCToz5BEcpZgwLfAhzxVRlDY3z-O)
+- [четыре: плейлист на русском](https://www.youtube.com/playlist?list=PLDyvV36pndZHkDRik6kKF6gSb0N0W995h)
 
 Пример: [организация работы с Git в Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) - там вообще своё собственное решение, но кто интересуется, можно проанализировать идеи.
 
