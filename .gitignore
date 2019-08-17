@@ -4,6 +4,7 @@
 **/*sqlite*
 **/.env
 **/.idea/
+**/.ipynb*
 **/build
 **/dbs
 **/eggs
