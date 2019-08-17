@@ -49,6 +49,8 @@ Pull request (Merge request) - запрос к Git на слияние одно�
     1. подтверждаем
 1. Пьём кофе, отдыхаем
 
+Пример: [организация работы с Git в Atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+
 
 ## Ресурсы
 
