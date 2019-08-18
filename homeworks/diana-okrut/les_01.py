@@ -1,4 +1,4 @@
-import os
+import os #файл проверен с помощью fleke8
 
 tries = 0
 while tries != 100:
