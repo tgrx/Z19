@@ -1,9 +1,18 @@
-a = int(input("Choose a variant (1-6): "))
-c = [1, 2, 3, 4, 5, 6]
-if a in c:
-    print("Variant confirmed")
-while a not in c:
-    a = int(input("Variant are not available, choose another one: "))
+a = 0
+arr = [1, 2, 3, 4, 5, 6]
+while True:
+  try:
+     a = int(input("Enter your variant (1-6): "))
+  except ValueError:
+     print("Variant is not an integer!")
+     continue
+  else:
+    if a in arr:
+     print("Variant is available!")
+     break
+    else:
+     print("Variant is not 1-6!")
+
 if a == 1:
     print("Hello world!")
 if a == 2:
@@ -21,4 +30,3 @@ if a == 5:
 if a == 6:
     import webbrowser
     webbrowser.open('https://youtu.be/dQw4w9WgXcQ')
-    print("Bye world!")
