@@ -1,4 +1,9 @@
-a = int(input("Change a variant (1-6): "))
+a = int(input("Choose a variant (1-6): "))
+c = [1, 2, 3, 4, 5, 6]
+if a in c:
+    print("Variant confirmed")
+while a not in c:
+    a = int(input("Variant are not available, choose another one: "))
 if a == 1:
     print("Hello world!")
 if a == 2:
