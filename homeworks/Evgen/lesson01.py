@@ -4,4 +4,4 @@ import os
 print("This is a system: "+os.name)
 name=input("What you name?:\n")
 print("Hello "+name+"!")
-input(name +" do you like programming?\n")
+input(name +" do you like programming?\n") #asks the user like to program
