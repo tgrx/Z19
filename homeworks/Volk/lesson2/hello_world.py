@@ -1,5 +1,4 @@
-print("Change a variant (1-6)")
-a = int(input())
+a = int(input("Change a variant (1-6): "))
 if a == 1:
     print("Hello world!")
 if a == 2:
