@@ -1,5 +1,6 @@
-print("Hello, World!!!")
+print("Hello, World!!!\nI am HAL 9000")
 import os
-print(os.name)
-print(os.__name__)
 
+print("I work on a system " + os.name)
+name = input("What's your name? \n")
+print("Hello " + name+"!")
