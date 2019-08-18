@@ -1,7 +1,6 @@
-print( "Hello world!\nI am Evgen!")
+print( "Hello world!\nThis is the first lesson!")
 #print ("I am Evgen!")
 import os
 print(os.name)
-input("What you name?: ")
-name="12345"
-print(name)
+name=input("What you name?: ")
+print("Hello "+name+"!")
