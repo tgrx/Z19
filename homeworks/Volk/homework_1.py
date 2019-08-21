@@ -1,4 +1,5 @@
 print("Change a variant (1-6)")
+print(5/2)
 a = int(input())
 if a == 1:
     print("Hello world!")
