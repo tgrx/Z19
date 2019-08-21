@@ -1,11 +1,15 @@
 while True:
   try:
-     a = int(input("Enter the length of the  (1-6): "))
+     length = int(input("Enter length of list: "))
   except ValueError:
      continue
   else:
-    if a in arr:
-     print("Variant is available!")
+    if True:
+     print("Length is available!")
      break
-    else:
-     print("Variant is not 1-6!")
+
+
+x = list()
+while length > 0:  #my ubuntu has died when length raised to 1000000000, now I know why commit is need for
+    x.append("a")
+    length -= 1
