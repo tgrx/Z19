@@ -22,5 +22,5 @@ def f(m,n):
   return f(m-1,f(m,n-1))
 
 
-print(f(m,n))
+print(f(m,n))  #my ubuntu has died again when i enter m=4 and n=1
 
