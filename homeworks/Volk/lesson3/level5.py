@@ -30,7 +30,7 @@ print(queue.dequeue())
 print(queue.dequeue())
 
 
-#Code under this comment doesnt working, but i have code with a simple working, it will be added i file level 5.1
+#Code under this comment doesnt working, but i have code with a simple working, it will be added in file level 5.1
 '''if __name__ == "__main__":       
     x = []
     assert dequeue(x) is None
