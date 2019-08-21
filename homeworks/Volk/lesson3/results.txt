@@ -1,0 +1,7 @@
+Operation: x = 100500. Time for 1000 loops: 8.577900007367134e-05
+Operation: x = 100*100/100. Time for 1000 loops: 8.535200322512537e-05
+Operation: 100 == 500. Time for 1000 loops: 0.00010174100316362455
+Operation: list1 += ['k']. Time for 1000 loops: 0.0002719900003285147
+Operation: ['v','o', 'l', 'k'].remove('k'). Time for 1000 loops: 0.0004318549981690012
+Operation: ('volk').index('o') Time for 1000 loops: 0.0003823969964287244
+Operation: sorted((3,2,1)). Time for 1000 loops: 0.0005003349942853674
