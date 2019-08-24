@@ -5,7 +5,7 @@ print("I Work on a systeme " + os.name)
 name = input("What you name?\n")
 print("Hello " + name)
 i = input("do you like programming\n")
-if i == "yes":
+if i == "yes":  # проверка условия
     print("good")
 else:
     print("bad")
