@@ -9,3 +9,4 @@ if i == "yes":  # проверка условия
     print("good")
 else:
     print("bad")
+# создал новую ветку в pycharm
