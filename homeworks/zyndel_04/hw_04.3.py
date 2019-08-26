@@ -1,10 +1,10 @@
 def lenList():
-    lst = [1]
+    l = [1]
     try:
-        while lst:
-            lst.append(1)
+        while l:
+            l.append(1)
     except MemoryError:
-        return len(lst)
+        return len(l)
     pass
 
 
