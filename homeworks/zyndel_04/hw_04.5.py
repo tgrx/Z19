@@ -5,7 +5,7 @@ def enqueue(l, e):
 def dequeue(l):
     if l:
         return l.pop(0)
-    elif l == []:
+    else:
         return None
 
 if __name__ == "__main__":
@@ -19,3 +19,4 @@ if __name__ == "__main__":
     assert dequeue(x) == 3
     assert dequeue(x) is None
     assert x == []
+    
