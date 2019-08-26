@@ -11,6 +11,3 @@ def verification():
                 return(a)
             else:
                 print("Variant is not 1-6!")
-
-
-v
