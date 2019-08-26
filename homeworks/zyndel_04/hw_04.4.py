@@ -8,9 +8,10 @@ def A(m, n):
             else:
                 return A(m - 1, A(m, n - 1))
     except TypeError:
-        return ("kek")
+        return "kek"
     except RecursionError:
-        return ("Maximum recursion depth exceeded in comparison.")
+        return "Maximum recursion depth exceeded in comparison."
 
-#In [87]: A(3, 8)
-#Out[87]: 2045
+
+# In [87]: A(3, 8)
+# Out[87]: 2045

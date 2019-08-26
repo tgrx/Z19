@@ -14,9 +14,9 @@ md = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(md)
 assert hasattr(md, "reversed2"), f"no `reversed2` in {fp}"
 
-r = getattr(md, "reversed2")
-assert isinstance(r, Callable), f"{r} is not callable"
+reversed2 = getattr(md, "reversed2")
+assert isinstance(reversed2, Callable), f"{reversed2} is not callable"
 
-assert r([]) == []
-assert r([3, 2, 1]) == [1, 2, 3]
-assert r([1, 1, 1]) == [1, 1, 1]
+assert reversed2([]) == []
+assert reversed2([3, 2, 1]) == [1, 2, 3]
+assert reversed2([1, 1, 1]) == [1, 1, 1]
