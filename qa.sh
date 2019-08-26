@@ -55,7 +55,9 @@ assert_names() {
 
 # ---------------------------------------------------------
 
-# check code format
+# checks
+
+python -m run_hw_tests
 
 assert_names || abort "HOMEWORKS USERS"
 

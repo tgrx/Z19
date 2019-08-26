@@ -8,4 +8,4 @@ install:
   - pip install black pylint flake8
 
 script:
-  - ./check_homeworks.sh
+  - ./qa.sh
