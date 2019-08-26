@@ -2,11 +2,13 @@ def enqueue(l, e):
     l.append(e)
     return None
 
+
 def dequeue(l):
     if l:
         return l.pop(0)
     elif l == []:
         return None
+
 
 if __name__ == "__main__":
     x = []
