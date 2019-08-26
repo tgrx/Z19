@@ -5,7 +5,7 @@ python:
   - "3.7"
 
 install:
-  - pip install black pylint
+  - pip install black pylint flake8
 
 script:
   - ./check_homeworks.sh
