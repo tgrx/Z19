@@ -20,12 +20,7 @@ set -o pipefail
 
 python -m black --check . || abort 'CODE COLOR'
 
-# check static typing
-
-python -m mypy \
-    homeworks/ \
-    lessons/ \
-|| abort 'STATIC TYPING CHECK'
+python -m flake8 homeworks/ || abort 'CODE STYLE'
 
 # ---------------------------------------------------------
 trap : 0

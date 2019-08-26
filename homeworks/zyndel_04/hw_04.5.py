@@ -6,7 +6,7 @@ def enqueue(l, e):
 def dequeue(l):
     if l:
         return l.pop(0)
-    elif l == []:
+    else:
         return None
 
 

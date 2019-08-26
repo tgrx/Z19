@@ -5,7 +5,7 @@ python:
   - "3.7"
 
 install:
-  - pip install black mypy
+  - pip install black pylint
 
 script:
   - ./check_homeworks.sh
