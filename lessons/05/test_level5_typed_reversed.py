@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Callable
 
-wanted_name = "LazyReversed"
+wanted_name = "TypedReversed"
 
 
 def wants_path(pth: Path) -> bool:
@@ -19,8 +19,9 @@ def verify(module):
 
     assert isinstance(r, Callable), f"`{wanted_name}` is not callable"
 
-    assert not isinstance(r([]), (list, tuple, str))
-    assert not isinstance(r(()), (list, tuple, str))
-    assert not isinstance(r(""), (list, tuple, str))
-    assert list(r([])) == []
-    assert tuple(r([3, 2, 1])) == (1, 2, 3)
+    assert r([]) == []
+    assert r([3, 2, 1]) == [1, 2, 3]
+    assert r([1, 1, 1]) == [1, 1, 1]
+    assert r([]) == []
+    assert r((3, 2, 1)) == (1, 2, 3)
+    assert r("aacb") == "bcaa"

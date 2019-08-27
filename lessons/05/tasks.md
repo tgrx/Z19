@@ -89,7 +89,7 @@ Filter(
 ```python
 TypedReversed([]) == []
 TypedReversed((3,2,1)) == (1, 2, 3)
-TypedReversed("aabc") == "bcaa"
+TypedReversed("aacb") == "bcaa"
 ```
 
 ## Уровень 6
@@ -103,7 +103,7 @@ TypedReversed("aabc") == "bcaa"
 ```python
 LazyReversed([]) == ?  # некий итератор
 LazyReversed((3,2,1)) == ?  # некий итератор
-LazyReversed("aabc") == ?  # некий итератор
+LazyReversed("aacb") == ?  # некий итератор
 
 list(LazyReversed([])) == []
 tuple(LazyReversed([3,2,1])) == (1, 2, 3)
