@@ -144,11 +144,3 @@ class DateRange:
                 raise StopIteration
             c, self.current = self.current, self.current + t(self.step)
             return c
-
-
-today = d.today()
-tomorrow = today + t(days=1)
-next_week = today + t(days=7)
-
-
-print(list(DateRange(today, next_week,2)))
