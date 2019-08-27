@@ -82,27 +82,31 @@ Filter(
 
 Аналогично уровню 2, но чтобы функция возвращала коллекцию того же типа, который имеет аргумент:
 
+Функцию назвать: `TypedReversed`
+
 Пример:
 
 ```python
-Reversed([]) == []
-Reversed((3,2,1)) == (1, 2, 3)
-Reversed("aabc") == "bcaa"
+TypedReversed([]) == []
+TypedReversed((3,2,1)) == (1, 2, 3)
+TypedReversed("aabc") == "bcaa"
 ```
 
 ## Уровень 6
 
 Аналогично уровню 2, но чтобы функция возвращала итератор:
 
+Функцию назвать: `LazyReversed`
+
 Пример:
 
 ```python
-Reversed([]) == ?  # некий итератор
-Reversed((3,2,1)) == ?  # некий итератор
-Reversed("aabc") == ?  # некий итератор
+LazyReversed([]) == ?  # некий итератор
+LazyReversed((3,2,1)) == ?  # некий итератор
+LazyReversed("aabc") == ?  # некий итератор
 
-list(Reversed([])) == []
-tuple(Reversed([3,2,1]) == (1, 2, 3)
+list(LazyReversed([])) == []
+tuple(LazyReversed([3,2,1])) == (1, 2, 3)
 ```
 
 ## Уровень 7
