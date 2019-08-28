@@ -61,7 +61,7 @@ python -m run_hw_tests
 
 #assert_names || abort "HOMEWORKS USERS"
 
-python -m black --check . || abort 'CODE COLOR'
+#python -m black --check . || abort 'CODE COLOR'
 
 #python -m flake8 homeworks/ || abort 'CODE STYLE'
 
