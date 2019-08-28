@@ -1,14 +1,18 @@
-# Lesson 5
+Coll# Lesson 5
 from datetime import date, timedelta
 # Уровень 2
 
 def Reversed(Str):
-    print(list(reversed(Str)))
+    print(Str[::-1])
 
 # Уровень 3
 
-def Sorted(Str):
-    print(sorted(Str))
+def Sorted(Coll):
+    for j in range(len(Coll) - 1):
+        for i in range(len(Coll)- j -1):
+            if Coll[i] > Coll[i + 1]:
+                Coll[i], Coll[i + 1] = Coll[i + 1], Coll[i]
+    print(Coll)
 
 # Уровень 4
 
