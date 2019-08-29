@@ -16,15 +16,15 @@ def Reversed(l):
         return new_l
 
 
- # def Sorted(x):
- #     '''функция возвращает список из элементов коллекции-аргумента, которые отсортированы по возрастанию'''
- #     new_x = []
- #     a = None
- #     for i in x:
- #         a = i
- #         if x[0] <= i:
- #             new_x.append(i)
- #     return new_x
+# def Sorted(x):
+#     '''функция возвращает список из элементов коллекции-аргумента, которые отсортированы по возрастанию'''
+#     new_x = []
+#     a = None
+#     for i in x:
+#         a = i
+#         if x[0] <= i:
+#             new_x.append(i)
+#     return new_x
 
 
 # def Filter(foo, coll):
@@ -74,7 +74,6 @@ def LazyReversed(l):
             return iter(a)
         else:
             return iter(new_l)
-
 
 # def DateRange(tomorrow,next_week):
 #     today = d.today()
