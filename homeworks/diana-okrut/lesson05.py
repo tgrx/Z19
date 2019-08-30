@@ -27,11 +27,13 @@ def Reversed(l):
 #     return new_x
 
 
-# def Filter(foo, coll):
-#     l = []
-#     for c in coll:
-#         if foo(c):
-#             l.append(c)
+def Filter(foo, coll):
+    '''функция возвращает список (r) из элементов коллекции-аргумента, для которых предикат истинен'''
+    r = []
+    for c in coll:
+        if foo(c):
+            r.append(c)
+    return r
 
 
 def TypedReversed(l):
@@ -74,6 +76,20 @@ def LazyReversed(l):
             return iter(a)
         else:
             return iter(new_l)
+
+class Range:
+    def __init__(self, stop):
+        self.start = self.current = 0
+        self.stop = stop
+    def __iter__(self):
+        self.current = self.start
+        return self
+    def __next__(self):
+        if self.current >= self.stop:
+            raise StopIteration
+        c, self.current = self.current, self.current + 1
+        return c
+
 
 # def DateRange(tomorrow,next_week):
 #     today = d.today()
