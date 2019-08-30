@@ -1,5 +1,12 @@
 import timeit  # импортируем timeit
 
+
+def sec(s):
+    print(s, timeit.timeit(s, number=10000), "cek")
+
+
+sec("int(200)")
+
 # Проверяем время выполнения действий при одних и тех же значениях
 print("int(2000) - ", timeit.timeit("int(2000)", number=10000), "cек")  # проверяем время выполнения создания
 print("str(2000) - ", timeit.timeit("str(2000)", number=10000), "cек")  # проверяем время выполнения создания
@@ -14,9 +21,9 @@ print("x=2000+2000 - ", timeit.timeit("x= 2000+2000", number=10000), "cек")  #
 print("x=2000-2000 - ", timeit.timeit("x= 2000-2000", number=10000), "cек")  # проверяем время выполнения вычитания
 # e = [4000, 3000, 2000]
 # e += [1000]
-
+a = str(sec("int(200)"))
 f = open('/Users/alex/Documents/python/2.txt', 'w')  # создаем файл
-# f.write(a)       # записываем в файл
+f.write(a)  # записываем в файл
 f.close()  # закрываем файл
 
 
