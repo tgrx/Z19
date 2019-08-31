@@ -100,6 +100,7 @@ class Runner(multiprocessing.Process):
 def main():
     with multiprocessing.Manager() as mgr:
         results = mgr.dict()
+
         r = Runner(results=results, mgr=mgr)
         r.start()
         r.join(5)
