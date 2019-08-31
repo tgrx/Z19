@@ -1,9 +1,6 @@
-from math import pi
-
-
+from decimal import Decimal as D
 
 print('Hello World!')
-from decimal import Decimal as D
 
 a = 10
 b = 5
@@ -15,4 +12,4 @@ print(D(d))
 print(c)
 print(d)
 print(e)
-print(c**d)
+print(c ** d)

@@ -1,6 +1,7 @@
-
 import telebot
-token='550640345:AAGJ4ahUBiono_q7pZ_rzZyhNSZZBgu2NPs'
+from telebot import types
+
+token = '550640345:AAGJ4ahUBiono_q7pZ_rzZyhNSZZBgu2NPs'
 
 bot = telebot.TeleBot(token)
 
@@ -13,7 +14,6 @@ def repeat_all_messages(message):
 if __name__ == '__main__':
     bot.polling(none_stop=True)
 
-from telebot import types
 markup = types.ReplyKeyboardMarkup()
 markup.row('a', 'v')
 markup.row('c', 'd', 'e')
