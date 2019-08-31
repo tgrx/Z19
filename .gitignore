@@ -2,6 +2,7 @@
 **/*.pid
 **/*secrets.*
 **/*sqlite*
+**/*venv*
 **/.env
 **/.idea/
 **/.ipynb*
