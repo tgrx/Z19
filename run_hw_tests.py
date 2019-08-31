@@ -1,11 +1,31 @@
 import importlib.util
 import multiprocessing
+import traceback
 from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parent
 
 HOMEWORKS_DIR = PROJECT_DIR / "homeworks"
 LESSONS_DIR = PROJECT_DIR / "lessons"
+
+ERROR_MSG = """
+FAILED! test: `{test}`
+
+# APP:
+```
+{app}
+```
+
+# ERROR:
+```
+{err}
+```
+
+# TRACEBACK:
+```
+{tb}
+```
+"""
 
 
 def _import(module_path: Path, prefix=""):
@@ -42,7 +62,18 @@ class Runner(multiprocessing.Process):
                     print(f"\t\tskip: test does not want module")
                     continue
 
-                test.verify(hm)
+                try:
+                    test.verify(hm)
+                except Exception as err:
+                    print(
+                        ERROR_MSG.format(
+                            test=test_path,
+                            app=homework_path,
+                            err=err,
+                            tb=traceback.format_exc(),
+                        )
+                    )
+                    raise
 
                 print("\tok")
 

@@ -1,5 +1,6 @@
 import timeit
-results = open('results.txt', 'w')
+
+results = open("results.txt", "w")
 
 
 def test1():
@@ -7,7 +8,7 @@ def test1():
 
 
 def test2():
-    x = 100*100/100
+    x = 100 * 100 / 100
 
 
 def test3():
@@ -15,19 +16,20 @@ def test3():
 
 
 def test4():
-    volk = ['v','o','l']+['k']
+    volk = ["v", "o", "l"] + ["k"]
 
 
 def test5():
-    ['v','o', 'l', 'k'].remove('k')
+    ["v", "o", "l", "k"].remove("k")
 
 
 def test6():
-    ('volk').index("o")
+    ("volk").index("o")
 
 
 def test7():
-    sorted((3,2,1))
+    sorted((3, 2, 1))
+
 
 result = timeit.timeit("test1()", setup="from __main__ import test1", number=1000)
 results.write("Operation: x = 100500.")

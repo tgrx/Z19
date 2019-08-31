@@ -49,6 +49,7 @@ print(i)
 
 ##### .03 #####
 
+
 def lenList():
     l = [1]
     try:
@@ -114,6 +115,7 @@ def lenTuple():
 
 ##### .04 #####
 
+
 def A(m, n):
     try:
         if m == 0:
@@ -133,6 +135,7 @@ def A(m, n):
 # Out[87]: 2045
 
 ##### 0.5 #####
+
 
 def enqueue(l, e):
     l.append(e)
@@ -160,6 +163,7 @@ if __name__ == "__main__":
 
 
 ###### .06 #####
+
 
 def enqueue(l, p, e):
     l[e] = p

@@ -1,6 +1,6 @@
 from decimal import Decimal as D
 
-print('Hello World!')
+print("Hello World!")
 
 a = 10
 b = 5

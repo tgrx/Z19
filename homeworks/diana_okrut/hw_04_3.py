@@ -63,6 +63,7 @@ def lenTuple():
         return len(t)
     pass
 
+
 # 33_554_432
 
 # def lenFrozenset():

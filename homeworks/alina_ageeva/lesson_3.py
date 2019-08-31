@@ -30,6 +30,7 @@ def lenList():
 
 # 156_097_847
 
+
 def lenDict():
     d = {1: 1}
     c = 2
@@ -42,6 +43,7 @@ def lenDict():
 
 
 # 19_650_740
+
 
 def lenSet():
     s = {1}
@@ -56,6 +58,7 @@ def lenSet():
 
 # 20_132_659
 
+
 def lenStr():
     s = "1"
     try:
@@ -67,6 +70,7 @@ def lenStr():
 
 # 268_435_456
 
+
 def lenTuple():
     t = (1,)
     try:
@@ -77,6 +81,7 @@ def lenTuple():
 
 
 # 67_108_864
+
 
 def enqueue(l, e):
     l.append(e)
@@ -103,7 +108,7 @@ if __name__ == "__main__":
 
 
 def enqueue(l, p, e):
-    l = {1: 1, }
+    l = {1: 1}
     p = input()
     e = input()
     l[p] = e

@@ -14,22 +14,21 @@ def dequeue(l):
         return str(l)
 
 
-
 x = {}
-enqueue(x,1,"Monday")
-enqueue(x,2,"Tuesday")
-enqueue(x,3,"Wednesday")
-enqueue(x,4,"Thursday")
-enqueue(x,5,"Friday")
-enqueue(x,7,"Sunday")
-enqueue(x,6,"Saturday")
+enqueue(x, 1, "Monday")
+enqueue(x, 2, "Tuesday")
+enqueue(x, 3, "Wednesday")
+enqueue(x, 4, "Thursday")
+enqueue(x, 5, "Friday")
+enqueue(x, 7, "Sunday")
+enqueue(x, 6, "Saturday")
 
 
-print('Monday' == dequeue(x))
+print("Monday" == dequeue(x))
 
 n = dequeue(x)
 print(n)
-m = 'Tuesday'
+m = "Tuesday"
 print(m)
 
 """
@@ -47,9 +46,6 @@ print(dequeue(x))
 print(x)
 print(dequeue(x))
 """
-
-
-
 
 
 """if __name__ == "__main__":
@@ -71,5 +67,3 @@ print(dequeue(x))
     assert dequeue(x) == "c"
     assert dequeue(x) is None
     assert x == {}"""
-
-

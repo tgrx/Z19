@@ -1,5 +1,5 @@
 def verification():
-    print('Hello!')
+    print("Hello!")
     while True:
         try:
             a = int(input("Enter your variant (1-6): "))
@@ -9,6 +9,6 @@ def verification():
         else:
             if a in [1, 2, 3, 4, 5, 6]:
                 print("Variant is available!")
-                return(a)
+                return a
             else:
                 print("Variant is not 1-6!")

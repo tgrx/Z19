@@ -1,6 +1,7 @@
 # 2 lvl
 import timeit
 
+
 def stat():
     s = """ int('00000')) = 2.37 ms ± 308 µs per loop 
             str(00000) = 2.8 ms ± 340 µs per loop       
@@ -14,5 +15,6 @@ def stat():
             print(y)  # 79 ns ± 4.88 ns per loop
     """
     print(s)
+
 
 stat()
