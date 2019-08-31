@@ -54,6 +54,8 @@ assert_names() {
 
 # ---------------------------------------------------------
 
+rm -rf homeworks/__pycache__
+
 # checks
 
 assert_names || abort "HOMEWORKS USERS"
