@@ -1,5 +1,7 @@
 m = int(input("Введите число m > 0\t"))
 n = int(input("Введите число n > 0\t"))
+
+
 def Ackerman(m, n):
     stack = []
     while True:
@@ -13,15 +15,19 @@ def Ackerman(m, n):
             stack.append(m - 1)
             n -= 1
 
-print(Ackerman(m,n))
+
+print(Ackerman(m, n))
+
 
 def lenList():
     l = [1]
     try:
         while l:
-           l.append(1)
+            l.append(1)
     except MemoryError:
         return len(l)
+
+
 # 156_097_847
 
 def lenDict():
@@ -30,9 +36,11 @@ def lenDict():
     try:
         while d:
             d.setdefault(c, []).append(1)
-            c+= 1
+            c += 1
     except MemoryError:
         return len(d)
+
+
 # 19_650_740
 
 def lenSet():
@@ -41,37 +49,45 @@ def lenSet():
     try:
         while s:
             s.add(c)
-            c+= 1
+            c += 1
     except MemoryError:
         return len(s)
+
+
 # 20_132_659
 
 def lenStr():
     s = "1"
     try:
         while s:
-            s+= 1
+            s += 1
     except MemoryError:
         return len(s)
+
+
 # 268_435_456
 
 def lenTuple():
-    t = (1, )
+    t = (1,)
     try:
         while t:
-            t+= 1
+            t += 1
     except MemoryError:
         return len(t)
+
+
 # 67_108_864
 
 def enqueue(l, e):
     l.append(e)
+
 
 def dequeue(l):
     if l:
         return l.pop(0)
     if l == []:
         return None
+
 
 if __name__ == "__main__":
     x = []
@@ -85,18 +101,21 @@ if __name__ == "__main__":
     assert dequeue(x) is None
     assert x == []
 
+
 def enqueue(l, p, e):
-    l = {1: 1,}
+    l = {1: 1, }
     p = input()
     e = input()
     l[p] = e
     print(l)
+
 
 def dequeue(l):
     if l == {}:
         return None
     if l:
         return l[0]
+
 
 if __name__ == "__main__":
     x = {}
