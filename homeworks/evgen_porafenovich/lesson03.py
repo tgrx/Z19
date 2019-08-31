@@ -17,7 +17,7 @@ print("x=2000-2000 - ", timeit.timeit("x= 2000-2000", number=10000), "cек")  #
 # e = [4000, 3000, 2000]
 # e += [1000]
 
-f = open('/home/evgen/Documents/lesson03.txt','w')  # создаем файл
+f = open('/home/evgen/Documents/lesson03.txt', 'w')  # создаем файл
 # f.write(a)       # записываем в файл
 f.close()  # закрываем файл
 
