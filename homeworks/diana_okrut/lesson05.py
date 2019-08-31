@@ -18,22 +18,22 @@ def Reversed(l):
 
 def Sorted(sample):
     '''функция возвращает список из элементов коллекции-аргумента, которые отсортированы по возрастанию'''
-    sample = list(sample)
-    if not sample:
+    nsample = list(sample)
+    if not nsample:
         return []
-    left = min(sample)
-    right = len(sample) - 1
+    left = 0
+    right = len(nsample) - 1
     while left <= right:
         for i in range(left, right, +1):
-            if sample[i] > sample[i + 1]:
-                sample[i], sample[i + 1] = sample[i + 1], sample[i]
+            if nsample[i] > nsample[i + 1]:
+                nsample[i], nsample[i + 1] = nsample[i + 1], nsample[i]
         right -= 1
 
         for i in range(right, left, -1):
-            if sample[i - 1] > sample[i]:
-                sample[i], sample[i - 1] = sample[i - 1], sample[i]
+            if nsample[i - 1] > nsample[i]:
+                nsample[i], nsample[i - 1] = nsample[i - 1], nsample[i]
         left += 1
-    print(sample)
+    print(nsample)
 
 
 def Filter(foo, coll):
