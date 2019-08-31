@@ -33,7 +33,7 @@ def Sorted(sample):
             if nsample[i - 1] > nsample[i]:
                 nsample[i], nsample[i - 1] = nsample[i - 1], nsample[i]
         left += 1
-    print(nsample)
+    return (nsample)
 
 
 def Filter(foo, coll):
