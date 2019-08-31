@@ -18,6 +18,8 @@ def Reversed(l):
 
 def Sorted(sample):
     '''функция возвращает список из элементов коллекции-аргумента, которые отсортированы по возрастанию'''
+    if not sample:
+        return []
     sample = list(sample)
     left = 0
     right = len(sample) - 1
