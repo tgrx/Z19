@@ -11,7 +11,7 @@ def dequeue(l):
         l = str(l.pop(list(l.keys())[0]))
         l = l[:-2]
         l = l[2:]
-        return l
+        return str(l)
 
 
 
@@ -27,7 +27,12 @@ enqueue(x,6,"Saturday")
 
 print('Monday' == dequeue(x))
 
+n = dequeue(x)
+print(n)
+m = 'Tuesday'
+print(m)
 
+"""
 print(dequeue(x))
 print(x)
 print(dequeue(x))
@@ -41,7 +46,7 @@ print(x)
 print(dequeue(x))
 print(x)
 print(dequeue(x))
-
+"""
 
 
 

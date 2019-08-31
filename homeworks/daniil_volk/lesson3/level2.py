@@ -1,4 +1,5 @@
 import timeit
+results = open('results.txt', 'w')
 
 
 def test1():
@@ -28,7 +29,6 @@ def test6():
 def test7():
     sorted((3,2,1))
 
-results = open('results.txt', 'w')
 result = timeit.timeit("test1()", setup="from __main__ import test1", number=1000)
 results.write("Operation: x = 100500.")
 results.write(" Time for 1000 loops: ")
