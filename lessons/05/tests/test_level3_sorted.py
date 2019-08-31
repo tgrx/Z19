@@ -19,7 +19,19 @@ def verify(module):
 
     assert isinstance(r, Callable), f"`{wanted_name}` is not callable"
 
-    assert r([]) == []
-    assert r((3, 1, 2)) == [1, 2, 3]
-    assert r("zxy") == ["x", "y", "z"]
-    assert r({3, 1, 1, 2}) == [1, 2, 3]
+    assert r([]) == [], f"Sorted([]) => `{r([])}`, while expected: []"
+    assert r((3, 1, 2)) == [
+        1,
+        2,
+        3,
+    ], f"Sorted((3,1,2)) => `{r((3, 1, 2))}`, while expected: [1, 2, 3]"
+    assert r("zxy") == [
+        "x",
+        "y",
+        "z",
+    ], f'Sorted("zxy") => `{r("zxy")}`, while expected: ["x", "y", "z"]'
+    assert r({3, 1, 1, 2}) == [
+        1,
+        2,
+        3,
+    ], f"Sorted({3, 1, 1, 2}) => `{r({3, 1, 1, 2})}`, while expected: [1, 2, 3]"
