@@ -21,7 +21,7 @@ def Sorted(sample):
     sample = list(sample)
     if not sample:
         return []
-    left = 0
+    left = min(sample)
     right = len(sample) - 1
     while left <= right:
         for i in range(left, right, +1):
