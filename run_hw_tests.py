@@ -119,7 +119,9 @@ def main():
                 print(f"\t{homework}: {status}")
                 if status != "OK":
                     print(f"\t\terror: {context['error']}")
-                    print(f"\n\t\t----- trace -----\n{context['traceback']}\t\t----- trace -----\n")
+                    print(
+                        f"\n\t\t----- trace -----\n{context['traceback']}\t\t----- trace -----\n"
+                    )
                     ok = False
 
         return int(ok is False)
