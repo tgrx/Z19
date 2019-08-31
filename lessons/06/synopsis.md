@@ -275,14 +275,219 @@ print(bob)  # AttributeError: no name
 
 ## Наследование
 
-## Специальные методы
+Классы можно наследовать друг от друга:
+при этом наследник получает все атрибуты родителя в наследство,
+плюс может добавлять свои:
+
+```python
+class Summator:
+    def add(self, a, b):
+        return a + b
+
+class Multiplicator(Summator):
+    def multiply(self, a, b):
+        result = 0
+        for _ in range(b):
+            result += a
+        return result
+
+s = Summator()
+m = Multiplicator()
+
+# родитель умеет только складывать
+s.add(1, 2)  # 3
+
+# а потомок ещё и научился умножать
+m.add(1, 2)  # 3
+m.multiply(0, 10)  # 0
+
+# родитель умножать не умеет:
+s.multiply(-1, -1)  # AttributeError: no "multiply"
+```
 
 ## Перегрузка
 
+А что, если потомок захочет родительские алгоритмы делать по-своему?
+
+Потомку придётся переопределить родительский метод. Это называется — "перегрузка":
+
+```python
+class IntegralDivisor:
+    def divide(self, dividend, divisor):
+        quotient = dividend // divisor
+        return quotient
+
+class FractionDivisor(IntegralDivisor):
+    def divide(self, dividend, divisor):
+        quotient = dividend // divisor
+        remainder = dividend % divisor
+        return (quotient, remainder)
+
+i = IntegralDivisor()
+f = FractionDivisor()
+
+i.divide(10, 7)  # 1
+f.divide(10, 7)  # (1, 3)
+```
+
+Хорошо, но что, если нет нужды, как в примере выше,
+*полностью* переопределять наследие родителя?
+Иначе говоря, вызвать метод родителя с тем же именем?
+Как различить, чей метод?
+
+Вариантов несколько:
+
+1. использовать `super`:
+
+    ```python
+    class IntegralDivisor:
+        def divide(self, dividend, divisor):
+            quotient = dividend // divisor
+            return quotient
+
+    class FractionDivisor(IntegralDivisor):
+        def divide(self, dividend, divisor):
+            # self связывается super-ом автоматически
+            quotient = super().divide(dividend, divisor)
+            remainder = dividend % divisor
+            return (quotient, remainder)
+    ```
+
+1. использовать имя родителя:
+
+    ```python
+    class IntegralDivisor:
+        def divide(self, dividend, divisor):
+            quotient = dividend // divisor
+            return quotient
+
+    class FractionDivisor(IntegralDivisor):
+        def divide(self, dividend, divisor):
+            # первый аргумент придётся передавать самому!
+            quotient = IntegralDivisor.divide(self, dividend, divisor)
+            remainder = dividend % divisor
+            return (quotient, remainder)
+    ```
+
+Конструктор тоже можно перегружать:
+
+```python
+class Profile:
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        return f"Profile(name={self.name})"
+
+
+class TelegramProfile(Profile):
+    def __init__(self, phone, name):
+        Profile.__init__(self, name)
+        self.phone = phone
+
+    def __repr__(self):
+        p = Profile.__repr__(self)
+        return f"Telegram(phone={self.phone}, profile={p})"
+
+
+class InstagramProfile(Profile):
+    def __init__(self, insta, name):
+        Profile.__init__(self, name)
+        self.insta = f"@{insta}"
+
+    def __repr__(self):
+        p = Profile.__repr__(self)
+        return f"Instagram(insta={self.insta}, profile={p})"
+
+
+class User(TelegramProfile, InstagramProfile):
+    def __init__(self, name, phone, insta):
+        TelegramProfile.__init__(self, phone, name)
+        InstagramProfile.__init__(self, insta, name)
+
+    def __repr__(self):
+        t = TelegramProfile.__repr__(self)
+        i = InstagramProfile.__repr__(self)
+        return f"User(telegram={t}, instagram={i})"
+
+
+u = User("alex", "+1", "abc")
+
+# User(telegram=Telegram(phone=+1, profile=Profile(name=alex)), instagram=Instagram(insta=@abc, profile=Profile(name=alex)))
+print(u)
+```
+
 ## Проблемы наследования и MRO
 
-MRO: [Хабр](https://habr.com/ru/post/62203/)
+Проблемы наследования возникают только у тех, кто наследуется от более чем одного родителя.
+
+Пример выше это хорошо иллюстрирует.
+
+А кому нужно больше — для вас есть MRO: [Хабр](https://habr.com/ru/post/62203/)
+
+И ["diamond problem"](https://www.quora.com/What-is-the-diamond-problem-in-programming):
+
+```python
+class First: ...
+class Second: ...
+
+class A(First, Second): ...
+class B(Second, First): ...
+
+class XXX(A, B):
+    pass
+```
+
+## Специальные методы
+
+- `__init__`
+- `__eq__` / `__gte__` / ...
+- `__nonzero__`
+- `__getitem__`
+- [тысячи их](https://docs.python.org/3/reference/datamodel.html#special-method-names)
 
 ## Создание классов
 
+Как объекты создают классы — это всем известно.
+
+А как вот так же, на лету, создать сам класс?
+
+Очень просто:
+
+```python
+def initialize(obj, name, email):
+    obj.name = name
+    obj.email = email
+
+
+def represent(obj):
+    classname = obj.__class__.__name__
+    name = obj.name
+    email = obj.email
+    return f"{classname}(name={name!r}, email={email!r})"
+
+
+C = type(
+    # class name
+    "User",
+
+    # base classes
+    (),
+
+    # dict: то самое "пространство имён"
+    {
+        "__init__": initialize,
+        "__repr__": represent,
+    }
+)
+
+alice = C(name="alice", email="x")
+
+# User(name='alice', email='x')
+print(alice)
+```
+
 ## Метаклассы
+
+Если вы не знаете, что это — оно вам не надо.
+
