@@ -1,6 +1,6 @@
+import sys
 from os import system
 from webbrowser import open
-import sys
 
 print("\tЗдравствуйте! Что бы вы хотели сделать?\n")
 print("\t1 -- Вывести Hello, World!")
