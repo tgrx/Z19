@@ -1,47 +1,47 @@
-from datetime import date as d, timedelta as t
+from datetime import timedelta as t
 
 
 def Reversed(x):
     x = list(x)
     l = len(x)
-    steps = l//2
+    steps = l // 2
     for i in range(steps):
         l -= 1
         x[i], x[l] = x[l], x[i]
-    return(x)
+    return x
 
 
 def Sorted(x):
     x = list(x)
     l = len(x)
     for i in range(l):
-        for j in range(l-1):
-            if x[j] > x[j+1]:
-                x[j + 1],x[j] = x[j],x[j + 1]
-    return(x)
+        for j in range(l - 1):
+            if x[j] > x[j + 1]:
+                x[j + 1], x[j] = x[j], x[j + 1]
+    return x
 
 
-def Filter(y,x):
+def Filter(y, x):
     x = list(x)
     l = len(x)
     z = []
-    if isinstance(y,bool):
-        if y == True:
+    if isinstance(y, bool):
+        if y is True:
             for i in range(l):
                 if x[i] > 0:
                     z.append(x[i])
-            return(z)
+            return (z)
         else:
             for i in range(l):
                 if x[i] == 0:
                     z.append(x[i])
-            return(z)
+            return z
     else:
         y = str(y)
         for i in range(l):
             if y in x[i]:
                 z.append(x[i])
-        return (z)
+        return z
 
 
 def TypedReversed(x):
@@ -51,7 +51,7 @@ def TypedReversed(x):
         raise Exception('Dict')
     x = list(x)
     l = len(x)
-    steps = l//2
+    steps = l // 2
     for i in range(steps):
         l -= 1
         x[i], x[l] = x[l], x[i]
@@ -73,7 +73,7 @@ def TypedReversed(x):
 
 
 class Range:
-    def __init__(self, start, stop = 'default', step = 'default'):
+    def __init__(self, start, stop='default', step='default'):
         if step == 'default':
             self.step = 1
             self.start = start
@@ -89,9 +89,11 @@ class Range:
             self.stop = stop
             self.step = step
             self.current = start
+
     def __iter__(self):
         self.current = self.start
         return self
+
     def __next__(self):
         if self.stop >= self.start and self.step < 0:
             raise StopIteration
@@ -110,7 +112,7 @@ class Range:
 
 
 class DateRange:
-    def __init__(self, start, stop = 'default', step = 'default'):
+    def __init__(self, start, stop='default', step='default'):
         if step == 'default':
             self.step = 1
             self.start = start
@@ -126,9 +128,11 @@ class DateRange:
             self.stop = stop
             self.step = step
             self.current = start
+
     def __iter__(self):
         self.current = self.start
         return self
+
     def __next__(self):
         if self.stop >= self.start and self.step < 0:
             raise StopIteration
