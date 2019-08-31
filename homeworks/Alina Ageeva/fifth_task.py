@@ -10,18 +10,22 @@ print("\t4 -- Вывести приветстие с вашим именем")
 print("\t5 -- Выйти из программы\n")
 
 while True:
-        try:
-            number = int(input("\tЧто выбираете?\t\t"))
-            if number < 1 or number > 5:
-                raise ValueError
-            break
-        except ValueError:
-            print("\nВы должны ввести число от 1 до 5. Попробуйте снова.\n")
+    try:
+        number = int(input("\tЧто выбираете?\t\t"))
+        if number < 1 or number > 5:
+            raise ValueError
+        break
+    except ValueError:
+        print("\nВы должны ввести число от 1 до 5. Попробуйте снова.\n")
 
 if number == 1:
     print("\n\tHello, World!\n")
 elif number == 2:
-    answer = str(input("\n\tПривет! Меня зовут Алина. Мне 19 лет. Я учусь в БГУИРе. Интересует?)\n"))
+    answer = str(
+        input(
+            "\n\tПривет! Меня зовут Алина. Мне 19 лет. Я учусь в БГУИРе. Интересует?)\n"
+        )
+    )
     ans = answer.lower()
     if ans == "да":
         open("https://vk.com/ageevaalina")
