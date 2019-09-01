@@ -3,5 +3,4 @@ def reversed2(L):
     for s in L:
         x.append(s)
         z = x[::-1]
-    print(z)
-# функция реверса
+    print(z)  # функция реверса
