@@ -5,7 +5,7 @@ def Reversed(l):
     '''функция возвращает список из элементов коллекции-аргумента, но которые в обратном порядке'''
     types = (str, tuple, list)
     if type(l) not in types:
-        print('Введенные данные не соответствуют условию.')
+        return ('Введенные данные не соответствуют условию.')
     else:
         new_l = []
         count = 0
@@ -49,7 +49,7 @@ def TypedReversed(l):
     '''функция возвращает коллекцию того же типа, который имеет аргумент, но в обратном порядке'''
     types = (str, tuple, list)
     if type(l) not in types:
-        print('Введенные данные не соответствуют условию.')
+        return ('Введенные данные не соответствуют условию.')
     else:
         new_l = []
         count = 0
@@ -69,7 +69,7 @@ def LazyReversed(l):
     '''функция возвращает итератор коллекции того же типа, который имеет аргумент, но в обратном порядке'''
     types = (str, tuple, list)
     if type(l) not in types:
-        print('Введенные данные не соответствуют условию.')
+        return ('Введенные данные не соответствуют условию.')
     else:
         new_l = []
         count = 0
@@ -87,10 +87,11 @@ def LazyReversed(l):
             return iter(new_l)
 
 
-class Range(type):
-    def __init__(self, stop):
-        self.start = self.current = 0
+class Range:
+    def __init__(self,start=0, stop, step=1):
+        self.start = start
         self.stop = stop
+        self.step = step
 
     def __iter__(self):
         self.current = self.start
@@ -102,10 +103,11 @@ class Range(type):
         c, self.current = self.current, self.current + 1
         return c
 
-
+from datetime import date as d, timedelta as t
 def DateRange(tomorrow, next_week):
-    '''функция работает как range, но только для дат'''
+#    '''функция работает как range, но только для дат'''
     today = d.today()
     tomorrow = today + t(days=1)
     next_week = today + t(days=7)
-    return tomorrow in range(today, next_week)
+
+    return
