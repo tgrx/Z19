@@ -1,4 +1,4 @@
-def reversed2(L):
+def Reversed(L):
     x = list([])
     for s in L:
         x.append(s)
