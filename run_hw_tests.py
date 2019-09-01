@@ -1,5 +1,6 @@
 import importlib.util
 import multiprocessing
+import sys
 import traceback
 from pathlib import Path
 
@@ -43,9 +44,16 @@ def _import(module_path: Path, prefix=""):
 
 
 class Runner(multiprocessing.Process):
+    def __init__(self, results, mgr):
+        super().__init__()
+        self._results = results
+        self._mgr = mgr
+
     def run(self) -> None:
         for test_path in LESSONS_DIR.glob("**/test_*.py"):
             print(f"\nrun test: {test_path.as_posix()}\n")
+
+            self._results[test_path] = self._mgr.dict()
 
             test = _import(test_path, "tests")
 
@@ -73,19 +81,52 @@ class Runner(multiprocessing.Process):
                             tb=traceback.format_exc(),
                         )
                     )
-                    raise
 
-                print("\tok")
+                    self._results[test_path][homework_path] = {
+                        "result": "FAIL",
+                        "error": err,
+                        "traceback": traceback.format_exc(),
+                    }
+                else:
+                    self._results[test_path][homework_path] = {
+                        "result": "OK",
+                        "error": None,
+                        "traceback": None,
+                    }
 
-        print("END test run\n\n")
+                    print("END test run\n\n")
 
 
 def main():
-    r = Runner()
-    r.start()
-    r.join(5)
-    assert r.exitcode == 0, "tests failed"
+    with multiprocessing.Manager() as mgr:
+        results = mgr.dict()
+
+        r = Runner(results=results, mgr=mgr)
+        r.start()
+        r.join(5)
+        if r.exitcode != 0:
+            print("TESTS FAILED")
+            return 1
+
+        ok = True
+
+        print("\n\n[RESULTS]")
+
+        for test_case, test_targets in results.items():
+            print(f"\n[TEST] {test_case}")
+
+            for homework, context in test_targets.items():
+                status = context["result"]
+                print(f"\t{homework}: {status}")
+                if status != "OK":
+                    print(f"\t\terror: {context['error']}")
+                    print(
+                        f"\n\t\t----- trace -----\n{context['traceback']}\t\t----- trace -----\n"
+                    )
+                    ok = False
+
+        return int(ok is False)
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
