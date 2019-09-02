@@ -1,11 +1,11 @@
 class User:
-    def __init__(self, name, emeil):
+    def __init__(self, name, email):
         self.name = name
-        self.emeil = emeil
+        self.email = email
 
     def __eq__(self, other):
         if type(self) == type(other):
-            return self.emeil == other.emeil
+            return self.email == other.emeil
         else:
             raise TypeError
 
@@ -19,12 +19,12 @@ class UserForm(User):
         a = (not any(c.islower() for c in self.name))
         b = (not self.name.isnumeric())
         c = (self.name != '_')
-        d = (not '.' in self.name)
+        d = ('.' not in self.name)
         if a and b and c and d:
             return ValueError
 
     def validate_email(self):
-        em = self.emeil.split("@")
+        em = self.email.split("@")
         log = em[0]
         dom = em[1]
 
@@ -37,8 +37,8 @@ class UserForm(User):
         a = (not any(c.islower() for c in log))
         b = (not log.isnumeric())
         c = (log != '_')
-        d = (not '.' in log)
-        e = (not '+' in log)
+        d = ('.' not in log)
+        e = ('+' not in log)
         if a and b and c and d and e:
             return ValueError
 
@@ -49,6 +49,6 @@ class UserForm(User):
         a = (not any(c.islower() for c in dom))
         b = (not dom.isnumeric())
         c = (dom != '_')
-        d = (not '.' in dom)
+        d = ('.' not in dom)
         if a and b and c and d:
             return ValueError
