@@ -13,7 +13,7 @@ while True:
         if type(user_age) == int:
             break
     except ValueError:
-        print('Ошбика, введите возраст заново!')
+        print("Ошбика, введите возраст заново!")
         continue
 
 
@@ -40,7 +40,11 @@ def fifth_task():
     """Даёт пользователю выбрать одну из трех предлагаемых систем"""
     while True:
         try:
-            user_choice = int(input("Please, choose one of three options: 1)Windows, 2)Linux, 3)Mac\n"))
+            user_choice = int(
+                input(
+                    "Please, choose one of three options: 1)Windows, 2)Linux, 3)Mac\n"
+                )
+            )
             if user_choice == 1:
                 print("Your choice is Windows")
                 break
@@ -54,7 +58,7 @@ def fifth_task():
                 print("Wrong number!")
                 continue
         except ValueError:
-            print('Error, try again!')
+            print("Error, try again!")
             continue
 
 
@@ -95,7 +99,7 @@ def sixth_task():
             else:
                 print("Неверный знак")
         except ValueError:
-            print('Error, try again!')
+            print("Error, try again!")
             continue
 
 
@@ -119,5 +123,5 @@ while True:
         else:
             print("Wrong number!")
     except ValueError:
-        print('Error, try again!')
+        print("Error, try again!")
         continue
