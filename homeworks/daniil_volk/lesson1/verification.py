@@ -6,7 +6,7 @@ def verification():
             print("Variant is not an integer!")
             continue
         else:
-            if a in range(1,7):
+            if a in range(1, 7):
                 print("Variant is available!")
                 return a
             print("Variant is not 1-6!")
