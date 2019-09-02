@@ -5,7 +5,6 @@
 #         rev_coll.append(coll[i])
 #     return rev_coll
 #
-#
 # def Sorted(col):
 #     r = list(col)
 #     for i in range(len(col) - 1):
@@ -25,7 +24,6 @@
 #             r.append(col[i])
 #     return r
 #
-#
 # def TypedReversed(coll):
 #     t = type(coll)
 #     coll = list(coll)
@@ -37,3 +35,5 @@
 #     else:
 #         rev_coll = t(rev_coll)
 #     return rev_coll
+#
+#
