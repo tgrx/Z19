@@ -48,7 +48,10 @@ def fifth_task():
     while True:
         try:
             option = int(
-                input("Choose the option: 1)'a cup of coffee' or 2)'a cup of tea' or 3)'rumka vodki na stole'"))
+                input(
+                    "Choose the option: 1)'a cup of coffee' or 2)'a cup of tea' or 3)'rumka vodki na stole'"
+                )
+            )
             if option == 1:
                 print("You have chosen a cup of coffee.")
                 break
