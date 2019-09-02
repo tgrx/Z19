@@ -11,7 +11,7 @@ while 1:
         print(f"Good! {name}")
         break
     elif answer.lower() == "no":
-        print("I'm sorry")
+        print("I'm sorry!")
         break
     else:
         print("I did not understand the answer")
