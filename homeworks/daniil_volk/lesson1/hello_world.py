@@ -19,4 +19,3 @@ if a == 5:
     a = int(input())
 if a == 6:
     webbrowser.open("https://youtu.be/dQw4w9WgXcQ")
-    print("Bye world!")
