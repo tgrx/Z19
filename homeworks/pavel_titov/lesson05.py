@@ -3,8 +3,7 @@
 
 def Reversed(x):
     if x == ([], (), str):
-        reversed(x)
-        print(x)
+        return(reversed(x))
     else:
         print("Error")
 
