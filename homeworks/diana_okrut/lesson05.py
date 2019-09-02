@@ -42,23 +42,23 @@ def Filter(foo, coll):
     return r
 
 
-def TypedReversed(l):
-    types = (str, tuple, list)
-    if type(l) not in types:
-        return "Введенные данные не соответствуют условию."
-    else:
-        new_l = []
-        count = 0
-        for i in l:
-            x = l[count]
-            new_l.insert(0, x)
-            count += 1
-        if type(l) is str:
-            return "".join(new_l)
-        elif type(l) is tuple:
-            return tuple(new_l)
-        else:
-            return new_l
+# def TypedReversed(l):
+#     types = (str, tuple, list)
+#     if type(l) not in types:
+#         return "Введенные данные не соответствуют условию."
+#     else:
+#         new_l = []
+#         count = 0
+#         for i in l:
+#             x = l[count]
+#             new_l.insert(0, x)
+#             count += 1
+#         if type(l) is str:
+#             return "".join(new_l)
+#         elif type(l) is tuple:
+#             return tuple(new_l)
+#         else:
+#             return new_l
 
 
 # def LazyReversed(l):
