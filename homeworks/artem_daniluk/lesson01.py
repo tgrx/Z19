@@ -1,88 +1,123 @@
+import platform
+
+
 def first_task():
     print("Hello, world!")
 
 
-def second_task(user_name, user_surname, user_age):
+user_name = input("Введите Ваше имя:\n")
+user_surname = input("Введите Вашу фамилию:\n")
+while True:
+    try:
+        user_age = int(input("Введите Ваш возраст:\n"))
+        if type(user_age) == int:
+            break
+    except ValueError:
+        print('Ошбика, введите возраст заново!')
+        continue
+
+
+def second_task():
     """Спрашивает данные пользователя(имя, фамилия, возраст)."""
-    user_name = input("Введите Ваше имя:\n")
-    user_surname = input("Введите Вашу фамилию:\n")
-    user_age = int(input("Введите Ваш возраст:\n"))
-    print("Вас зовут:", user_name, user_surname, ", Ваш возраст: ", user_age)
+    print(f"Вас зовут: {user_name} {user_surname}, Ваш возраст: {user_age}")
 
 
 def third_task():
     """Выводит информацию о системе пользователя"""
-    import platform
 
-    print("Platform:", platform.platform())
-    print("System:", platform.system())
-    print("Release:", platform.release())
-    print("Version:", platform.version())
+    print(f"Platform: {platform.platform()}")
+    print(f"System: {platform.system()}")
+    print(f"Release: {platform.release()}")
+    print(f"Version: {platform.version()}")
 
 
-def fourth_task(user_name):
+def fourth_task():
     """Приветствует пользователя"""
-    user_name = input("Как Вас зовут?\n")
-    print("Привет,", user_name, "!")
+    print(f"Привет,{user_name}!")
 
 
-def fifth_task(user_choice):
+def fifth_task():
     """Даёт пользователю выбрать одну из трех предлагаемых систем"""
-    user_choice = int(
-        input("Please, choose one of three options: 1)Windows, 2)Linux, 3)Mac\n")
-    )
-    if user_choice == 1:
-        print("Your choice is Windows")
-    elif user_choice == 2:
-        print("Your choice is Linux")
-    elif user_choice == 3:
-        print("Your choice is Mac")
-    else:
-        print("Wrong number!")
+    while True:
+        try:
+            user_choice = int(input("Please, choose one of three options: 1)Windows, 2)Linux, 3)Mac\n"))
+            if user_choice == 1:
+                print("Your choice is Windows")
+                break
+            elif user_choice == 2:
+                print("Your choice is Linux")
+                break
+            elif user_choice == 3:
+                print("Your choice is Mac")
+                break
+            else:
+                print("Wrong number!")
+                continue
+        except ValueError:
+            print('Error, try again!')
+            continue
 
 
-def sixth_task(first_number, second_number, math_sign, result):
+def sixth_task():
     """что-то похожее на калькулятор"""
-    first_number = int(input("Введите первое число.\n"))
-    second_number = int(input("Введите второе число.\n"))
-    math_sign = input("Введите математический знак.\n")
-    if math_sign == "+":
-        result = first_number + second_number
-        print(result)
-    elif math_sign == "-":
-        result = first_number - second_number
-        print(result)
-    elif math_sign == "*":
-        result = first_number * second_number
-        print(result)
-    elif math_sign == "/":
-        result = first_number / second_number
-        print(result)
-    elif math_sign == "**":
-        result = pow(first_number, second_number)
-        print(result)
-    elif math_sign == "//":
-        result = first_number // second_number
-        print(result)
-    elif math_sign == "%":
-        result = first_number % second_number
-        print(result)
-    else:
-        print("Неверный знак")
+    while True:
+        try:
+            first_number = int(input("Введите первое число.\n"))
+            second_number = int(input("Введите второе число.\n"))
+            math_sign = input("Введите математический знак.\n")
+            if math_sign == "+":
+                result = first_number + second_number
+                print(result)
+                break
+            elif math_sign == "-":
+                result = first_number - second_number
+                print(result)
+                break
+            elif math_sign == "*":
+                result = first_number * second_number
+                print(result)
+                break
+            elif math_sign == "/":
+                result = first_number / second_number
+                print(result)
+                break
+            elif math_sign == "**":
+                result = pow(first_number, second_number)
+                print(result)
+                break
+            elif math_sign == "//":
+                result = first_number // second_number
+                print(result)
+            elif math_sign == "%":
+                result = first_number % second_number
+                print(result)
+                break
+            else:
+                print("Неверный знак")
+        except ValueError:
+            print('Error, try again!')
+            continue
 
 
-user_wish = int(input("Choose 1 of 6 tasks you want to run.\n"))
-if user_wish == 1:
-    first_task()
-elif user_wish == 2:
-    second_task("Artem", "Danilyuk", "18")
-elif user_wish == 3:
-    third_task()
-elif user_wish == 4:
-    fourth_task("Artem")
-elif user_wish == 5:
-    fifth_task("1")
-elif user_wish == 6:
-    sixth_task("15", "12", "+", "27")
-else:
-    print("Wrong number!")
+while True:
+    try:
+        user_wish = int(input("Choose 1 of 6 tasks you want to run. Enter 0 to exit\n"))
+        if user_wish == 1:
+            first_task()
+        elif user_wish == 2:
+            second_task()
+        elif user_wish == 3:
+            third_task()
+        elif user_wish == 4:
+            fourth_task()
+        elif user_wish == 5:
+            fifth_task()
+        elif user_wish == 6:
+            sixth_task()
+        elif user_wish == 0:
+            break
+        else:
+            print("Wrong number!")
+    except ValueError:
+        print('Error, try again!')
+        continue
