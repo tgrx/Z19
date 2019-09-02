@@ -28,7 +28,7 @@ class UserForm(User):
         log = em[0]
         dom = em[1]
 
-        if log[0] == '+' or log[-1] == '+'
+        if log[0] == '+' or log[-1] == '+':
             return ValueError
         if isinstance(log[0], int):
             return ValueError
@@ -40,4 +40,15 @@ class UserForm(User):
         d = (not '.' in log)
         e = (not '+' in log)
         if a and b and c and d and e:
+            return ValueError
+
+        if isinstance(dom[0], int):
+            return ValueError
+        if dom[0] == '.' or dom[-1] == '.':
+            return ValueError
+        a = (not any(c.islower() for c in dom))
+        b = (not dom.isnumeric())
+        c = (dom != '_')
+        d = (not '.' in dom)
+        if a and b and c and d:
             return ValueError
