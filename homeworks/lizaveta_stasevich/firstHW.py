@@ -1,48 +1,97 @@
-# 1 выводит "Hello, World"
+import platform
 
-print("Hello, world!")
 
-# 2 выводит информацию о вас
+def choice_func():
+    while True:
+        try:
+            choice = int(input("Input your choice."))
+            if choice == 1:
+                first_task()
+            elif choice == 2:
+                second_task()
+            elif choice == 3:
+                third_task()
+            elif choice == 4:
+                fourth_task()
+            elif choice == 5:
+                fifth_task()
+            elif choice == 6:
+                six_task()
+            else:
+                print("Error.")
+                continue
+        except ValueError:
+            print("Input right number.")
+            continue
+
+
+def first_task():
+    print("Hello, world!")
+
+
+def second_task():
+    print(f"Information about user: {name} {surname}, {age} years old.")
+
+
+def third_task():
+    print(f"Platform: {platform.platform()}")
+    print(f"System: {platform.system()}")
+    print(f"Release: {platform.release()}")
+    print(f"Version: {platform.version()}")
+
+
+def fourth_task():
+    print(f"Hello,{name}")
+
+
+def fifth_task():
+    while True:
+        try:
+            option = int(
+                input(
+                    "Choose the option: 1)'a cup of coffee' or 2)'a cup of tea' or 3)'rumka vodki na stole'"
+                )
+            )
+            if option == 1:
+                print("You have chosen a cup of coffee.")
+                break
+            elif option == 2:
+                print("Your choice is a cup of tea.")
+                break
+            elif option == 3:
+                print("Oh, it's OK, you're not an alcoholic:)")
+                break
+            else:
+                print("Wrong number!")
+                continue
+        except ValueError:
+            print("Input the number.")
+            continue
+
+
+def six_task():
+    while True:
+        try:
+            year = int(input("Input the year - "))
+            if year % 4 != 0 or (year % 100 == 0 and year % 400 != 0):
+                print(f"The year  is not a leap year.")
+                break
+            else:
+                print(f"The year {year} is a leap year.")
+                break
+        except ValueError:
+            print("Error.")
+            continue
+
 
 name = input("Input your name - ")
 surname = input("Input your surname - ")
-age = input("Input your age - ")
-print("Information about user: ", name, surname, ",", age, "years.")
-
-# 3 выводит информацию о системе, на которой она будет запущена
-
-import platform
-
-print("Platform: ", platform.platform())
-print("System: ", platform.system())
-print("Release: ", platform.release())
-print("Version: ", platform.version())
-
-# 4 спрашивает имя у пользователя и приветствует его
-
-print("Hello,", name)
-
-# 5 спрашивает вариант у пользователя и выводит один из вариантов выводов выше
-
-option = int(
-    input(
-        "Choose the option: 1)'a cup of coffee' or 2)'a cup of tea' or 3)'rumka vodki na stole'"
-    )
-)
-if option == 1:
-    print("You have chosen a cup of coffee.")
-elif option == 2:
-    print("Your choice is a cup of tea.")
-elif option == 3:
-    print("Oh, it's OK, you're not an alcoholic:)")
-else:
-    print("Wrong number!")
-
-# 6 всё, на что вы способны за время до следующего занятия
-# определяет високосный год
-
-year = int(input("Input the year - "))
-if year % 4 != 0 or (year % 100 == 0 and year % 400 != 0):
-    print("The year", year, "is not a leap year.")
-else:
-    print("The year", year, "is a leap year.")
+while True:
+    try:
+        age = int(input("Input your age - "))
+        if type(age) == int:
+            break
+    except ValueError:
+        print("Wrong age! Try one more time")
+        continue
+choice_func()
