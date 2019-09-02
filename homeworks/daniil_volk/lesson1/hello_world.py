@@ -11,7 +11,7 @@ if a == 2:
 if a == 3:
     print(os.name)
 if a == 4:
-    print("Enter your name:")
+    print("Enter your name :")
     b = str(input())
     print("Hello,", b, "!")
 if a == 5:
