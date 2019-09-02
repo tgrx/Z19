@@ -4,7 +4,7 @@ import platform
 # print("асталовиста бейби")
 # print("system:", platform.system())
 
-name = (input("name: "))
+name = input("name: ")
 print(f"Hello, {name}")
 choise = int(input("выбирите вариант: 1, 2,3 "))
 if choise == 1:
