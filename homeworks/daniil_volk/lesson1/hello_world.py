@@ -3,8 +3,8 @@ import webbrowser
 import os
 
 
-print('Enter variant:')
-variant = verification(1,7)
+print("Enter variant:")
+variant = verification(1, 7)
 if variant == 1:
     print("Hello world!")
 if variant == 2:
