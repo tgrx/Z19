@@ -1,18 +1,18 @@
 # from datetime import date as d, timedelta as t
 #
 #
-def Reversed(l):
-    types = (str, tuple, list)
-    if type(l) not in types:
-        return "Введенные данные не соответствуют условию."
-    else:
-        new_l = []
-        count = 0
-        for i in l:
-            x = l[count]
-            new_l.insert(0, x)
-            count += 1
-        return new_l
+# def Reversed(l):
+#     types = (str, tuple, list)
+#     if type(l) not in types:
+#         return "Введенные данные не соответствуют условию."
+#     else:
+#         new_l = []
+#         count = 0
+#         for i in l:
+#             x = l[count]
+#             new_l.insert(0, x)
+#             count += 1
+#         return new_l
 
 
 def Sorted(sample):
