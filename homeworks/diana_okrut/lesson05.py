@@ -1,81 +1,86 @@
 # from datetime import date as d, timedelta as t
 #
 #
-# def Reversed(l):
-#     '''функция возвращает список из элементов коллекции-аргумента, но которые в обратном порядке'''
-#     types = (str, tuple, list)
-#     if type(l) not in types:
-#         print('Введенные данные не соответствуют условию.')
-#     else:
-#         new_l = []
-#         count = 0
-#         for i in l:
-#             x = l[count]
-#             new_l.insert(0, x)
-#             count += 1
-#         return new_l
-#
-#
-# # def Sorted(x):
-# #     '''функция возвращает список из элементов коллекции-аргумента, которые отсортированы по возрастанию'''
-# #     new_x = []
-# #     a = None
-# #     for i in x:
-# #         a = i
-# #         if x[0] <= i:
-# #             new_x.append(i)
-# #     return new_x
-#
-#
-# def Filter(foo, coll):
-#     '''функция возвращает список (r) из элементов коллекции-аргумента, для которых предикат истинен'''
-#     r = []
-#     for c in coll:
-#         if foo(c):
-#             r.append(c)
-#     return r
-#
-#
-# def TypedReversed(l):
-#     '''функция возвращает коллекцию того же типа, который имеет аргумент, но в обратном порядке'''
-#     types = (str, tuple, list)
-#     if type(l) not in types:
-#         print('Введенные данные не соответствуют условию.')
-#     else:
-#         new_l = []
-#         count = 0
-#         for i in l:
-#             x = l[count]
-#             new_l.insert(0, x)
-#             count += 1
-#         if type(l) is str:
-#             return ''.join(new_l)
-#         elif type(l) is tuple:
-#             return tuple(new_l)
-#         else:
-#             return new_l
-#
-#
-# def LazyReversed(l):
-#     '''функция возвращает итератор коллекции того же типа, который имеет аргумент, но в обратном порядке'''
-#     types = (str, tuple, list)
-#     if type(l) not in types:
-#         print('Введенные данные не соответствуют условию.')
-#     else:
-#         new_l = []
-#         count = 0
-#         for i in l:
-#             x = l[count]
-#             new_l.insert(0, x)
-#             count += 1
-#         if type(l) is str:
-#             a = ''.join(new_l)
-#             return iter(a)
-#         elif type(l) is tuple:
-#             a = tuple(new_l)
-#             return iter(a)
-#         else:
-#             return iter(new_l)
+def Reversed(l):
+    types = (str, tuple, list)
+    if type(l) not in types:
+        return "Введенные данные не соответствуют условию."
+    else:
+        new_l = []
+        count = 0
+        for i in l:
+            x = l[count]
+            new_l.insert(0, x)
+            count += 1
+        return new_l
+
+
+def Sorted(sample):
+    nsample = list(sample)
+    if not nsample:
+        return []
+    left = 0
+    right = len(nsample) - 1
+    while left <= right:
+        for i in range(left, right, +1):
+            if nsample[i] > nsample[i + 1]:
+                nsample[i], nsample[i + 1] = nsample[i + 1], nsample[i]
+        right -= 1
+
+        for i in range(right, left, -1):
+            if nsample[i - 1] > nsample[i]:
+                nsample[i], nsample[i - 1] = nsample[i - 1], nsample[i]
+        left += 1
+    return nsample
+
+
+def Filter(foo, coll):
+    r = []
+    for c in coll:
+        if foo(c):
+            r.append(c)
+    return r
+
+
+def TypedReversed(l):
+    types = (str, tuple, list)
+    if type(l) not in types:
+        return "Введенные данные не соответствуют условию."
+    else:
+        new_l = []
+        count = 0
+        for i in l:
+            x = l[count]
+            new_l.insert(0, x)
+            count += 1
+        if type(l) is str:
+            return "".join(new_l)
+        elif type(l) is tuple:
+            return tuple(new_l)
+        else:
+            return new_l
+
+
+def LazyReversed(l):
+    types = (str, tuple, list)
+    if type(l) not in types:
+        return "Введенные данные не соответствуют условию."
+    else:
+        new_l = []
+        count = 0
+        for i in l:
+            x = l[count]
+            new_l.insert(0, x)
+            count += 1
+        if type(l) is str:
+            a = "".join(new_l)
+            return iter(a)
+        elif type(l) is tuple:
+            a = tuple(new_l)
+            return iter(a)
+        else:
+            return iter(new_l)
+
 #
 # class Range:
 #     def __init__(self, stop):
