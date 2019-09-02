@@ -1,37 +1,32 @@
 import os
 
-tries = 0
-while tries != 100:
+
+while True:
     name = input("Здравствуйте, назовите свое имя: ")
-    if name == "xxx":
-        print("Упс, вышла ошибка при вводе данных. Повторите ваш ответ:")
-    else:
+    if name not in ["xxx", "yyy"]:
         break
-    tries += 1
-while tries != 100:
+    print("Упс, вышла ошибка при вводе данных. Повторите ваш ответ:")
+    continue
+
+while True:
     choice = int(
         input(
-            f"{name} , какая информация вам интересна:"
-            f" первая программа новоиспеченного программиста (1),"
-            f" знакомство со мной (2)"
-            f"или информация о вашей системе(3)?"
-            f" Для выхода из программы нажмите (4). "
+            f"{name} , какая информация вам интересна: первая программа новоиспеченного программиста (1),"
+            f" знакомство со мной (2) или информация о вашей системе(3)? Для выхода из программы нажмите (4). "
         )
     )
-    if choice != 1 and choice != 2 and choice != 3 and choice != 4:
-        print("Упс, произошла ошибка при вводе данных. Повторите ваш ответ:")
-        tries += 1
-    else:
-        if choice == 1:
-            print("Hello World!")
-        elif choice == 2:
-            print(
-                "My name is Diana. I am 25 years old. "
-                "I'm a student of python courses in school Teach Me Skills. "
-                "My english is very bad."
-            )
-        elif choice == 3:
-            print(os.name)
-        else:
-            print("Всего доброго!")
+    if choice in range(1, 5):
         break
+    print("Упс, вышла ошибка при вводе данных. Повторите ваш ответ:")
+    continue
+if choice == 1:
+    print("Hello World!")
+elif choice == 2:
+    print(
+        "My name is Diana. I am 25 years old. I'm a student of python courses in school Teach Me Skills."
+        " My english is very bad."
+    )
+elif choice == 3:
+    print(os.name)
+else:
+    print("Всего доброго!")
