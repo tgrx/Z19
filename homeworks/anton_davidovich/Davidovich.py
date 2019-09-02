@@ -15,3 +15,4 @@ elif choise == 3:
     print("system:", platform.system())
 else:
     print("Вели не правильный вариант")
+
