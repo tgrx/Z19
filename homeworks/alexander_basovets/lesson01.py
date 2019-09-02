@@ -14,6 +14,6 @@ while 1:
         print("I'm sorry!")
         break
     else:
-        print("I did not understand the answer")
+        print("I did not understand the answer!")
         continue
 
