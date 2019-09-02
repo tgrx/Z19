@@ -7,4 +7,6 @@ name = input("Как тебя зовут?:")
 print ("Ваше имя:" + name + "!")
 
 import os
-print(os.name)
+
+print("Ваша ОС:" + os.name)
+
