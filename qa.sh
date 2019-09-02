@@ -31,18 +31,17 @@ function contains() {
 assert_names() {
   dir_names=$(ls -d homeworks/* | sed -e 's/homeworks\///g')
   github_names=(
-    "AlexandrZ1913"
-    "Dalalaler"
-    "daniluuuuuuuk"
-    "davidovichanton"
-    "diana-okrut"
-    "Evgen1177"
-    "Kefir331"
-    "lizaveta-stasevich"
-    "maximilian-sklyar"
-    "OswinOswalt"
-    "PierreBykov"
-    "python77777121"
+    "alexander_basovets"
+    "alina_ageeva"
+    "anton_davidovich"
+    "artem_daniluk"
+    "daniil_volk"
+    "diana_okrut"
+    "lizaveta_stasevich"
+    "maximilian_sklyar"
+    "oleg_vasilchik"
+    "pavel_titov"
+    "yauheniy_parafenovich"
   )
 
   for n in ${dir_names}; do
@@ -55,13 +54,15 @@ assert_names() {
 
 # ---------------------------------------------------------
 
+rm -rf homeworks/__pycache__
+
 # checks
+
+assert_names || abort "HOMEWORKS USERS"
 
 python -m run_hw_tests
 
-#assert_names || abort "HOMEWORKS USERS"
-
-#python -m black --check . || abort 'CODE COLOR'
+python -m black --check . || abort 'CODE COLOR'
 
 #python -m flake8 homeworks/ || abort 'CODE STYLE'
 

@@ -1,2 +1,1 @@
-input()
 print("hello world")

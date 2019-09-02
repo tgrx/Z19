@@ -17,8 +17,8 @@ def second_level():
     x.sort()  # 81.1 ns ± 5.58 ns per loop
     y = (1, 3) + (4, 6)  # 81 ns ± 3.69 ns per loop
     id(y)  # 262 ns ± 27.1 ns per loop
-    statistics = """Efficiency: int('00001')) = 2.47 ms ± 328 µs per loop
-            str(2019) = 2.5 ms ± 360 µs per loop
+    statistics = """Efficiency: int('00001')) = 2.47 ms ± 328 µs per loop 
+            str(2019) = 2.5 ms ± 360 µs per loop       
             complex(2, 4) = 2.41 ms ± 343 µs per loop
             list(str(334545)) = 2.56 ms ± 357 µs per loop
             tuple([2, 4, 6]) = 2.45 ms ± 363 µs per loop
@@ -34,7 +34,7 @@ def second_level():
             print(x) = 81.1 ns ± 5.58 ns per loop
             y = (1, 3,) + (4, 6)
             print(y)  # 81 ns ± 3.69 ns per loop
-            print(id(y))  # 262 ns ± 27.1 ns per loop
+            print(id(y))  # 262 ns ± 27.1 ns per loop             
     """
     print(statistics)
 

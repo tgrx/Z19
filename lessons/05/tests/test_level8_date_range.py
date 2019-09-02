@@ -1,7 +1,27 @@
+import ast
 from pathlib import Path
 from typing import Callable
 
 wanted_name = "DateRange"
+
+
+def verify_no_prohibited_calls(module_path):
+    prohibited_names = {"print"}
+
+    with open(module_path, "r") as module:
+        code = module.read()
+
+        tree = ast.parse(code)
+
+        for node in ast.walk(tree):
+            if not isinstance(node, ast.Name):
+                continue
+
+            assert node.id not in prohibited_names, (
+                f"`{node.id}` detected in {module_path}"
+                f" at {node.lineno}:{node.col_offset}"
+                f" - must not use"
+            )
 
 
 def wants_path(pth: Path) -> bool:
@@ -13,6 +33,8 @@ def wants_module(module) -> bool:
 
 
 def verify(module):
+    verify_no_prohibited_calls(module.__file__)
+
     assert hasattr(module, wanted_name), f"no `{wanted_name}` defined in {module}"
 
     r = getattr(module, wanted_name)

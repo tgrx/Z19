@@ -76,5 +76,3 @@ def lenTuple():
 #   except MemoryError:
 #      return len(f)
 #  pass
-
-#
