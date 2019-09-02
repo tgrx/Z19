@@ -1,5 +1,13 @@
-# name = input("Введите свое имя: ")
-# age = input("Введите свой возраст: ")
-#
-# print("Привет" + name + "!")
-# print("Тебе уже" + age + "!")
+## Уровень 2
+
+
+def Reversed(x):
+    if x == ([], (), str):
+        reversed(x)
+        print(x)
+    else:
+        print("Error")
+
+
+## Уровень 3
+
