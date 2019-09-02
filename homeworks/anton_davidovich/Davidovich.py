@@ -14,8 +14,6 @@ while True:
     print("Только от 1 до 3!")
     continue
 
-
-
 if choose == 1:
     print("hello world")
 elif choose == 2:
