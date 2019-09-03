@@ -9,6 +9,7 @@ class User:
     def __eq__(self, other: "User"):
         return self.email == other.email
 
+
 u1 = User("1", "@")
 u2 = User("1", "@")
 print(u1 == u2)
