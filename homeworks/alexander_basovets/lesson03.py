@@ -51,10 +51,19 @@ f.write(a)  # записываем в файл
 f.close()  # закрываем файл
 
 
+def ackermann(m, n):
+    """функция Аккермана"""
+    if m == 0:
+        return n + 1
+    elif m > 0 and n == 0:
+        return ackermann(m - 1, 1)
+    elif m > 0 and n > 0:
+        return ackermann(m - 1, ackermann(m, n - 1))
+
+
 def enqueue(l, e):
     """ добавляет элемент в конец очереди """
     l.append(e)
-
 
 
 def dequeue(l):
@@ -64,11 +73,7 @@ def dequeue(l):
    """
     if not l:
         return None
-    else:
-        l = l.pop(0)
-        return l
-
-
+    return l.pop(0)
 
 
 if __name__ == "__main__":
@@ -82,3 +87,34 @@ if __name__ == "__main__":
     assert dequeue(x) == 3
     assert dequeue(x) is None
     assert x == []
+
+
+##def enqueue(l, p, e):
+    """ добавляет элемент e в конец очереди l с приоритетом p """
+
+
+##def dequeue(l):
+    """
+    вынимает элемент из начала очереди и возвращает его
+    если очередь пуста - возвращается None
+    элементы возвращаются согласно приоритету
+    """
+# if __name__ == "__main__":
+#    x = {}
+#    assert dequeue(x) is None
+#    assert enqueue(x, 1, "a") is None
+#    assert enqueue(x, 1, "b") is None
+#    assert enqueue(x, 2, "aa") is None
+#    assert dequeue(x) == "aa"
+#    assert enqueue(x, 1, "c") is None
+#    assert enqueue(x, 3, "aaa") is None
+#    assert enqueue(x, 3, "bbb") is None
+#    assert enqueue(x, 2, "bb") is None
+#    assert dequeue(x) == "aaa"
+#    assert dequeue(x) == "bbb"
+#    assert dequeue(x) == "bb"
+#    assert dequeue(x) == "a"
+#    assert dequeue(x) == "b"
+#    assert dequeue(x) == "c"
+#    assert dequeue(x) is None
+#    assert x == {}
