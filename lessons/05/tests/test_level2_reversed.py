@@ -14,20 +14,21 @@ def verify_no_prohibited_calls(module_path):
         tree = ast.parse(code)
 
         for node in ast.walk(tree):
-            if isinstance(node, ast.Subscript):
-                if (
-                    node.slice.lower is None
-                    and node.slice.upper is None
-                    and node.slice.step is not None
-                    and isinstance(node.slice.step.op, ast.USub)
-                    and isinstance(node.slice.step.operand, ast.Num)
-                    and node.slice.step.operand.n == 1
-                ):
-                    raise AssertionError(
-                        f"reversing slice [::-1] detected in {module_path}"
-                        f" at {node.lineno}:{node.col_offset}"
-                        f" - must not use"
-                    )
+            if (
+                isinstance(node, ast.Subscript)
+                and isinstance(node.slice, ast.Slice)
+                and node.slice.lower is None
+                and node.slice.upper is None
+                and node.slice.step is not None
+                and isinstance(node.slice.step.op, ast.USub)
+                and isinstance(node.slice.step.operand, ast.Num)
+                and node.slice.step.operand.n == 1
+            ):
+                raise AssertionError(
+                    f"reversing slice [::-1] detected in {module_path}"
+                    f" at {node.lineno}:{node.col_offset}"
+                    f" - must not use"
+                )
 
             if not isinstance(node, ast.Name):
                 continue
