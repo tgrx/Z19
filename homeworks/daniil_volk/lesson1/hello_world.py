@@ -4,7 +4,7 @@ import os
 
 
 print("Enter variant:")
-variant = verification(1, 7)
+variant = verification(1, 6)
 if variant == 1:
     print("Hello world!")
 if variant == 2:
