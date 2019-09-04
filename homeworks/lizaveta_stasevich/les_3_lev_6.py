@@ -1,6 +1,6 @@
-def enqueue(l, p, e, ):
+def enqueue(l, p, e):
     """ добавляет элемент e в конец очереди l с приоритетом p """
-    return l.setdefault('p', []).append(e)
+    return l.setdefault("p", []).append(e)
 
 
 def dequeue(l):
