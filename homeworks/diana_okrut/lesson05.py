@@ -81,7 +81,6 @@ def LazyReversed(l):
         else:
             return iter(new_l)
 
-
 # class Range:
 #     def __init__(self, stop):
 #         self.start = self.current = 0
