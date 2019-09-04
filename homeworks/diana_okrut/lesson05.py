@@ -61,25 +61,25 @@ def TypedReversed(l):
             return new_l
 
 
-def LazyReversed(l):
-    types = (str, tuple, list)
-    if type(l) not in types:
-        return "Введенные данные не соответствуют условию."
-    else:
-        new_l = []
-        count = 0
-        for i in l:
-            x = l[count]
-            new_l.insert(0, x)
-            count += 1
-        if type(l) is str:
-            a = "".join(new_l)
-            return iter(a)
-        elif type(l) is tuple:
-            a = tuple(new_l)
-            return iter(a)
-        else:
-            return iter(new_l)
+# def LazyReversed(l):
+#     types = (str, tuple, list)
+#     if type(l) not in types:
+#         return "Введенные данные не соответствуют условию."
+#     else:
+#         new_l = []
+#         count = 0
+#         for i in l:
+#             x = l[count]
+#             new_l.insert(0, x)
+#             count += 1
+#         if type(l) is str:
+#             a = "".join(new_l)
+#             return iter(a)
+#         elif type(l) is tuple:
+#             a = tuple(new_l)
+#             return iter(a)
+#         else:
+#             return iter(new_l)
 
 
 # class Range:
