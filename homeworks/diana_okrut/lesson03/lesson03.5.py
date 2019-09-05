@@ -1,6 +1,5 @@
 def enqueue(l, e):
     l.append(e)
-    return None
 
 
 def dequeue(l):
