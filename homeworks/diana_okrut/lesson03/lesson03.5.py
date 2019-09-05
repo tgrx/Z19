@@ -4,10 +4,7 @@ def enqueue(l, e):
 
 
 def dequeue(l):
-    if l:
-        return l.pop(0)
-    else:
-        return None
+    return l.pop(0) if l else None
 
 
 if __name__ == "__main__":
