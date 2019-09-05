@@ -30,3 +30,6 @@ def privet():
         return f"system: {platform.system()}"
     else:
         return "Всего доброго!"
+
+
+privet()

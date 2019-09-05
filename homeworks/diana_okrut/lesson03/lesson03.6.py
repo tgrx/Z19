@@ -3,7 +3,7 @@ def enqueue(l, p, e):
 
 
 def dequeue(l):
-    for p in (sorted(l)):
+    for p in sorted(l):
         q = l[p]
         if not q:
             del l[p]
