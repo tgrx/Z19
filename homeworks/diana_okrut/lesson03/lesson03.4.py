@@ -13,5 +13,5 @@ def A(m, n):
         return "Maximum recursion depth exceeded in comparison."
 
 
-# In [87]: A(3, 8)
-# Out[87]: 2045
+# In: A(3, 8)
+# Out: 2045

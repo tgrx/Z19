@@ -65,14 +65,3 @@ def lenTuple():
 
 
 # 33_554_432
-
-# def lenFrozenset():
-#    f = frozenset('1')
-#   a = 2
-#   try:
-#       while f:
-#          f | frozenset('f"a')
-#       a += 1
-#   except MemoryError:
-#      return len(f)
-#  pass

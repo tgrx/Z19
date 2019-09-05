@@ -9,7 +9,6 @@ def dequeue(l):
             del l[p]
             continue
         return q.pop(0)
-    return
 
 
 if __name__ == "__main__":
