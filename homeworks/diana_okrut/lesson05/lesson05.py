@@ -76,23 +76,23 @@ def LazyReversed(l):
         return iter(new_l)
 
 
-class Range:
-    def __init__(self, stop):
-        self.start = self.current = 0
-        self.stop = stop
-
-    def __iter__(self):
-        self.current = self.start
-        return self
-
-    def __next__(self):
-        if self.current >= self.stop:
-            raise StopIteration
-        c, self.current = self.current, self.current + 1
-        return c
-
-
-def DateRange(tomorrow, next_week):
-    today = d.today()
-    tomorrow = today + t(days=1)
-    next_week = today + t(days=7)
+# class Range:
+#     def __init__(self, stop):
+#         self.start = self.current = 0
+#         self.stop = stop
+#
+#     def __iter__(self):
+#         self.current = self.start
+#         return self
+#
+#     def __next__(self):
+#         if self.current >= self.stop:
+#             raise StopIteration
+#         c, self.current = self.current, self.current + 1
+#         return c
+#
+#
+# def DateRange(tomorrow, next_week):
+#     today = d.today()
+#     tomorrow = today + t(days=1)
+#     next_week = today + t(days=7)
