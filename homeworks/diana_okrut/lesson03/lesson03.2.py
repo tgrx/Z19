@@ -1,55 +1,82 @@
-d_c_t = {
-    "zyndel": "qwerty",
-    "master": 123,
-    "alexander": "*12qw",
-    "artem": 55567,
-    "egor": [1, 5, 7],
-    "lol": 17,
-    "bugaGA": (1, 3, 6),
-}
-s_t_r0 = "xdcfvgbhnxdcfvgkbh23645677osedrfutgiyhpouiylukj6seydrufvkbugaGa"
+import timeit
+from decimal import Decimal
 
 
-# %timeit 'bugaGA' in d_c_t
-# 50.1 ns ± 0.809 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
-#
-# %timeit 'bugaGA' in s_t_r0
-# 85.6 ns ± 0.293 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+f = open('results.txt', 'w')
+
+a = Decimal('0.33') + Decimal('1.66')
+b = Decimal(5**7) + Decimal(7**5)
+c = Decimal(17**19) + Decimal(19**17)
+f.write(f' lead time 5**7 + 7**5              ---> {timeit.timeit("5**7 + 7**5")} \n')
+f.write(f' lead time 17**19 + 19**17          ---> {timeit.timeit("17**19 + 19**17")} \n')
+f.write(f' lead time 1e30 + 1e-30             ---> {timeit.timeit("1e30 + 1e-30")} \n')
+f.write(f' lead time 1+2j + 2-1j              ---> {timeit.timeit("1+2j + 2-1j")} \n')
+f.write(f' lead time Decimal: "0.33" + "1.66" ---> {timeit.timeit(f"{a}")} \n')
+f.write(f' lead time Decimal: 5**7 + 7**5     ---> {timeit.timeit(f"{b}")} \n')
+f.write(f' lead time Decimal: 17**19 + 19**17 ---> {timeit.timeit(f"{c}")} \n \n')
+
+a = Decimal('0.33') * Decimal('1.66')
+b = Decimal(5**7) * Decimal(7**5)
+c = Decimal(17**19) * Decimal(19**17)
+f.write(f' lead time 5**7 * 7**5              ---> {timeit.timeit("5**7 * 7**5")} \n')
+f.write(f' lead time 17**19 * 19**17          ---> {timeit.timeit("17**19 * 19**17")} \n')
+f.write(f' lead time 1e30 * 1e-30             ---> {timeit.timeit("1e30 * 1e-30")} \n')
+f.write(f' lead time 1+2j * 2-1j              ---> {timeit.timeit("1+2j * 2-1j")} \n')
+f.write(f' lead time Decimal: "0.33" * "1.66" ---> {timeit.timeit(f"{a}")} \n')
+f.write(f' lead time Decimal: 5**7 * 7**5     ---> {timeit.timeit(f"{b}")} \n')
+f.write(f' lead time Decimal: 17**19 * 19**17 ---> {timeit.timeit(f"{c}")} \n \n')
+
+a = Decimal('0.33') / Decimal('1.66')
+b = Decimal(5**7) / Decimal(7**5)
+c = Decimal(17**19) / Decimal(19**17)
+f.write(f' lead time 5**7 / 7**5              ---> {timeit.timeit("5**7 / 7**5")} \n')
+f.write(f' lead time 17**19 / 19**17          ---> {timeit.timeit("17**19 / 19**17")} \n')
+f.write(f' lead time 1e30 / 1e-30             ---> {timeit.timeit("1e30 / 1e-30")} \n')
+f.write(f' lead time 1+2j / 2-1j              ---> {timeit.timeit("1+2j / 2-1j")} \n')
+f.write(f' lead time Decimal: "0.33" / "1.66" ---> {timeit.timeit(f"{a}")} \n')
+f.write(f' lead time Decimal: 5**7 / 7**5     ---> {timeit.timeit(f"{b}")} \n')
+f.write(f' lead time Decimal: 17**19 / 19**17 ---> {timeit.timeit(f"{c}")} \n \n')
+
+s = 'ab' * 10000 + 'c'
+f.write("s = 'ab' * 10000 + 'c' \n")
+f.write(f' lead time "a" in s                     ---> {timeit.Timer("a" in f"{s}")} \n')
+f.write(f' lead time "b" in s                     ---> {timeit.Timer("b" in f"{s}")} \n')
+f.write(f' lead time "c" in s                     ---> {timeit.Timer("c" in f"{s}")} \n')
+f.write(f' lead time "ab" in s                    ---> {timeit.Timer("ab" in f"{s}")} \n')
+f.write(f' lead time "ba" in s                    ---> {timeit.Timer("ba" in f"{s}")} \n')
+f.write(f' lead time "bc" in s                    ---> {timeit.Timer("bc" in f"{s}")} \n')
+f.write(f' lead time "ac" in s                    ---> {timeit.Timer("ac" in f"{s}")} \n')
+f.write(f' lead time "ababababababababababc" in s ---> {timeit.Timer("ababababababababababc" in f"{s}")} \n \n')
 
 
-i_n_t = 768543268543126453127645312645312645312 * 64531645316745316784531645312678453
-f_l_t = (
-    768543268543126453127645312645312645312.0 * 64531645316745316784531645312678453.0
-)
-c_m_p_l = (645324568753214568532 + 76453547867543j) * (
-    21524562135468535468532563256 - 215573463455687435442542554j
-)
-s_t_r1 = "xdcfuvgihbzsxcfvgkbhxhcfjvg" * 78457
+L = [i for i in range(10000)]
+# f.write(f' lead time 0 in L ---> {timeit.timeit("1+2j + 2-1j")} "\n"')
+# f.write(f' lead time 9999 in L---> {timeit.timeit("1+2j + 2-1j")} "\n"')
+# f.write(f' lead time 10000 in L---> {timeit.timeit("1+2j + 2-1j")} "\n"')
 
 
-# %timeit i_n_t
-# 26.5 ns ± 0.302 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
-#
-# %timeit f_l_t
-# 30.7 ns ± 0.173 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
-#
-# %timeit c_m_p_l
-# 34.7 ns ± 0.336 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
-#
-# %timeit  s_t_r1
-# 26.2 ns ± 0.294 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+T = tuple(i for i in range(10000))
+# f.write(f' lead time 0 in T ---> {timeit.timeit("1+2j + 2-1j")} "\n"')
+# f.write(f' lead time 9999 in T---> {timeit.timeit("1+2j + 2-1j")} "\n"')
+# f.write(f' lead time 10000 in T---> {timeit.timeit("1+2j + 2-1j")} "\n"')
 
 
-s_t_r2 = "HelloMyDearFriend"
-l_s_t = list(s_t_r2)
-t_p_l = tuple(s_t_r2)
+S = {i for i in range(10000)}
+# f.write(f' lead time 0 in S ---> {timeit.timeit("1+2j + 2-1j")} "\n"')
+# f.write(f' lead time 9999 in S---> {timeit.timeit("1+2j + 2-1j")} "\n"')
+# f.write(f' lead time 10000 in S---> {timeit.timeit("1+2j + 2-1j")} "\n"')
 
 
-# %timeit 'i' in s_t_r2
-# 60.2 ns ± 0.422 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
-#
-# %timeit 'i' in l_s_t
-# 306 ns ± 19.9 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
-#
-# %timeit 'i' in t_p_l
-# 283 ns ± 2.55 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+D = {i:i for i in range(10000)}
+# f.write(f' lead time 0 in D ---> {timeit.timeit("1+2j + 2-1j")} "\n"')
+# f.write(f' lead time 9999 in D---> {timeit.timeit("1+2j + 2-1j")} "\n"')
+# f.write(f' lead time 10000 in D---> {timeit.timeit("1+2j + 2-1j")} "\n"')
+
+
+R = range(10000)
+# f.write(f' lead time 0 in R ---> {timeit.timeit("1+2j + 2-1j")} "\n"')
+# f.write(f' lead time 9999 in R---> {timeit.timeit("1+2j + 2-1j")} "\n"')
+# f.write(f' lead time 10000 in R---> {timeit.timeit("1+2j + 2-1j")} "\n""\n"')
+
+
+f.close()
