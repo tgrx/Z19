@@ -79,9 +79,8 @@ class UserForm(User):
             "9",
         ]:
             return ValueError
-        lisname = list(self.name).pop(0)
-        lisname = lisname.pop(-1)
-        for x in lisname:
+        slice = self.name[1:-2]
+        for x in slice:
             if x not in [
                 "_",
                 ".",
@@ -200,9 +199,8 @@ class UserForm(User):
             "9",
         ]:
             return ValueError
-        lisname = list(login).pop(0)
-        lisname = lisname.pop(-1)
-        for x in lisname:
+        slice = self.name[1:-2]
+        for x in slice:
             if x not in [
                 "_",
                 ".",
@@ -315,9 +313,8 @@ class UserForm(User):
             "9",
         ]:
             return ValueError
-        lisname = list(domain).pop(0)
-        lisname = lisname.pop(-1)
-        for x in lisname:
+        slice = self.name[1:-2]
+        for x in slice:
             if x not in [
                 "_",
                 ".",
