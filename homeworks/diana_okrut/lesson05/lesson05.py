@@ -5,11 +5,8 @@ def Reversed(l):
     if not isinstance(l, (str, tuple, list)):
         return "Введенные данные не соответствуют условию."
     new_l = []
-    count = 0
     for i in l:
-        x = l[count]
-        new_l.insert(0, x)
-        count += 1
+        new_l.insert(0, i)
     return new_l
 
 
@@ -44,11 +41,8 @@ def TypedReversed(l):
     if not isinstance(l, (str, tuple, list)):
         return "Введенные данные не соответствуют условию."
     new_l = []
-    count = 0
     for i in l:
-        x = l[count]
-        new_l.insert(0, x)
-        count += 1
+        new_l.insert(0, i)
     if type(l) is str:
         return "".join(new_l)
     elif type(l) is tuple:
@@ -61,11 +55,8 @@ def LazyReversed(l):
     if not isinstance(l, (str, tuple, list)):
         return "Введенные данные не соответствуют условию."
     new_l = []
-    count = 0
     for i in l:
-        x = l[count]
-        new_l.insert(0, x)
-        count += 1
+        new_l.insert(0, i)
     if type(l) is str:
         a = "".join(new_l)
         return iter(a)
