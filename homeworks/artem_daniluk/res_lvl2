@@ -1,0 +1,51 @@
+i:1)timeit(5**7 + 7**5)
+    31.4 ns ± 2.73 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+  2)timeit(5**7 * 7**5)
+    31.3 ns ± 2.73 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+  3)timeit(5**7 / 7**5)
+    31.4 ns ± 3.08 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+    Results: * is the fastest
+             + is the 2nd
+             / is the 3rd
+
+
+iii)1)timeit(1e30 + 1e-30)
+      31.1 ns ± 3.31 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+    2)timeit(1e30 * 1e-30)
+      32.9 ns ± 2.77 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+    3)timeit(1e30 / 1e-30)
+      31.4 ns ± 2.84 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+      RESULTS: + is the fastest
+               / is the 2nd
+               * is the 3rd
+
+ iv)1)timeit((1+2j) + (2-1j))
+      33.3 ns ± 3.41 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+    2)timeit((1+2j) * (2-1j))
+      33.9 ns ± 3.7 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+    3)timeit((1+2j) / (2-1j))
+      31.2 ns ± 3.06 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+      RESULTS: / is the fastest
+               + is the 2nd
+               * is the 3rd
+
+  v)1)timeit(D("0.33") + D("1.66"))
+      2.8 µs ± 262 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    2)timeit(D("0.33") * D("1.66"))
+      2.69 µs ± 255 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    3)timeit(D("0.33") / D("1.66"))
+      3.16 µs ± 293 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+      RESULTS: / is the fastest
+               + is the 2nd
+               / is the 3rd
+
+
+  v)1)timeit(D(5**7) + D(7**5))
+      1.61 µs ± 55.3 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    2)timeit(D(5**7) * D(7**5))
+      1.57 µs ± 28.3 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    3) timeit(D(5**7) / D(7**5))
+       1.94 µs ± 55 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+      RESULTS: / is the fastest
+               + is the 2nd
+               / is the 3rd
