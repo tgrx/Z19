@@ -1,15 +1,13 @@
-while True:
-    try:
-        m = int(input("Enter m: "))
-        n = int(input("Enter n: "))
-    except ValueError:
-        print("Variant is not an integer!")
-        continue
-    else:
+def valid():
+    while True:
+        try:
+            m = int(input())
+            n = int(input())
+        except ValueError:
+            raise ValueError
         if m >= 0 and n >= 0:
             break
-        else:
-            print("Your entered numbers are not positive numbers! ")
+        raise ValueError
 
 
 def f(m, n):
@@ -21,4 +19,3 @@ def f(m, n):
         return f(m - 1, f(m, n - 1))
 
 
-print(f(m, n))
