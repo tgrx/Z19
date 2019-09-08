@@ -20,8 +20,6 @@ variable7 = 1 + 2j
 variable8 = 2 - 1j
 
 
-
-
 def test1_1():
     """(5 ** 7) + (7 ** 5) """
     return variable1 + variable2
@@ -242,34 +240,66 @@ def test5_5_3():
     return 10000 in R
 
 
-tests = (test1_1, test1_2, test1_3, test1_4, test1_5, test1_6, test1_7,
-         test2_1, test2_2, test2_3, test2_4, test2_5, test2_6, test2_7,
-         test3_1, test3_2, test3_3, test3_4, test3_5, test3_6, test3_7,
-         test4_1, test4_2, test4_3, test4_4, test4_5, test4_6, test4_7, test4_8,
-         test5_1_1, test5_1_2, test5_1_3,
-         test5_2_1, test5_2_2, test5_2_3,
-         test5_3_1, test5_3_2, test5_3_3,
-         test5_4_1, test5_4_2, test5_4_3,
-         test5_5_1, test5_5_2, test5_5_3,
-         )
+tests = (
+    test1_1,
+    test1_2,
+    test1_3,
+    test1_4,
+    test1_5,
+    test1_6,
+    test1_7,
+    test2_1,
+    test2_2,
+    test2_3,
+    test2_4,
+    test2_5,
+    test2_6,
+    test2_7,
+    test3_1,
+    test3_2,
+    test3_3,
+    test3_4,
+    test3_5,
+    test3_6,
+    test3_7,
+    test4_1,
+    test4_2,
+    test4_3,
+    test4_4,
+    test4_5,
+    test4_6,
+    test4_7,
+    test4_8,
+    test5_1_1,
+    test5_1_2,
+    test5_1_3,
+    test5_2_1,
+    test5_2_2,
+    test5_2_3,
+    test5_3_1,
+    test5_3_2,
+    test5_3_3,
+    test5_4_1,
+    test5_4_2,
+    test5_4_3,
+    test5_5_1,
+    test5_5_2,
+    test5_5_3,
+)
 
 results = open("results.txt", "w")
 
 
-
-
-
 def benchmark(testing, filename):
     filename.write(
-            'Function: '
-            + str(testing.__doc__)
-            + " \n"
-            + 'Time: '
-            + str(round(timeit.timeit(testing, number = 1000), 5))
-            + " \n\n"
-        )
-    return round(timeit.timeit(testing, number = 1000), 5)
-
+        "Function: "
+        + str(testing.__doc__)
+        + " \n"
+        + "Time: "
+        + str(round(timeit.timeit(testing, number=1000), 5))
+        + " \n\n"
+    )
+    return round(timeit.timeit(testing, number=1000), 5)
 
 
 with open("results.txt", "w") as filename:
@@ -283,11 +313,11 @@ with open("results.txt", "w") as filename:
     )
 
     test1 = {
-        timeit.timeit(test5_1_1, number = 1000): ["list  "],
-        timeit.timeit(test5_2_1, number = 1000): ["tuple "],
-        timeit.timeit(test5_3_1, number = 1000): ["set   "],
-        timeit.timeit(test5_4_1, number = 1000): ["dict  "],
-        timeit.timeit(test5_5_1, number = 1000): ["range "]
+        timeit.timeit(test5_1_1, number=1000): ["list  "],
+        timeit.timeit(test5_2_1, number=1000): ["tuple "],
+        timeit.timeit(test5_3_1, number=1000): ["set   "],
+        timeit.timeit(test5_4_1, number=1000): ["dict  "],
+        timeit.timeit(test5_5_1, number=1000): ["range "],
     }
 
     filename.write("\nTime for searching 0: \n")
@@ -299,11 +329,11 @@ with open("results.txt", "w") as filename:
         filename.write("\n")
 
     test2 = {
-        timeit.timeit(test5_1_2, number = 1000): ["list  "],
-        timeit.timeit(test5_2_2, number = 1000): ["tuple "],
-        timeit.timeit(test5_3_2, number = 1000): ["set   "],
-        timeit.timeit(test5_4_2, number = 1000): ["dict  "],
-        timeit.timeit(test5_5_2, number = 1000): ["range "]
+        timeit.timeit(test5_1_2, number=1000): ["list  "],
+        timeit.timeit(test5_2_2, number=1000): ["tuple "],
+        timeit.timeit(test5_3_2, number=1000): ["set   "],
+        timeit.timeit(test5_4_2, number=1000): ["dict  "],
+        timeit.timeit(test5_5_2, number=1000): ["range "],
     }
 
     filename.write("\nTime for searching 9999: \n")
@@ -315,11 +345,11 @@ with open("results.txt", "w") as filename:
         filename.write("\n")
 
     test3 = {
-        timeit.timeit(test5_1_3, number = 1000): ["list  "],
-        timeit.timeit(test5_2_3, number = 1000): ["tuple "],
-        timeit.timeit(test5_3_3, number = 1000): ["set   "],
-        timeit.timeit(test5_4_3, number = 1000): ["dict  "],
-        timeit.timeit(test5_5_3, number = 1000): ["range "]
+        timeit.timeit(test5_1_3, number=1000): ["list  "],
+        timeit.timeit(test5_2_3, number=1000): ["tuple "],
+        timeit.timeit(test5_3_3, number=1000): ["set   "],
+        timeit.timeit(test5_4_3, number=1000): ["dict  "],
+        timeit.timeit(test5_5_3, number=1000): ["range "],
     }
 
     filename.write("\nTime for searching 10000: \n")
