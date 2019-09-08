@@ -17,5 +17,3 @@ def f(m, n):
         return f(m - 1, 1)
     if m > 0 and n > 0:
         return f(m - 1, f(m, n - 1))
-
-
