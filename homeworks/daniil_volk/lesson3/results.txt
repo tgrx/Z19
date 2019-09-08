@@ -1,7 +1,88 @@
-Operation: x = 100500. Time for 1000 loops: 0.00015404099940496963
-Operation: x = 100*100/100. Time for 1000 loops: 0.0001764270000421675
-Operation: 100 == 500. Time for 1000 loops: 0.00019722700017155148
-Operation: list1 += ['k']. Time for 1000 loops: 0.00046183099948393647
-Operation: ['v','o', 'l', 'k'].remove('k'). Time for 1000 loops: 0.000564605999898049
-Operation: ('volk').index('o') Time for 1000 loops: 0.0003836760006379336
-Operation: sorted((3,2,1)). Time for 1000 loops: 0.0003546900006767828
+Test: для int: 5**7 + 7**5  Time for 1000 loops: 0.0001318439999522525
+Test: для int: 17**19 + 19**17  Time for 1000 loops: 0.00013209000007918803
+Test: для float: 1e30 + 1e-30  Time for 1000 loops: 0.0001379509994876571
+Test: для complex: 1+2j + 2-1j  Time for 1000 loops: 0.00013941299948783126
+Test: для Decimal: "0.33" + "1.66"  Time for 1000 loops: 0.0003904570003214758
+Test: для Decimal: 5**7 + 7**5  Time for 1000 loops: 0.0004290249999030493
+Test: для Decimal: 17**19 + 19**17  Time for 1000 loops: 0.0007484919997295947
+
+Test: для int: 5**7 * 7**5  Time for 1000 loops: 0.00012713299929600907
+Test: для int: 17**19 * 19**17  Time for 1000 loops: 0.00024355599998671096
+Test: для float: 1e30 * 1e-30  Time for 1000 loops: 0.00013193999984650873
+Test: для complex: 1+2j * 2-1j  Time for 1000 loops: 0.0001356190005026292
+Test: для Decimal: "0.33" * "1.66"  Time for 1000 loops: 0.000291818999357929
+Test: для Decimal: 5**7 * 7**5  Time for 1000 loops: 0.0006751820001227316
+Test: для Decimal: 17**19 * 19**17  Time for 1000 loops: 0.0011675209998429636
+
+Test: для int: 5**7 / 7**5  Time for 1000 loops: 7.625099988217698e-05
+Test: для int: 17**19 / 19**17  Time for 1000 loops: 7.634299981873482e-05
+Test: для float: 1e30 / 1e-30  Time for 1000 loops: 7.52119995013345e-05
+Test: для complex: 1+2j / 2-1j  Time for 1000 loops: 0.0001272310000786092
+Test: для Decimal: "0.33" / "1.66"  Time for 1000 loops: 0.0004291750001357286
+Test: для Decimal: 5**7 / 7**5  Time for 1000 loops: 0.0019079949997831136
+Test: для Decimal: 17**19 / 19**17  Time for 1000 loops: 0.0016400349995819852
+
+Test: "a" in s = "ab" * 10000 + "c"  Time for 1000 loops: 0.00011062799967476167
+Test: "b" in s = "ab" * 10000 + "c"  Time for 1000 loops: 0.0001143829995271517
+Test: "c" in s = "ab" * 10000 + "c"  Time for 1000 loops: 0.0007313260002774769
+Test: "ab" in s = "ab" * 10000 + "c"  Time for 1000 loops: 0.0001107239995690179
+Test: "ba" in s = "ab" * 10000 + "c"  Time for 1000 loops: 0.00011548000020411564
+Test: "bc" in s = "ab" * 10000 + "c"  Time for 1000 loops: 0.01329080400046223
+Test: "ac" in s = "ab" * 10000 + "c"  Time for 1000 loops: 0.012900716999865836
+Test: "ababababababababababc" in s = "ab" * 10000 + "c"  Time for 1000 loops: 0.02579183799934981
+
+Test: 0 in [i for i in range(10000)]  Time for 1000 loops: 0.00010598799963190686
+Test: 9999 in [i for i in range(10000)]  Time for 1000 loops: 0.1496638240005268
+Test: 10000 in [i for i in range(10000)]  Time for 1000 loops: 0.15057566900031816
+
+Test: 0 in tuple(i for i in range(10000))  Time for 1000 loops: 0.00010079599996970501
+Test: 9999 in tuple(i for i in range(10000))  Time for 1000 loops: 0.16539220000049681
+Test: 10000 in tuple(i for i in range(10000))  Time for 1000 loops: 0.14953501499985578
+
+Test: 0 in {i for i in range(10000)}  Time for 1000 loops: 0.0001059950000126264
+Test: 9999 in {i for i in range(10000)}  Time for 1000 loops: 0.00012324600083957193
+Test: 10000 in {i for i in range(10000)}  Time for 1000 loops: 0.00010225599999102997
+
+Test: 0 in {i:i for i in range(10000)}  Time for 1000 loops: 0.00011140500009787502
+Test: 9999 in {i:i for i in range(10000)}  Time for 1000 loops: 0.00012936300026922254
+Test: 10000 in {i:i for i in range(10000)}  Time for 1000 loops: 0.000109194000287971
+
+Test: 0 in range(10000)  Time for 1000 loops: 0.00018529699991631787
+Test: 9999 in range(10000)  Time for 1000 loops: 0.00019815399991784943
+Test: 10000 in range(10000)  Time for 1000 loops: 0.00014843900044070324
+
+____________________________________LEVEL 3____________________________________
+
+int: 5**7 + 7**5 faster than Decimal: 5**7 и 7**5  for 69.26892372657852 percents
+int: 17**19 + 19**17 faster than Decimal: 17**19 + 19**17  for 82.35251677681154 percents
+
+int: 5**7 * 7**5 faster than Decimal: 5**7 * 7**5  for 81.17055856452046 percents
+int: 17**19 * 19**17 faster than Decimal: 17**19 * 19**17  for 79.1390476043283 percents
+
+int: 5**7 / 7**5 faster than Decimal: 5**7 / 7**5  for 96.00360588519128 percents
+int: 17**19 / 19**17 faster than Decimal: 17**19 / 19**17  for 95.34503837794966 percents
+
+Below written has the format: 
+ the first line is the slowest type, his speed accepted as one; 
+another lines are the faster types, their speed shows how many times they are faster the slowest type.
+
+
+Time for searching 0: 
+['range ']1.0
+['dict  ']1.6666666666666667
+['list  ']1.7619047619047619
+['tuple ']1.85
+
+Time for searching 9999: 
+['tuple ']1.0
+['list  ']1.1050961159404795
+['range ']835.3131313131313
+['dict  ']1282.108527131783
+['set   ']1344.6504065040651
+
+Time for searching 10000: 
+['list  ']1.0
+['tuple ']1.0069548935031933
+['range ']1017.3986486486486
+['dict  ']1381.4220183486239
+['set   ']1476.2254901960785
