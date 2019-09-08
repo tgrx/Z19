@@ -677,9 +677,11 @@ test3.setdefault(int(result5_4_3 * 1000000), ["dict  "])
 test3.setdefault(int(result5_5_3 * 1000000), ["range "])
 
 
-results.write("Below written has the format: \n "
-              "the first line is the slowest type, his speed accepted as one; \n"
-              "another lines are the faster types, their speed shows how many times they are faster the slowest type.\n\n")
+results.write(
+    "Below written has the format: \n "
+    "the first line is the slowest type, his speed accepted as one; \n"
+    "another lines are the faster types, their speed shows how many times they are faster the slowest type.\n\n"
+)
 
 
 results.write("\nTime for searching 0: \n")
@@ -688,12 +690,7 @@ slowest = slowest[0]
 
 
 for p in reversed(sorted(test1)):
-    results.write(
-        str(
-            str(test1[p])
-            + str(slowest / p)
-        )
-    )
+    results.write(str(str(test1[p]) + str(slowest / p)))
     results.write("\n")
 
 
@@ -703,12 +700,7 @@ slowest = slowest[0]
 
 
 for p in reversed(sorted(test2)):
-    results.write(
-        str(
-            str(test2[p])
-            + str(slowest / p)
-        )
-    )
+    results.write(str(str(test2[p]) + str(slowest / p)))
     results.write("\n")
 
 
@@ -718,10 +710,5 @@ slowest = slowest[0]
 
 
 for p in reversed(sorted(test3)):
-    results.write(
-        str(
-            str(test3[p])
-            + str(slowest / p)
-        )
-    )
+    results.write(str(str(test3[p]) + str(slowest / p)))
     results.write("\n")
