@@ -3,8 +3,9 @@ class User:
         return f"User(name = {self.name}, email = {self.email})"
 
     def __init__(self, name, email):
-        self.name = name
-        self.email = email
+        if name != 0 and email != 0:
+            self.name = name
+            self.email = email
 
     def __eq__(self, other: "User"):
         return self.email == other.email
