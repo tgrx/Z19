@@ -1,0 +1,166 @@
+In [1]: %timeit 5**7 + 7**5
+10.6 ns ± 0.0457 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+In [2]: %timeit 17**19 + 19**17
+9.85 ns ± 0.0637 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+In [3]: %timeit 1e30 + (1e-30)
+10.1 ns ± 0.0323 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+In [4]: %timeit (1+2j) + (2-1j)
+10.2 ns ± 0.13 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+In [5]: %timeit D("0.33") + D("1.66")
+1.12 µs ± 2.12 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+In [6]: %timeit (D("5") ** D("7")) + (D("7") ** D("5"))
+1.93 µs ± 4.76 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+In [7]: %timeit (D("17") ** D("19")) + (D("19") ** D("17"))
+2.41 µs ± 17.7 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+------------------------------------------------------------------------------------
+
+In [8]: %timeit (5**7) * (7**5)
+9.84 ns ± 0.0322 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+In [9]: %timeit (17**19) * (19**17)
+152 ns ± 3.83 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [10]: %timeit 1e30 * (1e-30)
+9.88 ns ± 0.0519 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+In [11]: %timeit (1+2j) * (2-1j)
+9.8 ns ± 0.0185 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+In [12]: %timeit D("0.33") * D("1.66")
+1.07 µs ± 1.44 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+In [13]: %timeit (D("5") ** D("7")) * (D("7") ** D("5"))
+1.9 µs ± 11 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each) 
+
+In [14]:  %timeit (D("17") ** D("19")) * (D("19") ** D("17"))
+2.62 µs ± 59 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+-------------------------------------------------------------------------------------
+
+In [15]: %timeit (5**7) / (7**5)
+9.81 ns ± 0.0394 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+In [16]: %timeit (17**19) / (19**17)
+10 ns ± 0.361 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+In [17]: %timeit 1e30 / (1e-30)
+9.83 ns ± 0.0504 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+In [18]: %timeit (1+2j) / (2-1j)
+10.1 ns ± 0.405 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+In [19]: %timeit D("0.33") / D("1.66")
+1.2 µs ± 2.88 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+In [20]: %timeit (D("5") ** D("7")) / (D("7") ** D("5"))
+2 µs ± 5.03 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+In [21]: %timeit (D("17") ** D("19")) / (D("19") ** D("17"))
+2.83 µs ± 4.82 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+----------------------------------------------------------------------------------------
+
+In [22]: s = "ab" * 10000 + "c"
+
+In [23]: %timeit s.find("a")
+190 ns ± 0.967 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [24]: %timeit s.find("b")
+191 ns ± 3.6 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [25]: %timeit s.find("c")
+4.29 µs ± 8.46 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+In [26]: %timeit s.find("ab")
+195 ns ± 0.307 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [27]: %timeit s.find("ba")
+197 ns ± 1.43 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [28]: %timeit s.find("bc")
+15.4 µs ± 29.1 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+In [29]: %timeit s.find("ac")
+15.4 µs ± 92.2 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+In [30]: %timeit s.find("ababababababababababc")
+27.3 µs ± 31.9 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+-------------------------------------------------------------------------------------
+
+In [31]: L = [i for i in range(10000)]
+
+In [32]: %timeit 0 in L
+44.6 ns ± 0.112 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [33]: %timeit 9999 in L
+137 µs ± 412 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+In [34]: %timeit 10000 in L
+137 µs ± 187 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+In [35]: T = tuple(i for i in range(10000))
+
+In [36]: %timeit 0 in T
+44.1 ns ± 0.0907 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [37]: %timeit 9999 in T
+138 µs ± 101 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+In [38]: %timeit 10000 in T
+137 µs ± 161 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+In [39]: S = {i for i in range(10000)}
+
+In [40]: %timeit 0 in S
+51.9 ns ± 0.546 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [41]: %timeit 9999 in S
+72.2 ns ± 0.658 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [42]: %timeit 10000 in S
+50.4 ns ± 0.132 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [43]: D = {i: i for i in range(10000)}
+
+In [44]: %timeit 0 in D
+54 ns ± 0.0986 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [45]: %timeit 9999 in D
+71.4 ns ± 0.195 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [46]: %timeit 10000 in D
+53 ns ± 0.674 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [47]: R = range(10000)
+
+In [48]: %timeit 0 in R
+122 ns ± 0.65 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [49]: %timeit 9999 in R
+145 ns ± 6.26 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+In [50]: %timeit 10000 in R
+86.2 ns ± 0.137 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+-------------------------------------------------------------------------------------
+
+‘ÛÌÍˆËˇ ¿ÍÍÂÏ‡Ì‡
+In [52]: A(4, 2)
+RecursionError: maximum recursion depth exceeded in comparison
+
+--------------------------------------------------------------------------------------
+
+lenList = 156_097_847
+lenDict = 19_650_740
+lenSet = 20_132_659
+lenStr = 268_435_456
+lenTuple = 67_108_864
+

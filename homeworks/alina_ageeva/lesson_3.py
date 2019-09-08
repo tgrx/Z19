@@ -1,22 +1,12 @@
-m = int(input("Введите число m > 0\t"))
-n = int(input("Введите число n > 0\t"))
-
-
-def Ackerman(m, n):
-    stack = []
-    while True:
-        if not m:
-            if not stack:
-                return n + 1
-            m, n = stack.pop(), n + 1
-        elif not n:
-            m, n = m - 1, 1
-        else:
-            stack.append(m - 1)
-            n -= 1
-
-
-print(Ackerman(m, n))
+def A(m, n):
+    if m == 0:
+        return n + 1
+    if m > 0 and n == 0:
+        return A(m - 1, 1)
+    if m > 0 and n > 0:
+        return A(m - 1, A(m, n - 1))
+    else:
+        return 0
 
 
 def lenList():
@@ -26,9 +16,6 @@ def lenList():
             l.append(1)
     except MemoryError:
         return len(l)
-
-
-# 156_097_847
 
 
 def lenDict():
@@ -42,9 +29,6 @@ def lenDict():
         return len(d)
 
 
-# 19_650_740
-
-
 def lenSet():
     s = {1}
     c = 2
@@ -56,9 +40,6 @@ def lenSet():
         return len(s)
 
 
-# 20_132_659
-
-
 def lenStr():
     s = "1"
     try:
@@ -66,9 +47,6 @@ def lenStr():
             s += 1
     except MemoryError:
         return len(s)
-
-
-# 268_435_456
 
 
 def lenTuple():
@@ -80,9 +58,6 @@ def lenTuple():
         return len(t)
 
 
-# 67_108_864
-
-
 def enqueue(l, e):
     l.append(e)
 
@@ -90,8 +65,6 @@ def enqueue(l, e):
 def dequeue(l):
     if l:
         return l.pop(0)
-    if l == []:
-        return None
 
 
 if __name__ == "__main__":
@@ -108,18 +81,16 @@ if __name__ == "__main__":
 
 
 def enqueue(l, p, e):
-    l = {1: 1}
-    p = input()
-    e = input()
-    l[p] = e
-    print(l)
+    l.setdefault(p, []).append(e)
 
 
 def dequeue(l):
-    if l == {}:
-        return None
-    if l:
-        return l[0]
+    for p in reversed(sorted(l)):
+        a = l[p]
+        if not a:
+            del l[p]
+            continue
+        return a.pop(0)
 
 
 if __name__ == "__main__":
