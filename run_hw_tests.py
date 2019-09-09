@@ -107,7 +107,7 @@ def main():
         r.join(5)
         if r.exitcode != 0:
             r.terminate()
-            print("TESTS FAILED: timeout ^^^")
+            print("TESTS FAILED")
             ok = False
 
         print("\n\n[RESULTS]")
