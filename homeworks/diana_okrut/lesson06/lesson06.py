@@ -4,10 +4,8 @@ class User:
         self.email = email
 
     def __eq__(self, other):
-        return self.email == other.email
+        return self.email == other.email if other.email not in [0, 1, 'class', 'none', ] else False
 
-    def __ne__(self, other):
-        return self.email != 0
 
 
 class UserForm(User):
@@ -17,14 +15,11 @@ class UserForm(User):
         a = "qwertyuiopasdfghjklzxcvbnm_"
         b = "qwertyuiopasdfghjklzxcvbnm0123456789_"
         c = "qwertyuiopasdfghjklzxcvbnm0123456789_."
-        _1 = self.name[0]
-        _2 = self.name[-1]
-        _3 = self.name[1:-1]
-        if _1 not in a:
+        if self.name[0] not in a:
             raise ValueError
-        elif _2 not in b:
+        elif self.name[-1] not in b:
             raise ValueError
-        for x in _3:
+        for x in self.name[1:-1]:
             if x not in c:
                 raise ValueError
 
