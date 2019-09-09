@@ -1,5 +1,5 @@
 def Reversed(x):
-    if x == []:
+    if not x:
         return x == []
     new = ""
     index = len(x)
@@ -7,5 +7,3 @@ def Reversed(x):
         index -= 1
         new += x[index]
     return new
-
-
