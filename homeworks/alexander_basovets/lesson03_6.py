@@ -2,6 +2,7 @@ def enqueue(l, p, e):
     """ добавляет элемент e в конец очереди l с приоритетом p """
     l.setdefault(p, []).append(e)
 
+
 def dequeue(l):
     """
     вынимает элемент из начала очереди и возвращает его
@@ -36,4 +37,3 @@ if __name__ == "__main__":
     assert dequeue(x) == "c"
     assert dequeue(x) is None
     assert x == {}
-
