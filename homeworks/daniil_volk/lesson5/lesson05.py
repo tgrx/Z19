@@ -11,15 +11,16 @@ def Reversed(x):
     return x
 
 
-#
-# def Sorted(x):
-#     x = list(x)
-#     l = len(x)
-#     for i in range(l):
-#         for j in range(l - 1):
-#             if x[j] > x[j + 1]:
-#                 x[j + 1], x[j] = x[j], x[j + 1]
-#     return x
+def Sorted(x):
+    x = list(x)
+    l = len(x)
+    for i in range(l):
+        for j in range(l - 1):
+            if x[j] > x[j + 1]:
+                x[j + 1], x[j] = x[j], x[j + 1]
+    return x
+
+
 #
 #
 # def Filter(y, x):
