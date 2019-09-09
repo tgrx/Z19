@@ -1,13 +1,16 @@
 def enqueue(l, e):
+    """ добавляет элемент в конец очереди """
     l.append(e)
-    return None
 
 
 def dequeue(l):
-    if l:
-        return l.pop(0)
-    else:
+    """
+   вынимает элемент из начала очереди и возвращает его
+   если очередь пуста - возвращается None
+   """
+    if not l:
         return None
+    return l.pop(0)
 
 
 if __name__ == "__main__":

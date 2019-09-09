@@ -1,10 +1,20 @@
 def enqueue(l, p, e):
-    l[e] = p
-    return None
+    """ добавляет элемент e в конец очереди l с приоритетом p """
+    return l.setdefault("p", []).append(e)
 
 
 def dequeue(l):
-    return l.pop(e, None)
+    """
+    вынимает элемент из начала очереди и возвращает его
+    если очередь пуста - возвращается None
+    элементы возвращаются согласно приоритету
+    """
+    for p in reversed(sorted(l)):
+        q = l[p]
+        if not q:
+            del l[p]
+            continue
+        return q.pop(0)
 
     if __name__ == "__main__":
         x = {}
