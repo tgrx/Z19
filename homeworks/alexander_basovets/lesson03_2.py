@@ -2,8 +2,11 @@ import timeit
 from decimal import Decimal
 
 f = open("timeit_log.txt", "w")
+
+
 def sec(s):
     return (timeit.timeit(s, number=10000))
+
 
 f.write("   --- Сложение ---  \n")
 plus = sec("int(5**7+7**5)")
@@ -17,10 +20,10 @@ f.write("complex (1+2j + 2-1j -  "f'{plus}'" sec \n")
 x = Decimal("1.33") + Decimal("1.22")
 plus = sec(f'{x}')
 f.write("Decimal('1.33') + Decimal('1.22') -  "f'{plus}'" sec \n")
-y = Decimal(5**7) + Decimal(7**5)
+y = Decimal(5 ** 7) + Decimal(7 ** 5)
 plus = sec(f'{y}')
 f.write("Decimal(5**7) + Decimal(7**5) -  "f'{plus}'" sec \n")
-z = Decimal(17**19) + Decimal(19**17)
+z = Decimal(17 ** 19) + Decimal(19 ** 17)
 plus = sec(f'{z}')
 f.write("Decimal(17**19) + Decimal(19**17) -  "f'{plus}'" sec \n\n")
 
@@ -36,10 +39,10 @@ f.write("complex (1+2j * 2-1j -  "f'{m}'" sec \n")
 x = Decimal("1.33") * Decimal("1.22")
 m = sec(f'{x}')
 f.write("Decimal('1.33') * Decimal('1.22') -  "f'{m}'" sec \n")
-y = Decimal(5**7) * Decimal(7**5)
+y = Decimal(5 ** 7) * Decimal(7 ** 5)
 m = sec(f'{y}')
 f.write("Decimal(5**7) * Decimal(7**5) -  "f'{m}'" sec \n")
-z = Decimal(17**19) * Decimal(19**17)
+z = Decimal(17 ** 19) * Decimal(19 ** 17)
 m = sec(f'{z}')
 f.write("Decimal(17**19) * Decimal(19**17) -  "f'{m}'" sec \n\n")
 
@@ -55,10 +58,10 @@ f.write("complex (1+2j / 2-1j -  "f'{d}'" sec \n")
 x = Decimal("1.33") / Decimal("1.22")
 d = sec(f'{x}')
 f.write("Decimal('1.33') * Decimal('1.22') -  "f'{d}'" sec \n")
-y = Decimal(5**7) / Decimal(7**5)
+y = Decimal(5 ** 7) / Decimal(7 ** 5)
 d = sec(f'{y}')
 f.write("Decimal(5**7) / Decimal(7**5) -  "f'{d}'" sec \n")
-z = Decimal(17**19) / Decimal(19**17)
+z = Decimal(17 ** 19) / Decimal(19 ** 17)
 d = sec(f'{z}')
 f.write("Decimal(17**19) / Decimal(19**17) -  "f'{d}'" sec \n\n")
 
@@ -111,7 +114,7 @@ c = timeit.timeit(f'"1000" in "{S}"')
 f.write("10000 in S - "f'{c}'" sec \n\n")
 
 f.write("   ---  В словаре ---  \n")
-D = {i:i for i in range(10000)}
+D = {i: i for i in range(10000)}
 a = timeit.timeit(f'"0" in "{D}"')
 f.write("0 in D - "f'{a}'" sec \n")
 b = timeit.timeit(f'"999" in "{D}"')
