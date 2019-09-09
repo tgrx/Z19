@@ -10,6 +10,7 @@ def Reversed(x):
         x[i], x[l] = x[l], x[i]
     return x
 
+
 #
 # def Sorted(x):
 #     x = list(x)
