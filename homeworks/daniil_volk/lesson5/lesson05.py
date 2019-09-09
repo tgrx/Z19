@@ -30,7 +30,7 @@ def Filter(y, x):
             for i in range(l):
                 if x[i] > 0:
                     z.append(x[i])
-            return (z)
+            return z
         else:
             for i in range(l):
                 if x[i] == 0:
@@ -42,6 +42,8 @@ def Filter(y, x):
             if y in x[i]:
                 z.append(x[i])
         return z
+
+
 #
 #
 # def TypedReversed(x):
