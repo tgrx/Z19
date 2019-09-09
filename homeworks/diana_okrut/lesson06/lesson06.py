@@ -12,6 +12,8 @@ class User:
 
 class UserForm(User):
     def validate_name(self):
+        if not self.name:
+            raise ValueError
         a = "qwertyuiopasdfghjklzxcvbnm_"
         b = "qwertyuiopasdfghjklzxcvbnm0123456789_"
         c = "qwertyuiopasdfghjklzxcvbnm0123456789_."
@@ -27,6 +29,8 @@ class UserForm(User):
                 raise ValueError
 
     def validate_email(self):
+        if not self.email:
+            raise ValueError
         a = "qwertyuiopasdfghjklzxcvbnm_"
         b = "qwertyuiopasdfghjklzxcvbnm0123456789_"
         c = "qwertyuiopasdfghjklzxcvbnm0123456789_."
