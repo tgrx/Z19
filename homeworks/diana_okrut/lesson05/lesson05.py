@@ -43,9 +43,9 @@ def TypedReversed(l):
     new_l = []
     for i in l:
         new_l.insert(0, i)
-    if type(l) is str:
+    if isinstance(l, str):
         return "".join(new_l)
-    elif type(l) is tuple:
+    elif isinstance(l, tuple):
         return tuple(new_l)
     else:
         return new_l
