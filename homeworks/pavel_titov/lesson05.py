@@ -1,15 +1,25 @@
-<<<<<<< HEAD
-=======
-## Уровень 2
-
-
 def Reversed(x):
-    if x == ([], (), str):
-        return(reversed(x))
-    else:
-        print("Error")
+    y = []
+    for i in x:
+        y.insert(0, i)
+    return y
 
 
-## Уровень 3
->>>>>>> Merge branch 'master' of D:\z19 with conflicts.
+
+
+
+def Sorted(x):
+    r = []
+    for i in x:
+        for n in x:
+            if i <=n:
+                r.append(n)
+    return r
+
+
+
+
+
+
+
 
