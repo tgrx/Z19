@@ -49,7 +49,7 @@ def verify(module):
 
     assert tomorrow in r(today, next_week)
 
-    assert tuple(r(tomorrow, next_week)) == (
+    assert tuple(r(today, next_week)) == (
         today,
         today + t(days=1),
         today + t(days=2),
