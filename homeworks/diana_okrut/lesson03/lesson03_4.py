@@ -11,7 +11,3 @@ def A(m, n):
         return "kek"
     except RecursionError:
         return "Maximum recursion depth exceeded in comparison."
-
-
-# In: A(3, 8)
-# Out: 2045

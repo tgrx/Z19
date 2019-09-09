@@ -57,33 +57,4 @@ def LazyReversed(l):
     new_l = []
     for i in l:
         new_l.insert(0, i)
-    if type(l) is str:
-        a = "".join(new_l)
-        return iter(a)
-    elif type(l) is tuple:
-        a = tuple(new_l)
-        return iter(a)
-    else:
-        return iter(new_l)
-
-
-# class Range:
-#     def __init__(self, stop):
-#         self.start = self.current = 0
-#         self.stop = stop
-#
-#     def __iter__(self):
-#         self.current = self.start
-#         return self
-#
-#     def __next__(self):
-#         if self.current >= self.stop:
-#             raise StopIteration
-#         c, self.current = self.current, self.current + 1
-#         return c
-#
-#
-# def DateRange(tomorrow, next_week):
-#     today = d.today()
-#     tomorrow = today + t(days=1)
-#     next_week = today + t(days=7)
+    return iter(new_l)
