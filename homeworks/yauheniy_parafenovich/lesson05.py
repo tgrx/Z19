@@ -1,6 +1,5 @@
-def reversed2(L):
-    x = list([])
-    for s in L:
-        x.append(s)
-        z = x[::-1]
-    print(z)
+def Reversed(L):
+ z = L[::-1]
+ print(z)
+
+
