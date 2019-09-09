@@ -37,7 +37,6 @@ def Filter(y, x):
                     z.append(x[i])
             return z
     else:
-        y = str(y)
         for i in range(l):
             if y in x[i]:
                 z.append(x[i])
