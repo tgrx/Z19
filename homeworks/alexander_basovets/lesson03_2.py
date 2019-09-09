@@ -85,7 +85,7 @@ f.write("bc in s "f'{bc}'" sec \n")
 f.write("ac in s "f'{ac}'" sec \n")
 f.write("ababababababababababc in s "f'{ababababababababababc}'" sec \n\n")
 
-f.write("   ---  Коллекции ---  \n")
+f.write("   ---  Коллекции ---  \n\n")
 f.write("   ---  В списке ---  \n")
 L = [i for i in range(10000)]
 a = timeit.timeit(f'"0" in "{L}"')
