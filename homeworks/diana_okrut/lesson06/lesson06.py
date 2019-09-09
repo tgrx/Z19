@@ -45,3 +45,4 @@ class UserForm(User):
             for x in domain[1, -1]:
                 if x not in c:
                     raise ValueError
+        finally: None
