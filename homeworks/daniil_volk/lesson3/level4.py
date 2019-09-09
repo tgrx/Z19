@@ -4,10 +4,11 @@ def valid():
             m = int(input())
             n = int(input())
         except ValueError:
-            raise ValueError
+            print("Only integer")
+            raise
         if m >= 0 and n >= 0:
             break
-        raise ValueError
+        print("Only m>= 0 and n>= 0")
 
 
 def f(m, n):
