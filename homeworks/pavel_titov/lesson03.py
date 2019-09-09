@@ -130,8 +130,8 @@ def fix4():
 
 
 def fix5():
-    R = range(10000)
-    for i in R:
+    L = [i for i in range(10000)]
+    for i in L:
         if i == 0:
             print(i)
         if i == 9999:
