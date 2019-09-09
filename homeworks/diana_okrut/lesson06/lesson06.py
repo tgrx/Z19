@@ -6,6 +6,9 @@ class User:
     def __eq__(self, other):
         return self.email == other.email
 
+    def __ne__(self, other):
+        return self.email != 0
+
 
 class UserForm(User):
     def validate_name(self):
