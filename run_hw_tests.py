@@ -100,15 +100,15 @@ class Runner(multiprocessing.Process):
 def main():
     with multiprocessing.Manager() as mgr:
         results = mgr.dict()
+        ok = True
 
         r = Runner(results=results, mgr=mgr)
         r.start()
         r.join(5)
         if r.exitcode != 0:
-            print("TESTS FAILED")
-            return 1
-
-        ok = True
+            r.terminate()
+            print("TESTS FAILED: timeout ^^^")
+            ok = False
 
         print("\n\n[RESULTS]")
 

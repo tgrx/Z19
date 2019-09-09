@@ -6,7 +6,8 @@ wanted_name = "Sorted"
 
 
 def verify_no_prohibited_calls(module_path):
-    prohibited_names = {"print", "sorted"}
+    # prohibited_names = {"print", "sorted"}
+    prohibited_names = {"print"}
 
     with open(module_path, "r") as module:
         code = module.read()
