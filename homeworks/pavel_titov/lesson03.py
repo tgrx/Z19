@@ -129,14 +129,15 @@ def fix4():
 
 
 
-def fix5(L):
-    for i in range(10000):
+def fix5():
+    R = range(10000)
+    for i in R:
         if i == 0:
-            return 0
+            print(i)
         if i == 9999:
-            return 9999
+            print(i)
         if i == 10000:
-            return 10000
+            print(i)
 
 
 
