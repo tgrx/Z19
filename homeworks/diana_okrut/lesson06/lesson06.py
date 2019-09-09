@@ -15,11 +15,14 @@ class UserForm(User):
         a = "qwertyuiopasdfghjklzxcvbnm_"
         b = "qwertyuiopasdfghjklzxcvbnm0123456789_"
         c = "qwertyuiopasdfghjklzxcvbnm0123456789_."
-        if self.name[0] not in a:
+        _1 = self.name[0]
+        _2 = self.name[-1]
+        _3 = self.name[1:-1]
+        if _1 not in a:
             raise ValueError
-        elif self.name[-1] not in b:
+        elif _2 not in b:
             raise ValueError
-        for x in self.name[1:-1]:
+        for x in _3:
             if x not in c:
                 raise ValueError
 
