@@ -21,55 +21,57 @@ def Sorted(x):
     return x
 
 
-def Filter(y, x):
-    x = list(x)
-    l = len(x)
-    z = []
-    if isinstance(y, bool):
-        if y is True:
-            for i in range(l):
-                if x[i] > 0:
-                    z.append(x[i])
-            return z
-        else:
-            for i in range(l):
-                if x[i] == 0:
-                    z.append(x[i])
-            return z
-    else:
-        for i in range(l):
-            if y in x[i]:
-                z.append(x[i])
-        return z
-
-
-#
-# def TypedReversed(x):
-#     typex = type(x)
-#     print(typex)
-#     if typex == dict:
-#         raise TypeError
+# def Filter(y, x):
 #     x = list(x)
 #     l = len(x)
-#     steps = l // 2
-#     for i in range(steps):
-#         l -= 1
-#         x[i], x[l] = x[l], x[i]
-#     if typex == set:
-#         return set(x)
-#     elif typex == tuple:
-#         return tuple(x)
-#     elif typex == list:
-#         return list(x)
-#     elif typex == frozenset:
-#         return frozenset(x)
-#     elif typex == str:
-#         x = str(x)
-#         x = x.replace("'", "")
-#         x = x.replace(", ", "")
-#         x = x.replace("[", "")
-#         x = x.replace("]", "")
-#         return str(x)
+#     z = []
+#     if isinstance(y, bool):
+#         if y is True:
+#             for i in range(l):
+#                 if x[i] > 0:
+#                     z.append(x[i])
+#             return z
+#         else:
+#             for i in range(l):
+#                 if x[i] == 0:
+#                     z.append(x[i])
+#             return z
+#     else:
+#         y = str(y)
+#         for i in range(l):
+#             if y in x[i]:
+#                 z.append(x[i])
+#         return z
+
+
+def TypedReversed(x):
+    typex = type(x)
+    print(typex)
+    if typex == dict:
+        raise TypeError
+    x = list(x)
+    l = len(x)
+    steps = l // 2
+    for i in range(steps):
+        l -= 1
+        x[i], x[l] = x[l], x[i]
+    if typex == set:
+        return set(x)
+    elif typex == tuple:
+        return tuple(x)
+    elif typex == list:
+        return list(x)
+    elif typex == frozenset:
+        return frozenset(x)
+    elif typex == str:
+        x = str(x)
+        x = x.replace("'", "")
+        x = x.replace(", ", "")
+        x = x.replace("[", "")
+        x = x.replace("]", "")
+        return str(x)
+
+
 #
 #
 # class Range:
