@@ -10,34 +10,34 @@ T = tuple(i for i in range(10000))
 S = {i for i in range(10000)}
 D = {i: i for i in range(10000)}
 R = range(10000)
-variable1 = 5 ** 7
-variable2 = 7 ** 5
-variable3 = 17 ** 19
-variable4 = 19 ** 17
-variable5 = 1e30
-variable6 = 1e-30
-variable7 = 1 + 2j
-variable8 = 2 - 1j
+int1 = 5 ** 7
+int2 = 7 ** 5
+long1 = 17 ** 19
+long2 = 19 ** 17
+float1 = 1e30
+float2 = 1e-30
+complex1 = 1 + 2j
+complex2 = 2 - 1j
 
 
 def test1_1():
     """(5 ** 7) + (7 ** 5) """
-    return variable1 + variable2
+    return int1 + int2
 
 
 def test1_2():
     """17**19 + 19**17 """
-    return variable3 + variable4
+    return long1 + long2
 
 
 def test1_3():
     """1e30 + 1e-30 """
-    return variable5 + variable6
+    return float1 + float2
 
 
 def test1_4():
     """1+2j + 2-1j """
-    return variable7 + variable8
+    return complex1 + complex2
 
 
 def test1_5():
@@ -47,32 +47,32 @@ def test1_5():
 
 def test1_6():
     """5**7 + 7**5 """
-    return Decimal(variable1 + variable2)
+    return Decimal(int1 + int2)
 
 
 def test1_7():
     """17**19 + 19**17 """
-    return Decimal(variable3 + variable4)
+    return Decimal(long1 + long2)
 
 
 def test2_1():
     """(5 ** 7) * (7 ** 5) """
-    return variable1 * variable2
+    return int1 * int2
 
 
 def test2_2():
     """17**19 * 19**17"""
-    return variable3 * variable4
+    return long1 * long2
 
 
 def test2_3():
     """1e30 * 1e-30 """
-    return variable5 * variable6
+    return float1 * float2
 
 
 def test2_4():
     """1+2j * 2-1j """
-    return variable7 * variable8
+    return complex1 * complex2
 
 
 def test2_5():
@@ -82,32 +82,32 @@ def test2_5():
 
 def test2_6():
     """5**7 * 7**5 """
-    return Decimal(variable1 * variable2)
+    return Decimal(int1 * int2)
 
 
 def test2_7():
     """17**19 * 19**17 """
-    return Decimal(variable3 * variable4)
+    return Decimal(long1 * long2)
 
 
 def test3_1():
     """(5 ** 7) / (7 ** 5) """
-    return variable1 / variable2
+    return int1 / int2
 
 
 def test3_2():
     """17**19 / 19**17 """
-    return variable3 / variable4
+    return long1 / long2
 
 
 def test3_3():
     """1e30 / 1e-30 """
-    return variable5 / variable6
+    return float1 / float2
 
 
 def test3_4():
     """1+2j / 2-1j """
-    return variable7 / variable8
+    return complex1 / complex2
 
 
 def test3_5():
@@ -117,12 +117,12 @@ def test3_5():
 
 def test3_6():
     """5**7 / 7**5 """
-    return Decimal(variable1 / variable2)
+    return Decimal(int1 / int2)
 
 
 def test3_7():
     """17**19 / 19**17 """
-    return Decimal(variable3 / variable4)
+    return Decimal(long1 / long2)
 
 
 def test4_1():
@@ -287,75 +287,72 @@ tests = (
     test5_5_3,
 )
 
-results = open("results.txt", "w")
 
+def benchmark(testing, file):
+    file.write(
+        f"""Function: {testing.__doc__}
+Time: {str(round(timeit.timeit(testing, number=1000), 5))}
 
-def benchmark(testing, filename):
-    filename.write(
-        "Function: "
-        + str(testing.__doc__)
-        + " \n"
-        + "Time: "
-        + str(round(timeit.timeit(testing, number=1000), 5))
-        + " \n\n"
+"""
     )
-    return round(timeit.timeit(testing, number=1000), 5)
 
 
-with open("results.txt", "w") as filename:
+with open("results.txt", "w") as file:
     for test in tests:
-        benchmark(test, filename)
+        benchmark(test, file)
 
-    filename.write(
-        "Below written has the format: \n "
-        "the first line is the slowest type, his speed accepted as one; \n"
-        "another lines are the faster types, their speed shows how many times they are faster the slowest type.\n\n"
+    file.write(
+        """
+Below written has the format: 
+the first line is the slowest type, his speed accepted as one; 
+another lines are the faster types, their speed shows how many times they are faster the slowest type.
+    """
     )
 
     test1 = {
-        timeit.timeit(test5_1_1, number=1000): ["list  "],
-        timeit.timeit(test5_2_1, number=1000): ["tuple "],
-        timeit.timeit(test5_3_1, number=1000): ["set   "],
-        timeit.timeit(test5_4_1, number=1000): ["dict  "],
-        timeit.timeit(test5_5_1, number=1000): ["range "],
+        "list  ": round(timeit.timeit(test5_1_1, number=1000), 5),
+        "tuple ": round(timeit.timeit(test5_2_1, number=1000), 5),
+        "set   ": round(timeit.timeit(test5_3_1, number=1000), 5),
+        "dict  ": round(timeit.timeit(test5_4_1, number=1000), 5),
+        "range ": round(timeit.timeit(test5_5_1, number=1000), 5),
     }
 
-    filename.write("\nTime for searching 0: \n")
-    slowest = list(reversed(sorted(test1.keys())))
+    file.write("\nTime for searching 0: \n")
+    slowest = list(reversed(sorted(test1.values())))
     slowest = slowest[0]
 
-    for p in reversed(sorted(test1)):
-        filename.write(str(str(test1[p]) + str(slowest / p)))
-        filename.write("\n")
+    for p in test1:
+        file.write(p + str(round((slowest / test1[p]), 3)))
+        file.write("\n")
 
     test2 = {
-        timeit.timeit(test5_1_2, number=1000): ["list  "],
-        timeit.timeit(test5_2_2, number=1000): ["tuple "],
-        timeit.timeit(test5_3_2, number=1000): ["set   "],
-        timeit.timeit(test5_4_2, number=1000): ["dict  "],
-        timeit.timeit(test5_5_2, number=1000): ["range "],
+        "list  ": round(timeit.timeit(test5_1_2, number=1000), 5),
+        "tuple ": round(timeit.timeit(test5_2_2, number=1000), 5),
+        "set   ": round(timeit.timeit(test5_3_2, number=1000), 5),
+        "dict  ": round(timeit.timeit(test5_4_2, number=1000), 5),
+        "range ": round(timeit.timeit(test5_5_2, number=1000), 5),
     }
 
-    filename.write("\nTime for searching 9999: \n")
-    slowest = list(reversed(sorted(test2.keys())))
+    file.write("\nTime for searching 9999: \n")
+    slowest = list(reversed(sorted(test2.values())))
     slowest = slowest[0]
 
-    for p in reversed(sorted(test2)):
-        filename.write(str(str(test2[p]) + str(slowest / p)))
-        filename.write("\n")
+    for p in test2:
+        file.write(p + str(round((slowest / test2[p]), 3)))
+        file.write("\n")
 
     test3 = {
-        timeit.timeit(test5_1_3, number=1000): ["list  "],
-        timeit.timeit(test5_2_3, number=1000): ["tuple "],
-        timeit.timeit(test5_3_3, number=1000): ["set   "],
-        timeit.timeit(test5_4_3, number=1000): ["dict  "],
-        timeit.timeit(test5_5_3, number=1000): ["range "],
+        "list  ": round(timeit.timeit(test5_1_3, number=1000), 5),
+        "tuple ": round(timeit.timeit(test5_2_3, number=1000), 5),
+        "set   ": round(timeit.timeit(test5_3_3, number=1000), 5),
+        "dict  ": round(timeit.timeit(test5_4_3, number=1000), 5),
+        "range ": round(timeit.timeit(test5_5_3, number=1000), 5),
     }
 
-    filename.write("\nTime for searching 10000: \n")
-    slowest = list(reversed(sorted(test3.keys())))
+    file.write("\nTime for searching 10000: \n")
+    slowest = list(reversed(sorted(test3.values())))
     slowest = slowest[0]
 
-    for p in reversed(sorted(test3)):
-        filename.write(str(str(test3[p]) + str(slowest / p)))
-        filename.write("\n")
+    for p in test3:
+        file.write(p + str(round((slowest / test3[p]), 3)))
+        file.write("\n")
