@@ -8,25 +8,23 @@ class User:
 
 
 class UserForm(User):
-
     def validate_name(self):
-            a = 'qwertyuiopasdfghjklzxcvbnm_'
-            b = 'qwertyuiopasdfghjklzxcvbnm0123456789_'
-            c = 'qwertyuiopasdfghjklzxcvbnm0123456789_.'
-            if self.name[0] not in a:
+        a = "qwertyuiopasdfghjklzxcvbnm_"
+        b = "qwertyuiopasdfghjklzxcvbnm0123456789_"
+        c = "qwertyuiopasdfghjklzxcvbnm0123456789_."
+        if self.name[0] not in a:
+            raise ValueError
+        elif self.name[-1] not in b:
+            raise ValueError
+        for x in self.name[1:-1]:
+            if x not in c:
                 raise ValueError
-            elif self.name[-1] not in b:
-                raise ValueError
-            for x in self.name[1:-1]:
-                if x not in c:
-                    raise ValueError
-
 
     def validate_email(self):
-        a = 'qwertyuiopasdfghjklzxcvbnm_'
-        b = 'qwertyuiopasdfghjklzxcvbnm0123456789_'
-        c = 'qwertyuiopasdfghjklzxcvbnm0123456789_.'
-        d = 'qwertyuiopasdfghjklzxcvbnm0123456789_+.'
+        a = "qwertyuiopasdfghjklzxcvbnm_"
+        b = "qwertyuiopasdfghjklzxcvbnm0123456789_"
+        c = "qwertyuiopasdfghjklzxcvbnm0123456789_."
+        d = "qwertyuiopasdfghjklzxcvbnm0123456789_+."
         try:
             lisemail = self.email.split("@")
             login = lisemail[0]
@@ -35,7 +33,7 @@ class UserForm(User):
                 raise ValueError
             if login[-1] not in b:
                 raise ValueError
-            for x in login[1,-1]:
+            for x in login[1, -1]:
                 if x not in d:
                     raise ValueError
             if domain[0] not in a:
@@ -45,4 +43,5 @@ class UserForm(User):
             for x in domain[1, -1]:
                 if x not in c:
                     raise ValueError
-        finally: None
+        finally:
+            None
