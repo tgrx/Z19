@@ -129,7 +129,7 @@ def fix4():
 
 
 
-def fix5():
+def fix5(L):
     L = []
     for i in range(10000):
         if i == 0:
