@@ -1,0 +1,119 @@
+i: 1)   timeit(5**7 + 7**5)
+        11.2 ns ± 0.397 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+   2)   timeit((5**7) * (7**5))
+        10.9 ns ± 0.472 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+   3)   timeit((5**7) / (7**5))
+        11.1 ns ± 0.459 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+        Умножение самое быстрое, дел. - самое медленное.
+
+ii: 1)  timeit((17**19) + (19**17))
+        10.9 ns ± 0.29 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+     2) timeit((17**19) * (19**17))
+        144 ns ± 3.99 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+     3) timeit((17**19) / (19**17))
+        11 ns ± 0.421 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+        Сложение самое быстрое, умножение - медленное.
+
+iii: 1) timeit((1e30) + (1e-30))
+        11.1 ns ± 0.262 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+     2) timeit((1e30) * (1e-30))
+        11.5 ns ± 0.505 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+     3) timeit((1e30) / (1e-30))
+        11.2 ns ± 0.521 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+        Сложение быстрое, умножение медленное
+
+iv: 1)  timeit((1+2j) + (2-1j))
+        10.9 ns ± 0.302 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+     2) timeit((1+2j) * (2-1j))
+        11.6 ns ± 0.921 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+     3) timeit((1+2j) / (2-1j))
+        11.2 ns ± 0.508 ns per loop (mean ± std. dev. of 7 runs, 100000000 loops each)
+
+        Сложение быстрое, умножение медленное.
+
+v:  1)  timeit(d("0.33") + d("1.66"))
+        1.45 µs ± 144 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    2)  timeit(d("0.33") * d("1.66"))
+        1.45 µs ± 66.5 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    3)  timeit(d("0.33") / d("1.66"))
+        1.59 µs ± 72.9 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+        Умножение быстрое, деление медленное.
+
+vi: 1)  timeit(d(5**7) + d(7**5))
+        686 ns ± 41 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    2)  timeit(d(5**7) * d(7**5))
+        665 ns ± 47.3 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    3)  timeit(d(5**7) / d(7**5))
+        754 ns ± 29 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+        Умножение быстрое, деление медленное.
+
+vii:1)  timeit(d(17**19) + d(19**17))
+        894 ns ± 48.6 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    2)  timeit(d(17**19) * d(19**17))
+        1.03 µs ± 36.1 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    3)  timeit(d(17**19) / d(19**17))
+        1.32 µs ± 62.1 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+        Сложение быстрое, деление медленное.
+
+4.1)    timeit("a" in s)
+        68.9 ns ± 6.34 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+4.2)    timeit("b" in s)
+        67.3 ns ± 3.62 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+4.3)    timeit("c" in s)
+        4.31 µs ± 265 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+4.4)    timeit("ab" in s)
+        68.5 ns ± 4.24 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+4.5)    timeit("ba" in s)
+        71.8 ns ± 5.67 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+4.6)    timeit("bc" in s)
+        13.8 µs ± 2.21 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+4.7)    timeit("ac" in s)
+        16 µs ± 430 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+4.8)    timeit("ababababababababababc" in s)
+        25.5 µs ± 3.11 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+5
+ 0:  1) timeit(0 in L)
+        57 ns ± 1.38 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+     2) timeit(0 in T)
+        51 ns ± 2.87 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+     3) timeit(0 in S)
+        59 ns ± 1.35 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+     4) timeit(0 in D)
+        58.8 ns ± 1.39 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+     5) timeit(0 in R)
+        129 ns ± 4.98 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+        Самый быстрый поиск в tuple, самый медленный - в рэнже.
+
+9999:   1)  timeit(9999 in L)
+            139 µs ± 3.01 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+        2)  timeit(9999 in T)
+            137 µs ± 2.72 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+        3)  timeit(9999 in S)
+            76.1 ns ± 2.26 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+        4)  timeit(9999 in D)
+            73 ns ± 1.15 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+        5)  timeit(9999 in R)
+            150 ns ± 3.38 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+        Самый быстрый поиск в дикте, самый медленный - в списке.
+
+10000:  1)  timeit(10000 in L)
+            134 µs ± 7.09 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+        2)  timeit(10000 in T)
+            135 µs ± 972 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+        3)  timeit(10000 in S)
+            58.8 ns ± 3.11 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+        4)  timeit(10000 in D)
+            61.3 ns ± 1.68 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+        5)  timeit(10000 in R)
+            100 ns ± 3.26 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+
+        Самый быстрый поиск в сэте, самый медленный - в тапле.
