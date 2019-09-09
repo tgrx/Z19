@@ -3,7 +3,6 @@ from decimal import Decimal
 
 f = open("timeit_log.txt", "w")
 def sec(s):
-  #  print(s, timeit.timeit(s, number=10000), "cek")
     return (timeit.timeit(s, number=10000))
 
 f.write("   --- Сложение ---  \n")
