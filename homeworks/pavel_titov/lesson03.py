@@ -129,8 +129,7 @@ def fix4():
 
 
 
-def fix5(L):
-    L = []
+def fix5():
     for i in range(10000):
         if i == 0:
             return i
@@ -142,62 +141,62 @@ def fix5(L):
 
 
 
-result = timeit.timeit("fix11()", setup="from __main__ import fix1")
+result = timeit.timeit("fix11()", setup="from __main__ import fix11")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
 
-result = timeit.timeit("fix12()", setup="from __main__ import fix1")
+result = timeit.timeit("fix12()", setup="from __main__ import fix12")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
 
-result = timeit.timeit("fix13()", setup="from __main__ import fix1")
+result = timeit.timeit("fix13()", setup="from __main__ import fix13")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
 
-result = timeit.timeit("fix14()", setup="from __main__ import fix1")
+result = timeit.timeit("fix14()", setup="from __main__ import fix14")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
 
-result = timeit.timeit("fix21()", setup="from __main__ import fix1")
+result = timeit.timeit("fix21()", setup="from __main__ import fix21")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
 
-result = timeit.timeit("fix22()", setup="from __main__ import fix1")
+result = timeit.timeit("fix22()", setup="from __main__ import fix22")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
 
-result = timeit.timeit("fix23()", setup="from __main__ import fix1")
+result = timeit.timeit("fix23()", setup="from __main__ import fix23")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
 
-result = timeit.timeit("fix24()", setup="from __main__ import fix1")
+result = timeit.timeit("fix24()", setup="from __main__ import fix24")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
 
-result = timeit.timeit("fix31()", setup="from __main__ import fix1")
+result = timeit.timeit("fix31()", setup="from __main__ import fix31")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
 
-result = timeit.timeit("fix32()", setup="from __main__ import fix1")
+result = timeit.timeit("fix32()", setup="from __main__ import fix32")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
 
-result = timeit.timeit("fix33()", setup="from __main__ import fix1")
+result = timeit.timeit("fix33()", setup="from __main__ import fix33")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
 
-result = timeit.timeit("fix34()", setup="from __main__ import fix1")
+result = timeit.timeit("fix34()", setup="from __main__ import fix34")
 log.write("SpeedTest2:")
 log.write(str(result))
 log.write("\n")
