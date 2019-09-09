@@ -1,47 +1,47 @@
-# from datetime import timedelta as t
-#
-#
-# def Reversed(x):
-#     x = list(x)
-#     l = len(x)
-#     steps = l // 2
-#     for i in range(steps):
-#         l -= 1
-#         x[i], x[l] = x[l], x[i]
-#     return x
-#
-#
-# def Sorted(x):
-#     x = list(x)
-#     l = len(x)
-#     for i in range(l):
-#         for j in range(l - 1):
-#             if x[j] > x[j + 1]:
-#                 x[j + 1], x[j] = x[j], x[j + 1]
-#     return x
-#
-#
-# def Filter(y, x):
-#     x = list(x)
-#     l = len(x)
-#     z = []
-#     if isinstance(y, bool):
-#         if y is True:
-#             for i in range(l):
-#                 if x[i] > 0:
-#                     z.append(x[i])
-#             return (z)
-#         else:
-#             for i in range(l):
-#                 if x[i] == 0:
-#                     z.append(x[i])
-#             return z
-#     else:
-#         y = str(y)
-#         for i in range(l):
-#             if y in x[i]:
-#                 z.append(x[i])
-#         return z
+from datetime import timedelta as t
+
+
+def Reversed(x):
+    x = list(x)
+    l = len(x)
+    steps = l // 2
+    for i in range(steps):
+        l -= 1
+        x[i], x[l] = x[l], x[i]
+    return x
+
+
+def Sorted(x):
+    x = list(x)
+    l = len(x)
+    for i in range(l):
+        for j in range(l - 1):
+            if x[j] > x[j + 1]:
+                x[j + 1], x[j] = x[j], x[j + 1]
+    return x
+
+
+def Filter(y, x):
+    x = list(x)
+    l = len(x)
+    z = []
+    if isinstance(y, bool):
+        if y is True:
+            for i in range(l):
+                if x[i] > 0:
+                    z.append(x[i])
+            return (z)
+        else:
+            for i in range(l):
+                if x[i] == 0:
+                    z.append(x[i])
+            return z
+    else:
+        y = str(y)
+        for i in range(l):
+            if y in x[i]:
+                z.append(x[i])
+        return z
 #
 #
 # def TypedReversed(x):
