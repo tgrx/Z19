@@ -1,54 +1,17 @@
-def enqueue(l, p, e):
+def enqueue(l, p, e) -> None:
     l.setdefault(p, []).append(e)
-    print(l)
 
 
 def dequeue(l):
-    if not l:
-        print("Queue is empty!")
-        return None
-    else:
-        l = str(l.pop(list(l.keys())[0]))
-        l = l[:-2]
-        l = l[2:]
-        return str(l)
+    for p in reversed(sorted(l)):
+        q = l[p]
+        if not q:
+            del l[p]
+            continue
+        return q.pop(0)
 
 
-x = {}
-enqueue(x, 1, "Monday")
-enqueue(x, 2, "Tuesday")
-enqueue(x, 3, "Wednesday")
-enqueue(x, 4, "Thursday")
-enqueue(x, 5, "Friday")
-enqueue(x, 7, "Sunday")
-enqueue(x, 6, "Saturday")
-
-
-print("Monday" == dequeue(x))
-
-n = dequeue(x)
-print(n)
-m = "Tuesday"
-print(m)
-
-"""
-print(dequeue(x))
-print(x)
-print(dequeue(x))
-print(x)
-print(dequeue(x))
-print(x)
-print(dequeue(x))
-print(x)
-print(dequeue(x))
-print(x)
-print(dequeue(x))
-print(x)
-print(dequeue(x))
-"""
-
-
-"""if __name__ == "__main__":
+if __name__ == "__main__":
     x = {}
     assert dequeue(x) is None
     assert enqueue(x, 1, "a") is None
@@ -66,4 +29,4 @@ print(dequeue(x))
     assert dequeue(x) == "b"
     assert dequeue(x) == "c"
     assert dequeue(x) is None
-    assert x == {}"""
+    assert x == {}

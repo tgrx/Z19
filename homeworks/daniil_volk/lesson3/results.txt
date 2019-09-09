@@ -1,7 +1,157 @@
-Operation: x = 100500. Time for 1000 loops: 0.00015404099940496963
-Operation: x = 100*100/100. Time for 1000 loops: 0.0001764270000421675
-Operation: 100 == 500. Time for 1000 loops: 0.00019722700017155148
-Operation: list1 += ['k']. Time for 1000 loops: 0.00046183099948393647
-Operation: ['v','o', 'l', 'k'].remove('k'). Time for 1000 loops: 0.000564605999898049
-Operation: ('volk').index('o') Time for 1000 loops: 0.0003836760006379336
-Operation: sorted((3,2,1)). Time for 1000 loops: 0.0003546900006767828
+Function: (5 ** 7) + (7 ** 5) 
+Time: 0.00021
+
+Function: 17**19 + 19**17 
+Time: 0.00023
+
+Function: 1e30 + 1e-30 
+Time: 0.00021
+
+Function: 1+2j + 2-1j 
+Time: 0.00027
+
+Function: 0.33" + "1.66 
+Time: 0.00036
+
+Function: 5**7 + 7**5 
+Time: 0.00061
+
+Function: 17**19 + 19**17 
+Time: 0.00104
+
+Function: (5 ** 7) * (7 ** 5) 
+Time: 0.00025
+
+Function: 17**19 * 19**17
+Time: 0.00031
+
+Function: 1e30 * 1e-30 
+Time: 0.00023
+
+Function: 1+2j * 2-1j 
+Time: 0.00031
+
+Function: 0.33" * "1.66 
+Time: 0.00032
+
+Function: 5**7 * 7**5 
+Time: 0.0008
+
+Function: 17**19 * 19**17 
+Time: 0.00135
+
+Function: (5 ** 7) / (7 ** 5) 
+Time: 0.00021
+
+Function: 17**19 / 19**17 
+Time: 0.00036
+
+Function: 1e30 / 1e-30 
+Time: 0.00011
+
+Function: 1+2j / 2-1j 
+Time: 0.00022
+
+Function: 0.33" / "1.66 
+Time: 0.00048
+
+Function: 5**7 / 7**5 
+Time: 0.00268
+
+Function: 17**19 / 19**17 
+Time: 0.00248
+
+Function: searching 'a' in s = "ab" * 10000 + "c" 
+Time: 0.00016
+
+Function: searching 'b' in s = "ab" * 10000 + "c" 
+Time: 0.00012
+
+Function: searching 'c' in s = "ab" * 10000 + "c" 
+Time: 0.00082
+
+Function: searching 'ab' in s = "ab" * 10000 + "c" 
+Time: 0.00011
+
+Function: searching 'ba' in s = "ab" * 10000 + "c" 
+Time: 0.00016
+
+Function: searching 'bc' in s = "ab" * 10000 + "c" 
+Time: 0.01499
+
+Function: searching 'ac' in s = "ab" * 10000 + "c" 
+Time: 0.01434
+
+Function: searching 'ababababababababababc' in s = "ab" * 10000 + "c" 
+Time: 0.03324
+
+Function: searching 0 in [i for i in range(10000)] 
+Time: 0.0001
+
+Function: searching 9999 in [i for i in range(10000)] 
+Time: 0.22934
+
+Function: searching 10000 in [i for i in range(10000)] 
+Time: 0.25873
+
+Function: searching 0 in tuple(i for i in range(10000)) 
+Time: 0.00021
+
+Function: searching 9999 in tuple(i for i in range(10000)) 
+Time: 0.19611
+
+Function: searching 10000 in tuple(i for i in range(10000)) 
+Time: 0.18536
+
+Function: searching 0 in {i for i in range(10000)} 
+Time: 0.0001
+
+Function: searching 9999 in {i for i in range(10000)} 
+Time: 0.00021
+
+Function: searching 10000 in {i for i in range(10000)} 
+Time: 0.00017
+
+Function: searching 0 in {i:i for i in range(10000)} 
+Time: 0.00011
+
+Function: searching 9999 in {i:i for i in range(10000)} 
+Time: 0.00013
+
+Function: searching 10000 in {i:i for i in range(10000)}     
+Time: 0.00011
+
+Function: searching 0 in range(10000) 
+Time: 0.00018
+
+Function: searching 9999 in range(10000) 
+Time: 0.0002
+
+Function: searching 10000 in range(10000) 
+Time: 0.00015
+
+
+Below written has the format: 
+the first line is the slowest type, his speed accepted as one; 
+another lines are the faster types, their speed shows how many times they are faster the slowest type.
+    
+Time for searching 0: 
+list  1.8
+tuple 1.8
+set   1.636
+dict  1.636
+range 1.0
+
+Time for searching 9999: 
+list  1.023
+tuple 1.0
+set   1115.615
+dict  1115.615
+range 725.15
+
+Time for searching 10000: 
+list  1.027
+tuple 1.0
+set   1436.6
+dict  1306.0
+range 897.875
