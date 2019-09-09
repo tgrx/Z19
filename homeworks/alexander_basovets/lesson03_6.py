@@ -36,3 +36,4 @@ if __name__ == "__main__":
     assert dequeue(x) == "c"
     assert dequeue(x) is None
     assert x == {}
+
