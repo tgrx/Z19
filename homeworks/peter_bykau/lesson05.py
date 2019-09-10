@@ -52,9 +52,4 @@ def LazyReversed(x):
 
 
 
-a = datetime.datetime.today()
-numdays = 100
-dateList = []
-for x in range (0, numdays):
-    dateList.append(a - datetime.timedelta(days = x))
-print "dateList"
+
