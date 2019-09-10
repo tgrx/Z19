@@ -5,7 +5,7 @@ class User:
 
     def __eq__(self, other):
         if type(self) == type(other):
-            return self.email == other.emeil
+            return self.email == other.email
         else:
             raise TypeError
 
