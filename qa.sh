@@ -41,6 +41,7 @@ assert_names() {
     "maximilian_sklyar"
     "oleg_vasilchik"
     "pavel_titov"
+    "peter_bykau"
     "yauheniy_parafenovich"
   )
 
