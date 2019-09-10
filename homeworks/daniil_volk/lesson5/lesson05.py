@@ -24,7 +24,7 @@ def Sorted(x):
 def Filter(pred, old_list):
     new_list = []
     for x in old_list:
-        if pred in x:
+        if pred(x):
             new_list.append(x)
     return new_list
 
