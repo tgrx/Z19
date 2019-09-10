@@ -48,6 +48,18 @@ def TypedReversed(x):
         return z
 
 
+def LazyReversed(x):
+    if not isinstance(x, (str, tuple, list)):
+        return
+    x = list(x)
+    l = len(x)
+    steps = l // 2
+    for i in range(steps):
+        l -= 1
+        x[i], x[l] = x[l], x[i]
+    return iter(x)
+
+
 #
 #
 #
