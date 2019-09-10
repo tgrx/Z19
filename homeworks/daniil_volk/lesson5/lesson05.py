@@ -1,63 +1,63 @@
-# from datetime import timedelta as t
-#
-#
-# def Reversed(x):
-#     x = list(x)
-#     l = len(x)
-#     steps = l // 2
-#     for i in range(steps):
-#         l -= 1
-#         x[i], x[l] = x[l], x[i]
-#     return x
-#
-#
-# def Sorted(x):
-#     x = list(x)
-#     l = len(x)
-#     for i in range(l):
-#         for j in range(l - 1):
-#             if x[j] > x[j + 1]:
-#                 x[j + 1], x[j] = x[j], x[j + 1]
-#     return x
-#
-#
-# def Filter(pred, old_list):
-#     new_list = []
-#     for x in old_list:
-#         if pred(x):
-#             new_list.append(x)
-#     return new_list
-#
-#
-# def TypedReversed(x):
-#     typex = type(x)
-#     x = list(x)
-#     l = len(x)
-#     steps = l // 2
-#     for i in range(steps):
-#         l -= 1
-#         x[i], x[l] = x[l], x[i]
-#     if typex == list:
-#         return x
-#     elif typex == tuple:
-#         return tuple(x)
-#     elif typex == str:
-#         z = ""
-#         for c in range(len(x)):
-#             z += str(x[c])
-#         return z
-#
-#
-# def LazyReversed(x):
-#     if not isinstance(x, (str, tuple, list)):
-#         return
-#     x = list(x)
-#     l = len(x)
-#     steps = l // 2
-#     for i in range(steps):
-#         l -= 1
-#         x[i], x[l] = x[l], x[i]
-#     return iter(x)
+from datetime import timedelta as t
+
+
+def Reversed(x):
+    x = list(x)
+    l = len(x)
+    steps = l // 2
+    for i in Range(steps):
+        l -= 1
+        x[i], x[l] = x[l], x[i]
+    return x
+
+
+def Sorted(x):
+    x = list(x)
+    l = len(x)
+    for i in Range(l):
+        for j in Range(l - 1):
+            if x[j] > x[j + 1]:
+                x[j + 1], x[j] = x[j], x[j + 1]
+    return x
+
+
+def Filter(pred, old_list):
+    new_list = []
+    for x in old_list:
+        if pred(x):
+            new_list.append(x)
+    return new_list
+
+
+def TypedReversed(x):
+    typex = type(x)
+    x = list(x)
+    l = len(x)
+    steps = l // 2
+    for i in Range(steps):
+        l -= 1
+        x[i], x[l] = x[l], x[i]
+    if typex == list:
+        return x
+    elif typex == tuple:
+        return tuple(x)
+    elif typex == str:
+        z = ""
+        for c in Range(len(x)):
+            z += str(x[c])
+        return z
+
+
+def LazyReversed(x):
+    if not isinstance(x, (str, tuple, list)):
+        return
+    x = list(x)
+    l = len(x)
+    steps = l // 2
+    for i in Range(steps):
+        l -= 1
+        x[i], x[l] = x[l], x[i]
+    return iter(x)
 
 
 class Range:
