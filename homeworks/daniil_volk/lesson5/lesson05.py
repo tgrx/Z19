@@ -21,29 +21,29 @@ def Sorted(x):
     return x
 
 
-def Filter(y, x):
-    x = list(x)
-    l = len(x)
-    z = []
-    if isinstance(y, bool):
-        if y is True:
-            for i in range(l):
-                if x[i] > 0:
-                    z.append(x[i])
-            return z
-        else:
-            for i in range(l):
-                if x[i] == 0:
-                    z.append(x[i])
-            return z
-    else:
-        y = str(y)
-        for i in range(l):
-            if y in x[i]:
-                z.append(x[i])
-        return z
-
-
+# def Filter(y, x):
+#     x = list(x)
+#     l = len(x)
+#     z = []
+#     if isinstance(y, bool):
+#         if y is True:
+#             for i in range(l):
+#                 if x[i] > 0:
+#                     z.append(x[i])
+#             return z
+#         else:
+#             for i in range(l):
+#                 if x[i] == 0:
+#                     z.append(x[i])
+#             return z
+#     else:
+#         y = str(y)
+#         for i in range(l):
+#             if y in x[i]:
+#                 z.append(x[i])
+#         return z
+#
+#
 # def TypedReversed(x):
 #     typex = type(x)
 #     print(typex)
