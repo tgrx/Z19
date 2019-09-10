@@ -147,7 +147,7 @@ def display(measurements):
             print(f"\t{type_name:<20}\t{timings[0]:>10.2f}\t{timings[1]:>10.2f}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     R = run(BENCHMARKS_NUMBERS)
     R = normalize(R)
     display(R)
