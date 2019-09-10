@@ -30,40 +30,24 @@ def Filter(pred, old_list):
 
 
 def TypedReversed(x):
+    typex = type(x)
+    x = list(x)
     l = len(x)
     steps = l // 2
     for i in range(steps):
         l -= 1
         x[i], x[l] = x[l], x[i]
-    return
+    if typex == list:
+        return x
+    elif typex == tuple:
+        return tuple(x)
+    elif typex == str:
+        z = ""
+        for c in range(len(x)):
+            z += str(x[c])
+        return z
 
 
-# def TypedReversed(x):
-#     typex = type(x)
-#     print(typex)
-#     if typex == dict:
-#         raise TypeError
-#     x = list(x)
-#     l = len(x)
-#     steps = l // 2
-#     for i in range(steps):
-#         l -= 1
-#         x[i], x[l] = x[l], x[i]
-#     if typex == set:
-#         return set(x)
-#     elif typex == tuple:
-#         return tuple(x)
-#     elif typex == list:
-#         return list(x)
-#     elif typex == frozenset:
-#         return frozenset(x)
-#     elif typex == str:
-#         x = str(x)
-#         x = x.replace("'", "")
-#         x = x.replace(", ", "")
-#         x = x.replace("[", "")
-#         x = x.replace("]", "")
-#         return str(x)
 #
 #
 #
