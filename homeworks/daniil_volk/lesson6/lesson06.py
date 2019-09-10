@@ -1,15 +1,15 @@
-# class User:
-#     def __init__(self, name, email):
-#         self.name = name
-#         self.email = email
-#
-#     def __eq__(self, other):
-#         if type(self) == type(other):
-#             return self.email == other.emeil
-#         else:
-#             raise TypeError
-#
-#
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+
+    def __eq__(self, other):
+        if type(self) == type(other):
+            return self.email == other.emeil
+        else:
+            raise TypeError
+
+
 # class UserForm(User):
 #     def validate_name(self):
 #         if isinstance(self.name[0], int):
