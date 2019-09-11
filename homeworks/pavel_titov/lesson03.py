@@ -6,39 +6,42 @@ log = open("log.txt", "w")
 
 
 def fix11():
-    a = int(5**7)
-    b = int(7**5)
-    c = int(17**19)
-    d = int(19**17)
+    a = int(5 ** 7)
+    b = int(7 ** 5)
+    c = int(17 ** 19)
+    d = int(19 ** 17)
 
-    z = a+b
-    x = c+d
+    z = a + b
+    x = c + d
 
     return z, x
+
 
 def fix12():
     a = float(1e30)
     b = float(1e-30)
-    z = a+b
+    z = a + b
     return z
 
+
 def fix13():
-    a = complex(1+2j)
-    b = complex(2-1j)
-    z = a+b
+    a = complex(1 + 2j)
+    b = complex(2 - 1j)
+    z = a + b
     return z
+
 
 def fix14():
     a = D(0.33)
     b = D(1.66)
-    c = D(5**7)
-    d = D(7**5)
-    e = D(19**17)
-    f = D(17**19)
-    z = a+b
-    x = c+d
-    y = e+f
-    return z , x , y
+    c = D(5 ** 7)
+    d = D(7 ** 5)
+    e = D(19 ** 17)
+    f = D(17 ** 19)
+    z = a + b
+    x = c + d
+    y = e + f
+    return z, x, y
 
 
 def fix21():
@@ -128,7 +131,6 @@ def fix4():
             return False
 
 
-
 def fix5():
     L = [i for i in range(10000)]
     for i in L:
@@ -138,8 +140,6 @@ def fix5():
             print(i)
         if i == 10000:
             print(i)
-
-
 
 
 result = timeit.timeit("fix11()", setup="from __main__ import fix11")
@@ -203,7 +203,6 @@ log.write(str(result))
 log.write("\n")
 
 
-
 result = timeit.timeit("fix4()", setup="from __main__ import fix4")
 log.write("SpeedTest4:")
 log.write(str(result))
@@ -213,7 +212,6 @@ result = timeit.timeit("fix5()", setup="from __main__ import fix5")
 log.write("SpeedTest5:")
 log.write(str(result))
 log.write("\n")
-
 
 
 # Функция Аккермана
@@ -226,17 +224,18 @@ def akker(a, b):
         return akker(a - 1, 1)
     return akker(a - 1, akker(a, b - 1))
 
-#Уровень 5
+
+# Уровень 5
 
 
 def enqueue(l, e):
     l.append(e)
 
 
-
 def dequeue(l):
     if l:
         return l.pop(0)
+
 
 if __name__ == "__main__":
     x = []
@@ -249,10 +248,13 @@ if __name__ == "__main__":
     assert dequeue(x) == 3
     assert dequeue(x) is None
     assert x == []
-#Уровень 6
+# Уровень 6
+
 
 def enqueue(l, e, p):
-    l.setdefault(p, []).append(e) #возвращает значение 2 элемента - з и то что вставлено
+    l.setdefault(p, []).append(
+        e
+    )  # возвращает значение 2 элемента - з и то что вставлено
 
 
 def dequeue(l):
@@ -263,6 +265,3 @@ def dequeue(l):
         if not q:
             del l[p]
         return l.pop(0)
-
-
-
