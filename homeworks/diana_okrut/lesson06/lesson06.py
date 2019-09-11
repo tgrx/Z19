@@ -17,12 +17,12 @@ class UserForm(User):
         # a = "qwertyuiopasdfghjklzxcvbnm_"
         # b = "qwertyuiopasdfghjklzxcvbnm0123456789_"
         # c = "qwertyuiopasdfghjklzxcvbnm0123456789_."
-        if self.name[0] not in (string.ascii_lowercase + '_'):
+        if self.name[0] not in (string.ascii_lowercase + "_"):
             raise ValueError
-        elif self.name[-1] == '.':
+        elif self.name[-1] == ".":
             raise ValueError
         for x in self.name[1:-1]:
-            if x not in (string.ascii_lowercase + string.digits + '_.'):
+            if x not in (string.ascii_lowercase + string.digits + "_."):
                 raise ValueError
 
     def validate_email(self):
@@ -43,17 +43,17 @@ class UserForm(User):
             raise ValueError
         if not domain:
             raise ValueError
-        if login[0] not in (string.ascii_lowercase + '_'):
+        if login[0] not in (string.ascii_lowercase + "_"):
             raise ValueError
-        if login[-1] == '.':
+        if login[-1] == ".":
             raise ValueError
         for x in login[1:-1]:
-            if x not in (string.ascii_lowercase + string.digits + '_.+'):
+            if x not in (string.ascii_lowercase + string.digits + "_.+"):
                 raise ValueError
-        if domain[0] not in (string.ascii_lowercase + '_'):
+        if domain[0] not in (string.ascii_lowercase + "_"):
             raise ValueError
-        if domain[-1] == '.':
+        if domain[-1] == ".":
             raise ValueError
         for x in domain[1:-1]:
-            if x not in (string.ascii_lowercase + string.digits + '_.'):
+            if x not in (string.ascii_lowercase + string.digits + "_."):
                 raise ValueError
