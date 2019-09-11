@@ -39,6 +39,8 @@ class UserForm(User):
         domain = lisemail[1]
         if not login:
             raise ValueError
+        if not domain:
+            raise  ValueError
         if login[0] not in a:
             raise ValueError
         if login[-1] not in b:
