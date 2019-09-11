@@ -5,5 +5,5 @@ def Reversed(x):
     index = len(x)
     while index:
         index -= 1
-        new += x[index]
+        new += [x[index]]
     return new
