@@ -7,7 +7,6 @@ class User:
         return self.email == other.email if isinstance(other, User) else False
 
 
-
 class UserForm(User):
     def validate_name(self):
         if not self.name:
@@ -26,7 +25,7 @@ class UserForm(User):
     def validate_email(self):
         if not self.email:
             raise ValueError
-        if '@' not in self.email:
+        if "@" not in self.email:
             raise ValueError
         a = "qwertyuiopasdfghjklzxcvbnm_"
         b = "qwertyuiopasdfghjklzxcvbnm0123456789_"
@@ -40,18 +39,18 @@ class UserForm(User):
         if not login:
             raise ValueError
         if not domain:
-            raise  ValueError
+            raise ValueError
         if login[0] not in a:
             raise ValueError
         if login[-1] not in b:
             raise ValueError
-        for x in login[1: -1]:
+        for x in login[1:-1]:
             if x not in d:
                 raise ValueError
         if domain[0] not in a:
             raise ValueError
         if domain[-1] not in b:
             raise ValueError
-        for x in domain[1: -1]:
+        for x in domain[1:-1]:
             if x not in c:
                 raise ValueError
