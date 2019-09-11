@@ -1,53 +1,61 @@
+
 [ addition ]
-        float                         1.00            1.00
-        complex                       1.07            1.07
-        int                           1.12            1.13
-        long                          1.17            1.18
-        decimal/float                 1.45            1.45
-        decimal/int                   1.51            1.52
-        decimal/long                  1.64            1.65
+	float               	      1.00	      1.01
+	complex             	      1.11	      1.12
+	int                 	      1.17	      1.18
+	long                	      1.26	      1.28
+	decimal/float       	      1.68	      1.71
+	decimal/long        	      1.72	      1.75
+	decimal/int         	      1.78	      1.80
+
 [ division ]
-        int                           1.00            1.04
-        float                         1.01            1.05
-        complex                       1.10            1.14
-        decimal/int                   1.93            2.01
-        decimal/float                 2.13            2.21
-        long                          2.18            2.26
-        decimal/long                  3.20            3.33
+	float               	      1.00	      1.04
+	int                 	      1.01	      1.05
+	complex             	      1.15	      1.20
+	decimal/float       	      2.90	      3.01
+	decimal/int         	      2.91	      3.02
+	long                	      3.06	      3.18
+	decimal/long        	      4.78	      4.95
+
 [ multiplication ]
-        float                         1.00            1.00
-        complex                       1.09            1.09
-        int                           1.14            1.14
-        long                          1.38            1.38
-        decimal/float                 1.40            1.40
-        decimal/int                   1.41            1.41
-        decimal/long                  1.86            1.86
+	float               	      1.00	      1.00
+	complex             	      1.13	      1.13
+	int                 	      1.16	      1.16
+	long                	      1.62	      1.62
+	decimal/float       	      1.64	      1.64
+	decimal/int         	      1.72	      1.72
+	decimal/long        	      2.45	      2.45
+
 
 [ first ]
-        tuple                         1.00            1.00
-        list                          1.00            1.00
-        set                           1.05            1.05
-        str                           1.27            1.27
-        dict                          1.37            1.37
-        range                         1.88            1.88
+	tuple               	      1.00	      1.00
+	list                	      1.05	      1.05
+	dict                	      1.13	      1.13
+	set                 	      1.14	      1.14
+	str                 	      1.17	      1.17
+	range               	      2.49	      2.49
+
 [ last ]
-        set                           1.00            1.21
-        dict                          1.03            1.25
-        range                         1.50            1.83
-        str                           2.67            3.24
-        tuple                       849.74         1032.33
-        list                        867.18         1053.51
+	set                 	      1.00	      1.39
+	dict                	      1.05	      1.45
+	range               	      1.78	      2.47
+	str                 	      2.25	      3.12
+	tuple               	   1340.66	   1861.72
+	list                	   1379.71	   1915.95
+
 [ middle ]
-        set                           1.00            1.22
-        dict                          1.04            1.27
-        range                         1.62            1.96
-        str                         319.91          388.78
-        tuple                       423.73          514.93
-        list                        431.87          524.84
+	set                 	      1.00	      1.40
+	dict                	      1.04	      1.45
+	str                 	      1.62	      2.27
+	range               	      1.73	      2.43
+	tuple               	    676.20	    947.42
+	list                	    684.11	    958.50
+
 [ outbound ]
-        dict                          1.00            1.13
-        set                           1.04            1.18
-        range                         1.22            1.38
-        str                           2.85            3.23
-        tuple                       930.88         1052.30
-        list                        983.19         1111.44
+	set                 	      1.00	      1.09
+	dict                	      1.04	      1.13
+	range               	      1.48	      1.62
+	str                 	      2.82	      3.09
+	tuple               	   1722.66	   1882.97
+	list                	   1755.93	   1919.33
+
