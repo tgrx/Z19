@@ -18,10 +18,10 @@ def Sorted(x):
     return x
 
 
-# def Filter(x, y):
-#     y = list(y)
-#     new = []
-#     for i in range(len(y)):
-#         if x is y[i]:
-#             new.append(x)
-#     return new
+def Filter(x, y):
+    y = list(y)
+    r = []
+    for i in range(len(y)):
+        if x is y[i]:
+            r.append(x)
+    return r
