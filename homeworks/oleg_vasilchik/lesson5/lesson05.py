@@ -15,7 +15,7 @@ def Sorted(x):
         for i in range(len(x) - j - 1):
             if x[i] > x[i + 1]:
                 x[i], x[i + 1] = x[i + 1], x[i]
-    print(x)
+    return x
 
 
 def Filter(x, y):
