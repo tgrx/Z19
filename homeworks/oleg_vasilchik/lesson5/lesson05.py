@@ -1,6 +1,6 @@
 def Reversed(x):
     if not x:
-        return []
+        return x == []
     new = []
     index = len(x)
     while index:
