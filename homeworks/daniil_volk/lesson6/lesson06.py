@@ -4,49 +4,84 @@ class User:
         self.email = email
 
     def __eq__(self, other):
-        if type(self) == type(other):
-            return self.email == other.email
+        if not isinstance(other, User):
+            return False
+        return self.email == other.email
 
 
 class UserForm(User):
     def validate_name(self):
-        if isinstance(self.name[0], int):
-            return ValueError
-        if self.name[0] == '.' or self.name[-1] == '.':
-            return ValueError
-        a = (not any(c.islower() for c in self.name))
-        b = (not self.name.isnumeric())
-        c = (self.name != '_')
-        d = ('.' not in self.name)
-        if a and b and c and d:
-            return ValueError
+        n = self.name
+        if not n:
+            raise ValueError
+        if (
+            not (any(c.islower() for c in n))
+            and not (any(c.isdigit() for c in n))
+            and not n == "_"
+            or not (any(c.isalpha() for c in n))
+            and not (any(c.isdigit() for c in n))
+            and not n == "_"
+            or n[0] == "."
+            or n[(len(n) - 1)] == "."
+            or n[0] == "+"
+            or n[(len(n) - 1)] == "+"
+            or n[0] == "@"
+            or n[(len(n) - 1)] == "@"
+            or n[0] == "-"
+            or n[(len(n) - 1)] == "-"
+            or n[0].isnumeric()
+        ):
+            raise ValueError
 
     def validate_email(self):
+        if not self.email:
+            raise ValueError
+        if not "@" in self.email:
+            raise ValueError
         em = self.email.split("@")
+        if not em[0] or not em[1]:
+            raise ValueError
         log = em[0]
         dom = em[1]
+        if not log:
+            raise ValueError
+        if not dom:
+            raise ValueError
 
-        if log[0] == '+' or log[-1] == '+':
-            return ValueError
-        if isinstance(log[0], int):
-            return ValueError
-        if log[0] == '.' or log[-1] == '.':
-            return ValueError
-        a = (not any(c.islower() for c in log))
-        b = (not log.isnumeric())
-        c = (log != '_')
-        d = ('.' not in log)
-        e = ('+' not in log)
-        if a and b and c and d and e:
-            return ValueError
+        if (
+            not (any(c.islower() for c in log))
+            and not (any(c.isdigit() for c in log))
+            and not log == "_"
+            or not (any(c.isalpha() for c in log))
+            and not (any(c.isdigit() for c in log))
+            and not log == "_"
+            or log[0] == "."
+            or log[(len(log) - 1)] == "."
+            or log[0] == "+"
+            or log[(len(log) - 1)] == "+"
+            or log[0] == "@"
+            or log[(len(log) - 1)] == "@"
+            or log[0] == "-"
+            or log[(len(log) - 1)] == "-"
+            or log[0].isnumeric()
+        ):
+            raise ValueError
 
-        if isinstance(dom[0], int):
-            return ValueError
-        if dom[0] == '.' or dom[-1] == '.':
-            return ValueError
-        a = (not any(c.islower() for c in dom))
-        b = (not dom.isnumeric())
-        c = (dom != '_')
-        d = ('.' not in dom)
-        if a and b and c and d:
-            return ValueError
+        if (
+            not (any(c.islower() for c in dom))
+            and not (any(c.isdigit() for c in dom))
+            and not dom == "_"
+            or not (any(c.isalpha() for c in dom))
+            and not (any(c.isdigit() for c in dom))
+            and not dom == "_"
+            or dom[0] == "."
+            or dom[(len(dom) - 1)] == "."
+            or dom[0] == "+"
+            or dom[(len(dom) - 1)] == "+"
+            or dom[0] == "@"
+            or dom[(len(dom) - 1)] == "@"
+            or dom[0] == "-"
+            or dom[(len(dom) - 1)] == "-"
+            or dom[0].isnumeric()
+        ):
+            raise ValueError
