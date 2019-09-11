@@ -6,7 +6,7 @@ from timeit import timeit
 from typing import Dict
 
 INT_1 = 5 ** 7
-INT_2 = 5 ** 7
+INT_2 = 7 ** 5
 
 LONG_1 = 17 ** 19
 LONG_2 = 19 ** 17
@@ -28,7 +28,7 @@ DECIMAL_FLOAT_2 = Decimal("1.66")
 
 N = 10000
 
-STR = "ab" * N + "c"
+STR = ("ab" * (N // 4)) + "c" + ("ab" * (N // 4 - 1)) + "d"
 LIST = [_i for _i in range(N)]
 TUPLE = tuple(_i for _i in range(N))
 SET = {_i for _i in range(N)}
@@ -75,7 +75,7 @@ BENCHMARKS_SEARCH = {
         "range": (RANGE, 0),
     },
     "middle": {
-        "str": (STR, "ababababababababababc"),
+        "str": (STR, "c"),
         "list": (LIST, 5000),
         "tuple": (TUPLE, 5000),
         "set": (SET, 5000),
@@ -83,7 +83,7 @@ BENCHMARKS_SEARCH = {
         "range": (RANGE, 5000),
     },
     "last": {
-        "str": (STR, "c"),
+        "str": (STR, "d"),
         "list": (LIST, 9999),
         "tuple": (TUPLE, 9999),
         "set": (SET, 9999),
@@ -91,7 +91,7 @@ BENCHMARKS_SEARCH = {
         "range": (RANGE, 9999),
     },
     "outbound": {
-        "str": (STR, "z"),
+        "str": (STR, "x"),
         "list": (LIST, 10000),
         "tuple": (TUPLE, 10000),
         "set": (SET, 10000),
@@ -111,47 +111,55 @@ OPERATORS_MAP = {
 }
 
 
-def run(benchmarks) -> dict:
-    result = defaultdict(dict)
+def run(benchmarks: Dict) -> Dict:
+    measurements = defaultdict(dict)
 
-    for action, dataset in benchmarks.items():
-        op = OPERATORS_MAP[action]
+    for benchmark, data_set in benchmarks.items():
+        op = OPERATORS_MAP[benchmark]
 
-        for typename, args in dataset.items():
-            timing = timeit("op(args[0], args[1])", globals=locals(), number=10000)
+        for type_name, args in data_set.items():
+            timing = timeit("op(*args)", globals=locals(), number=10000)
 
-            result[action][typename] = timing
+            measurements[benchmark][type_name] = timing
 
-    return dict(result)
+    return dict(measurements)
 
 
-def normalize(measurements) -> Dict:
-    result = defaultdict(dict)
+def normalize(measurements: Dict) -> Dict:
+    normalized = defaultdict(dict)
 
-    min_global = min(chain(*[i.values() for i in measurements.values()]))
+    min_timing_global = min(chain(*[_i.values() for _i in measurements.values()]))
 
-    for action, types_timings in measurements.items():
-        min_action = min(types_timings.values())
+    for benchmark, types_timings in measurements.items():
+        min_timing_benchmark = min(types_timings.values())
 
         for type_name, timing in types_timings.items():
-            result[action][type_name] = (timing / min_action, timing / min_global)
+            normalized[benchmark][type_name] = (
+                timing / min_timing_benchmark,
+                timing / min_timing_global,
+            )
 
-    return dict(result)
+    return dict(normalized)
 
 
 def display(measurements):
-    for action, types_timings in sorted(measurements.items()):
-        print(f"[ {action} ]")
+    for benchmark, types_timings in sorted(measurements.items()):
+        print(f"\n[ {benchmark} ]")
 
-        for type_name, timings in sorted(types_timings.items(), key=lambda _i: _i[-1]):
-            print(f"\t{type_name:<20}\t{timings[0]:>10.2f}\t{timings[1]:>10.2f}")
+        sorted_timings = sorted(types_timings.items(), key=lambda _i: _i[-1])
+
+        for type_name, (timing_type, timing_benchmark) in sorted_timings:
+            print(f"\t{type_name:<20}\t{timing_type:>10.2f}\t{timing_benchmark:>10.2f}")
+
+    print()
+
+
+def main():
+    for benchmark in (BENCHMARKS_NUMBERS, BENCHMARKS_SEARCH):
+        measurements = run(benchmark)
+        normalized = normalize(measurements)
+        display(normalized)
 
 
 if __name__ == "__main__":
-    R = run(BENCHMARKS_NUMBERS)
-    R = normalize(R)
-    display(R)
-    print("")
-    R = run(BENCHMARKS_SEARCH)
-    R = normalize(R)
-    display(R)
+    main()
