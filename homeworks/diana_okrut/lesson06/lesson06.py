@@ -19,7 +19,7 @@ class UserForm(User):
         # c = "qwertyuiopasdfghjklzxcvbnm0123456789_."
         if self.name[0] not in (string.ascii_lowercase + "_"):
             raise ValueError
-        elif self.name[-1] == ".":
+        elif self.name[-1] not in (string.ascii_lowercase + string.digits + "_"):
             raise ValueError
         for x in self.name[1:-1]:
             if x not in (string.ascii_lowercase + string.digits + "_."):
@@ -45,14 +45,14 @@ class UserForm(User):
             raise ValueError
         if login[0] not in (string.ascii_lowercase + "_"):
             raise ValueError
-        if login[-1] == ".":
+        if login[-1] not in (string.ascii_lowercase + string.digits + "_"):
             raise ValueError
         for x in login[1:-1]:
             if x not in (string.ascii_lowercase + string.digits + "_.+"):
                 raise ValueError
         if domain[0] not in (string.ascii_lowercase + "_"):
             raise ValueError
-        if domain[-1] == ".":
+        if domain[-1] not in (string.ascii_lowercase + string.digits + "_"):
             raise ValueError
         for x in domain[1:-1]:
             if x not in (string.ascii_lowercase + string.digits + "_."):
