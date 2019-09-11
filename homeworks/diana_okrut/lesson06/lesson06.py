@@ -33,6 +33,8 @@ class UserForm(User):
         c = "qwertyuiopasdfghjklzxcvbnm0123456789_."
         d = "qwertyuiopasdfghjklzxcvbnm0123456789_+."
         lisemail = self.email.split("@")
+        if len(lisemail) != 2:
+            raise ValueError
         login = lisemail[0]
         domain = lisemail[1]
         if login[0] not in a:
