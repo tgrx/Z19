@@ -4,7 +4,7 @@ class User:
         self.email = email
 
     def __eq__(self, other):
-        return self.email == other.email if other.email not in [0, 1, ] else False
+        return self.email == other.email if not isinstance(self.email, (int,  None)) else False
 
 
 
