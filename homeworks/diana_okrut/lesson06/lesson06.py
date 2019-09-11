@@ -26,6 +26,8 @@ class UserForm(User):
     def validate_email(self):
         if not self.email:
             raise ValueError
+        if '@' not in self.email:
+            raise ValueError
         a = "qwertyuiopasdfghjklzxcvbnm_"
         b = "qwertyuiopasdfghjklzxcvbnm0123456789_"
         c = "qwertyuiopasdfghjklzxcvbnm0123456789_."
