@@ -1,61 +1,62 @@
+------------------------------------------------------------
 
 [ addition ]
-	float               	      1.00	      1.01
-	complex             	      1.11	      1.12
-	int                 	      1.17	      1.18
-	long                	      1.26	      1.28
-	decimal/float       	      1.68	      1.71
-	decimal/long        	      1.72	      1.75
-	decimal/int         	      1.78	      1.80
+	float               	      1.00	      1.06
+	complex             	      1.06	      1.12
+	int                 	      1.13	      1.20
+	long                	      1.24	      1.31
+	decimal/float       	      1.63	      1.72
+	decimal/int         	      1.65	      1.74
+	decimal/long        	      1.67	      1.76
 
 [ division ]
-	float               	      1.00	      1.04
-	int                 	      1.01	      1.05
-	complex             	      1.15	      1.20
-	decimal/float       	      2.90	      3.01
-	decimal/int         	      2.91	      3.02
-	long                	      3.06	      3.18
-	decimal/long        	      4.78	      4.95
+	float               	      1.00	      1.05
+	int                 	      1.03	      1.08
+	complex             	      1.19	      1.25
+	decimal/float       	      2.92	      3.06
+	decimal/int         	      2.96	      3.11
+	long                	      2.96	      3.11
+	decimal/long        	      4.78	      5.02
 
 [ multiplication ]
 	float               	      1.00	      1.00
-	complex             	      1.13	      1.13
-	int                 	      1.16	      1.16
+	complex             	      1.14	      1.14
+	int                 	      1.36	      1.36
 	long                	      1.62	      1.62
-	decimal/float       	      1.64	      1.64
-	decimal/int         	      1.72	      1.72
-	decimal/long        	      2.45	      2.45
+	decimal/int         	      1.67	      1.67
+	decimal/float       	      1.69	      1.69
+	decimal/long        	      2.68	      2.68
 
+------------------------------------------------------------
 
 [ first ]
 	tuple               	      1.00	      1.00
-	list                	      1.05	      1.05
-	dict                	      1.13	      1.13
-	set                 	      1.14	      1.14
-	str                 	      1.17	      1.17
-	range               	      2.49	      2.49
+	set                 	      1.04	      1.04
+	dict                	      1.07	      1.07
+	list                	      1.08	      1.08
+	str                 	      1.15	      1.15
+	range               	      2.11	      2.11
 
 [ last ]
-	set                 	      1.00	      1.39
-	dict                	      1.05	      1.45
-	range               	      1.78	      2.47
-	str                 	      2.25	      3.12
-	tuple               	   1340.66	   1861.72
-	list                	   1379.71	   1915.95
+	set                 	      1.00	      1.32
+	dict                	      1.05	      1.38
+	range               	      1.76	      2.32
+	str                 	      2.31	      3.04
+	tuple               	   1359.45	   1790.42
+	list                	   1403.31	   1848.19
 
 [ middle ]
-	set                 	      1.00	      1.40
-	dict                	      1.04	      1.45
-	str                 	      1.62	      2.27
-	range               	      1.73	      2.43
-	tuple               	    676.20	    947.42
-	list                	    684.11	    958.50
+	dict                	      1.00	      1.38
+	set                 	      1.08	      1.49
+	str                 	      1.57	      2.16
+	range               	      1.68	      2.33
+	tuple               	    658.50	    909.08
+	list                	    675.57	    932.65
 
 [ outbound ]
-	set                 	      1.00	      1.09
-	dict                	      1.04	      1.13
-	range               	      1.48	      1.62
-	str                 	      2.82	      3.09
-	tuple               	   1722.66	   1882.97
-	list                	   1755.93	   1919.33
-
+	set                 	      1.00	      1.05
+	dict                	      1.01	      1.06
+	range               	      1.49	      1.56
+	str                 	      2.84	      2.98
+	tuple               	   1724.34	   1809.38
+	list                	   1761.76	   1848.64

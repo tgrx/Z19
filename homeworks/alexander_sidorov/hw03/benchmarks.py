@@ -156,6 +156,7 @@ def display(measurements):
 
 def main():
     for benchmark in (BENCHMARKS_NUMBERS, BENCHMARKS_SEARCH):
+        print("-" * 60)
         measurements = run(benchmark)
         normalized = normalize(measurements)
         display(normalized)
