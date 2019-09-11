@@ -1,7 +1,5 @@
 def Reversed(x):
-    if not x:
-        return []
-    new = ""
+    new = []
     index = len(x)
     while index:
         index -= 1
