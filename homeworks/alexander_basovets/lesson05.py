@@ -21,3 +21,25 @@ def Sorted(r):
         x = x - 1
         c = x
     return S
+
+
+def TypedReversed(L):
+    M = []
+    for i in L:
+        #   c = 0
+        M.insert(0, i)
+    if type(L) is list:
+        return(M)
+    if type(L) is tuple:
+        return tuple(M)
+    if type(L) is str:
+        return("".join(M))
+
+
+
+#print(TypedReversed([]))
+#print(TypedReversed((3, 2, 1)))
+#print(TypedReversed("aacb"))
+# TypedReversed([]) == []
+# TypedReversed((3, 2, 1)) == (1, 2, 3)
+# TypedReversed("aacb") == "bcaa"
