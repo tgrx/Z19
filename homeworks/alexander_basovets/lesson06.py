@@ -5,8 +5,8 @@ class User:
 
     def __repr__(self):
         return f"{self.__class__.__name__}(name={self.name!r}, email={self.email!r})"
-    def compare():
-        if
+ #   def compare():
+
 
 
 alice = User(name="alice", email="x")
