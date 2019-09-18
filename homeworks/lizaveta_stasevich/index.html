@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&amp;subset=cyrillic" rel="stylesheet">
+</head>
+<body>
+	<div class="container ">
+		<div class="top"><h1>Лиза. </h1></div>
+		<p>
+            19 годиков живу в Минске, уже третий из которых учусь в Академии управления при Президенте Республики Беларусь.
+        </p>
+        <br>
+		<p>
+            <b>Люблю животных.</b>
+            <br>
+            У самой кошка Кошка и собака Зара <br>(не магазин, не зараза, не цыганка, но Ваше сердечко с первого раза похитить сумеет).
+        </p>
+        <br>
+		<p>
+            <b>Что касается достижений, увлечений и хобби.</b>
+            <br>
+            В душе лингвист, люблю белорусский язык, знаю английский и хочу изучать немецкий.
+            <br><br>
+            <i>Программирование учу, наверное, потому что там тоже языки.</i>
+            <br><br>
+            Люблю активно проводить время, путешествовать, пусть даже пока только по РБ, и наблюдать. <br>
+            Сейчас в сборной по футболу за Академию, пусть пока и проигрываем другим универам, зато я за 2 игры научилась отбивать мяч головой лучше, чем ногами.
+            <br><br>
+            Не представляю себя торчащей за компом весь день, но надеюсь что питон сможет стать тем, что затянет и поможет полюбить эту непонятную машину.
+        </p>
+        <br>
+        <p>
+            <b>Ну и на последок.</b> <br>
+            Хочу состариться, купить бэху икс-6 и забиться татуировками (начало которым уже положено).
+            <br><i>Потом уеду в закат с любимым человеком на боковом и слюнявой псиной сзади.</i>
+        </p>
+		<h2>Можете посмотреть как я живу тут:</h2>
+        <ul>
+            <li><a href="https://vk.com/e.stasik">лучшая страничка</a></li>
+            <li><a href="https://www.instagram.com/e_stasik/?hl=ru">вторая лучшая страничка</a></li>
+            <li><a href="https://github.com/lizaveta-stasevich">ам э девелопер</a></li>
+        </ul>
+    <br>
+    </div>
+    <div class="birds">
+        <img src="img/one.png" alt="">
+        <img src="img/two.png" alt="">
+        <img src="img/three.png" alt="">
+        <img src="img/four.png" alt="">
+        <img src="img/five.png" alt="">
+    </div>
+
+</body>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            color: white;
+            background: #6998d0;
+            font-size: 14px;
+            font-family: 'IBM Plex Sans', sans-serif;
+            line-height: 18px;
+            position: relative;
+        }
+
+        body:before{
+            content: url('img/shape1.png');
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate(10px, 340px);
+        }
+
+        body:after{
+            content: url('img/shape2.png');
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translate(10px, 180px);
+        }
+
+        .container{
+            width: 800px;
+            margin: 0 auto;
+            background: rgba(37, 67, 105, 0.69);
+            padding-right: 75px;
+            padding-left: 75px;
+            padding-bottom: 40px;
+            position: relative;
+        }
+
+        .container:before{
+            content: url('img/shape.png');
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate(50%,-50%);
+        }
+
+        .top{
+            margin-top: 107px;
+            padding-top: 55px;
+            padding-bottom: 40px;
+
+        }
+
+        h2{
+            padding-top: 35px;
+            padding-bottom: 25px;
+        }
+
+        .birds{
+            width: 800px;
+            margin: 0 auto;
+            background: rgba(37, 67, 105, 0.69);
+            padding-right: 75px;
+            padding-left: 75px;
+            position: relative;
+            padding-bottom: 160px;
+        }
+
+        .birds:after{
+            content: url('img/trava.png');
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translate(-203px, 0);
+        }
+        a{
+        color: white;
+        }
+    </style>
+</html>
