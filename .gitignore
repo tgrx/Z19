@@ -12,6 +12,7 @@
 **/logs
 **/setup.py
 *.swp
+**/*.picasa*
 .coverage
 .mypy_cache/
 .vscode
