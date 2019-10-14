@@ -19,7 +19,13 @@ def verify(module):
 
     assert isinstance(f, Callable), f"`{wanted_name}` is not callable"
 
-    checks = {"": "", "a1": "a", "a1b1": "ab", "a5b3c1": "aaaaabbbc"}
+    checks = {
+        "": "",
+        "a1": "a",
+        "a1b1": "ab",
+        "a5b3c1": "aaaaabbbc",
+        "a13b13c1": "aaaaaaaaaaaaabbbbbbbbbbbbbc",
+    }
 
     for origin, expected in checks.items():
         got = f(origin)
