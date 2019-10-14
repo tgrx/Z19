@@ -62,13 +62,9 @@ rm -rf homeworks/__pycache__
 
 assert_names || abort "HOMEWORKS USERS"
 
-python -m run_hw_tests
+pipenv run python -m run_hw_tests
 
-python -m black --check . || abort 'CODE COLOR'
-
-#python -m flake8 homeworks/ || abort 'CODE STYLE'
-
-#python -m pylint homeworks/ || abort 'CODE QUALITY'
+pipenv run black --check . || abort 'CODE COLOR'
 
 # ---------------------------------------------------------
 trap : 0
