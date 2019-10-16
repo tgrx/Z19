@@ -1,5 +1,4 @@
-def Zip(text:str):
-
+def Zip(text):
     output = []
     letters_counter = dict()
 
@@ -7,7 +6,7 @@ def Zip(text:str):
         if i in letters_counter:
             letters_counter[i] += 1
         else:
-            letters_counter.update({i:1})
+            letters_counter.update({i: 1})
 
     for i in letters_counter:
         output.append(i)
@@ -16,15 +15,12 @@ def Zip(text:str):
     return "".join(output)
 
 
-
-def Unzip(text:str):
-
+def Unzip(text):
     output = []
 
     for i in range(0, len(text)):
         data = ""
         if i % 2 == 0:
-            data = text[i]*int(text[i+1])
+            data = text[i] * int(text[i + 1])
             output.append(data)
     return "".join(output)
-
