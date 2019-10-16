@@ -19,7 +19,6 @@ def Unzip(text):
     output = []
 
     for i in range(0, len(text)):
-        data = ""
         if i % 2 == 0:
             data = text[i] * int(text[i + 1])
             output.append(data)
