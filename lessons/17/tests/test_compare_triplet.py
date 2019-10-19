@@ -1,11 +1,11 @@
 from pathlib import Path
 from typing import Callable
 
-wanted_name = "Unzip"
+wanted_name = "compare_triplets"
 
 
 def wants_path(pth: Path) -> bool:
-    return "lesson16" in pth.name
+    return "lesson17" in pth.name
 
 
 def wants_module(_module):
@@ -20,15 +20,15 @@ def verify(module):
     assert isinstance(f, Callable), f"`{wanted_name}` is not callable"
 
     checks = {
-        "": "",
-        "a1": "a",
-        "a1b1": "ab",
-        "a5b3c1": "aaaaabbbc",
-        "a13b13c1": "aaaaaaaaaaaaabbbbbbbbbbbbbc",
+        ((0, 0, 0), (1, 1, 1)): (0, 3),
+        ((1, 1, 0), (0, 1, 0)): (1, 0),
+        ((1, 1, 1), (0, 0, 0)): (3, 0),
+        ((1, 1, 1), (1, 1, 1)): (0, 0),
+        ((10, 20, 30), (20, 30, 10)): (1, 2),
     }
 
     for origin, expected in checks.items():
-        got = f(origin)
+        got = f(*origin)
         assert (
             got == expected
         ), f"{wanted_name}({origin!r}) != {expected!r}: returned {got!r}"
