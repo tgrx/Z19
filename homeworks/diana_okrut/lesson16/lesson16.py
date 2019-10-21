@@ -1,27 +1,27 @@
 def Zip(unzip):
-    if unzip == '':
-        return ''
-    zip = ''
+    if unzip == "":
+        return ""
+    zip = ""
     counta = 0
     countb = 0
     countc = 0
     for i in unzip:
-        if i == 'a':
+        if i == "a":
             counta += 1
-            zip = 'a' + str(counta)
-        elif i == 'b':
+            zip = "a" + str(counta)
+        elif i == "b":
             countb += 1
-            zip = 'a' + str(counta) + 'b' + str(countb)
-        elif i == 'c':
+            zip = "a" + str(counta) + "b" + str(countb)
+        elif i == "c":
             countc += 1
-            zip = 'a' + str(counta) + 'b' + str(countb) + 'c' + str(countc)
+            zip = "a" + str(counta) + "b" + str(countb) + "c" + str(countc)
     return zip
 
 
 def Unzip(zip):
-    if zip == '':
-        return ''
-    unzip = ''
+    if zip == "":
+        return ""
+    unzip = ""
     if len(zip) == 2:
         unzip = zip[0] * int(zip[1])
     elif len(zip) == 4:
