@@ -21,7 +21,11 @@ def verify(module):
 
     assert isinstance(f, Callable), f"`{wanted_name}` is not callable"
 
-    a, b, c, d = [choice(string.ascii_letters) for _ in "1234"]
+    random_chars = set()
+    while len(random_chars) < 4:
+        random_chars.add(choice(string.ascii_letters))
+
+    a, b, c, d = tuple(random_chars)
 
     checks = {
         "": "",
