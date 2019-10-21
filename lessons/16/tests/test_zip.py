@@ -34,5 +34,5 @@ def verify(module):
     for origin, expected in checks.items():
         got = f(origin)
         assert (
-                got == expected
+            got == expected
         ), f"{wanted_name}({origin!r}) != {expected!r}: returned {got!r}"
