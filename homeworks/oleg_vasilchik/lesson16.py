@@ -22,8 +22,5 @@ def Unzip(text):
         if i % 2 == 0:
             data = text[i] * int(text[i + 1])
             output.append(data)
+
     return "".join(output)
-
-
-
-
