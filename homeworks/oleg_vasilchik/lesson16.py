@@ -21,8 +21,12 @@ def Unzip(text):
     for i in range(0, len(text)):
         if text[i].isalpha():
             data = text[i] * int(text[i + 1])
-            if text[i+2].isdigit():
-                data = text[i] * int(text[i+1] + text[i+2])
+            try:
+                if text[i+2].isdigit():
+                    data = text[i] * int(text[i+1] + text[i+2])
+            except IndexError:
+                continue
             output.append(data)
 
     return "".join(output)
+
