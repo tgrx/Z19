@@ -30,3 +30,4 @@ def Unzip(text):
 
     return "".join(output)
 
+print(Unzip("a10"))
