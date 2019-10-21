@@ -1,4 +1,6 @@
+import string
 from pathlib import Path
+from random import choice
 from typing import Callable
 
 wanted_name = "Zip"
@@ -19,16 +21,18 @@ def verify(module):
 
     assert isinstance(f, Callable), f"`{wanted_name}` is not callable"
 
+    a, b, c, d = [choice(string.ascii_letters) for _ in "1234"]
+
     checks = {
         "": "",
-        "a": "a1",
-        "aaaaaaaaaaaaabbbbbbbbbbbbbc": "a13b13c1",
-        "aaaaabbbc": "a5b3c1",
-        "ab": "a1b1",
+        f"{a * 5}{b * 3}{c}{d}": f"{a}5{b}3{c}1{d}1",
+        f"{a * 13}{b * 13}{c}{d * 13}": f"{a}13{b}13{c}1{d}13",
+        f"{a}": f"{a}1",
+        f"{a}{b}": f"{a}1{b}1",
     }
 
     for origin, expected in checks.items():
         got = f(origin)
         assert (
-            got == expected
+                got == expected
         ), f"{wanted_name}({origin!r}) != {expected!r}: returned {got!r}"
