@@ -13,7 +13,7 @@ def count_pnz(args):
         if i == 0:
             count_of_nulls += 1
     count_of_positives = round(count_of_positives / len(args), 6)
-    count_of_negatives =  round(count_of_negatives / len(args), 6)
+    count_of_negatives = round(count_of_negatives / len(args), 6)
     count_of_nulls = round(count_of_nulls / len(args), 6)
     count_of_positives = str(count_of_positives).ljust(8, '0')
     count_of_negatives = str(count_of_negatives).ljust(8, '0')
