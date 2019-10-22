@@ -1,6 +1,6 @@
 def count_pnz(args):
     if len(args) == 0:
-        return ("0.000000", "0.000000", "0.000000",)
+        return "0.000000", "0.000000", "0.000000"
     count_of_positives = 0
     count_of_negatives = 0
     count_of_nulls = 0
