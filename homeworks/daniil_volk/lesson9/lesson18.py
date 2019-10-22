@@ -4,7 +4,6 @@ def count_pnz(args):
     count_of_positives = 0
     count_of_negatives = 0
     count_of_nulls = 0
-    total_count = []
     for i in args:
         if i > 0:
             count_of_positives += 1
@@ -18,7 +17,4 @@ def count_pnz(args):
     count_of_positives = str(count_of_positives).ljust(8, '0')
     count_of_negatives = str(count_of_negatives).ljust(8, '0')
     count_of_nulls = str(count_of_nulls).ljust(8, '0')
-    print(count_of_positives)
-    print(count_of_negatives)
-    print(count_of_nulls)
     return (count_of_positives, count_of_negatives, count_of_nulls)
