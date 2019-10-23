@@ -1,4 +1,6 @@
 def count_pnz(m):
+    if not m:
+        return None
     d = {'>':0, '<':0, '=': 0}
     for x in m:
         if x > 0:
