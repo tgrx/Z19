@@ -27,4 +27,5 @@ def choose():
     return
 
 
-choose()
+if __name__ == "__main__":
+    choose()
