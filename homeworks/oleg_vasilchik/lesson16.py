@@ -17,20 +17,20 @@ def Zip(text):
 
 def Unzip(text):
     step = 1
-    string = ""
+    output = ""
 
     for i in range(0, len(text)):
         if text[i].isalpha():
-            string += "'" + text[i] + "'" + "*"
+            output += "'" + text[i] + "'" + "*"
             try:
                 while text[i + step].isdigit():
-                    string += text[i + step]
+                    output += text[i + step]
                     step += 1
                 else:
                     step = 1
-                    string += " + "
+                    output += " + "
             except IndexError:
                 pass
-    output = eval(string)
-    return output
+
+    return eval(output)
 
