@@ -16,18 +16,20 @@ def Zip(text):
 
 
 def Unzip(text):
-    output = []
+    step = 1
+    string = ""
 
     for i in range(0, len(text)):
         if text[i].isalpha():
-            data = text[i] * int(text[i + 1])
+            string += "'" + text[i] + "'" + "*"
             try:
-                if text[i+2].isdigit():
-                    data = text[i] * int(text[i+1] + text[i+2])
+                while text[i + step].isdigit():
+                    string += text[i + step]
+                    step += 1
+                else:
+                    step = 1
+                    string += " + "
             except IndexError:
-                continue
-            output.append(data)
+                pass
 
-    return "".join(output)
-
-print(Unzip("a10"))
+    return eval(string)
