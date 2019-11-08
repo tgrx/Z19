@@ -4,7 +4,7 @@ def count_pnz(a):
     for e in a:
         if e > 0:
             r[0] += p
-        if e > 0:
+        if e < 0:
             r[1] += p
         if e == 0:
             r[2] += p
