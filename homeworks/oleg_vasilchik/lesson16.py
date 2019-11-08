@@ -31,5 +31,6 @@ def Unzip(text):
                     string += " + "
             except IndexError:
                 pass
+    output = eval(string)
+    return output
 
-    return eval(string)
