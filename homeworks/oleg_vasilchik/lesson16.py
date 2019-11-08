@@ -11,7 +11,6 @@ def Zip(text):
     for i in letters_counter:
         output.append(i)
         output.append(str(letters_counter[i]))
-
     return "".join(output)
 
 
@@ -31,8 +30,5 @@ def Unzip(text):
                     output += " + "
             except IndexError:
                 pass
-        else:
-            continue
-
     return eval(output)
 
