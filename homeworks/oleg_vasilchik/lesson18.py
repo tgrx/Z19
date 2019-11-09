@@ -1,6 +1,7 @@
 def count_pnz(massive):
+    empty = ('0.000000', '0.000000', '0.000000')
     if not massive:
-        return tuple()
+        return empty
 
     output = []
     total = len(massive)
@@ -21,5 +22,5 @@ def count_pnz(massive):
     output.append(str(share_plus))
     output.append(str(share_minus))
     output.append(str(share_zero))
-    
+
     return tuple(output)
