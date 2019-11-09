@@ -15,6 +15,8 @@ def Zip(text):
 
 
 def Unzip(text):
+    if not text:
+        return ""
     step = 1
     output = ""
 
@@ -31,4 +33,3 @@ def Unzip(text):
             except IndexError:
                 pass
     return eval(output)
-
