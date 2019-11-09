@@ -30,8 +30,8 @@ def Unzip(text: str) -> str:
     b = 1
     i = 1
     while i <= z:
-        p = int(s[b])
-        m = s[a] * p
+        p = s[b]
+        m = s[a] * int(p)
         zp.append(m)
         a += 2
         b += 2
