@@ -23,14 +23,15 @@ def Zip(text: str) -> str:
 
 def Unzip(text: str) -> str:
     z = int(len(text) / 2)
-    u = text
+    s = text
     m = ""
     zp = []
     a = 0
     b = 1
     i = 1
     while i <= z:
-        m = u[a] * int(u[b])
+        p = int(s[b])
+        m = s[a] * p
         zp.append(m)
         a += 2
         b += 2
