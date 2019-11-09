@@ -18,4 +18,4 @@ def count_pnz(massive):
     output.append(str(share_plus))
     output.append(str(share_minus))
     output.append(str(share_zero))
-    print(output)
+    return tuple(output)
