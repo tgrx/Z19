@@ -17,7 +17,10 @@ def Zip(text: str) -> str:
             num = 0
             zp.append(m)
     zp.append(m)
-    f = "".join(zp)
-    return f
+    v = "".join(zp)
+    return v
 
 
+def Unzip(text: str) -> str:
+    pass
+    return none
