@@ -15,5 +15,3 @@ def compare_triplets(A, B):
     output.append(score_b)
 
     return tuple(output)
-
-print(compare_triplets((1, 1, 0), (0, 1, 0)))
