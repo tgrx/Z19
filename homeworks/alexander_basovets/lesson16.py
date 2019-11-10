@@ -28,18 +28,23 @@ def Unzip(text: str) -> str:
     a = 0
     b = 1
     i = 1
-    c = 0
     while i <= z:
-        p = s[b]
         m = s[a]
-        w = m * float(p)
-        zp.append(w)
+        f = s[b]
+        if f.isnumeric():
+            p = int(s[b])
+            w = m * p
+            zp.append(w)
+        else:
+            p = s[b]
+            w = m + p
+            zp.append(w)
         a += 2
         b += 2
         i += 1
-        c += 1
     v = "".join(zp)
 
     return v
+
 
 
