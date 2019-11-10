@@ -1,5 +1,5 @@
 def count_pnz(massive):
-    empty = ('0.000000', '0.000000', '0.000000')
+    empty = ("0.000000", "0.000000", "0.000000")
     if not massive:
         return empty
 
@@ -15,9 +15,9 @@ def count_pnz(massive):
         else:
             zero += 1
 
-    share_plus = '{:.6f}'.format(plus / total)
-    share_minus = '{:.6f}'.format(minus / total)
-    share_zero = '{:.6f}'.format(zero / total)
+    share_plus = "{:.6f}".format(plus / total)
+    share_minus = "{:.6f}".format(minus / total)
+    share_zero = "{:.6f}".format(zero / total)
 
     output.append(str(share_plus))
     output.append(str(share_minus))
