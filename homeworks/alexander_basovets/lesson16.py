@@ -42,4 +42,4 @@ def Unzip(text: str) -> str:
 
     return v
 
-print(Unzip("q1w2d3"))
+
