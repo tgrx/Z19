@@ -24,11 +24,11 @@ def Zip(text: str) -> str:
 def Unzip(text: str) -> str:
     z = int(len(text) / 2)
     s = text
-    m = ""
     zp = []
     a = 0
     b = 1
     i = 1
+    c = 0
     while i <= z:
         p = s[b]
         m = s[a] * int(p)
@@ -36,6 +36,9 @@ def Unzip(text: str) -> str:
         a += 2
         b += 2
         i += 1
+        c += 1
     v = "".join(zp)
 
     return v
+
+print(Unzip("q1w2d3"))
