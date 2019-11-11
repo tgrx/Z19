@@ -1,7 +1,7 @@
 def normalized(path: str) -> str:
     self = ""
     answer = ""
-  #  if path != "../../../..":
+    #  if path != "../../../..":
     for i in range(0, len(path)):
         if path[i] == ".":
             continue
@@ -17,8 +17,8 @@ def normalized(path: str) -> str:
         answer += self[i]
     position = self.rfind("/")
     # answer += self[position+1:]
- #   else:
- #       answer = ""
+    #   else:
+    #       answer = ""
     return answer
 
 
