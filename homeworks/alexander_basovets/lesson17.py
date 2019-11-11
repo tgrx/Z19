@@ -7,5 +7,5 @@ def compare_triplets(A, B):
         elif A[i] < B[i]:
             c[1] = c[1] + 1
         i += 1
-    m = tuple(c)
-    return m
+    v = tuple(c)
+    return v
