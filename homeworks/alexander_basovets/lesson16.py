@@ -61,8 +61,10 @@ def Unzip(text: str) -> str:
             while "0" <= f <= "9":
                 s_int += f
                 t += 1
+                i = t - 1
                 if t < l:
                     f = s[t]
+
                 else:
                     break
             m = int(s_int)
