@@ -18,6 +18,9 @@ def normalized(path: str) -> str:
         else:
             break
     end_text = end[::-1]
+    if back == "/" and end_text == "/":
+        answer = ""
+        return answer
     if end_text != "/":
         answer = back + "/" + end_text
     else:
