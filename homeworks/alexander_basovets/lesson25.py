@@ -2,7 +2,7 @@ def normalized(path: str) -> str:
     self = ""
     back = ""
     end = ""
-    if path == "" or path == ".":
+    if path == "" or path == "." or path == "..":
         answer = ""
         return answer
     for i in range(0, len(path)):
@@ -31,7 +31,7 @@ def normalized(path: str) -> str:
     return answer
 
 
-# print(normalized("."))
+# print(normalized(".."))
 # print(normalized("/xxx/yyy/../zzz"))
 # print(normalized("/xxx/./"))
 # print(normalized("/a/b/./../c"))
