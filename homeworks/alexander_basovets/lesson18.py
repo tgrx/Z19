@@ -23,5 +23,11 @@ def count_pnz(x):
         d.append(format(cf, ".6f"))
         m = tuple(d)
     else:
+        af = 0
+        bf = 0
+        cf = 0
+        d[0] = format(af, ".6f")
+        d.append(format(bf, ".6f"))
+        d.append(format(cf, ".6f"))
         m = tuple(d)
     return m
