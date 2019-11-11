@@ -21,30 +21,57 @@ def Zip(text: str) -> str:
     return v
 
 
+# def Unzip(text: str) -> str:
+#     z = int(len(text) / 2)
+#     s = text
+#     zp = []
+#     a = 0
+#     b = 1
+#     i = 1
+#     while i <= z:
+#         m = s[a]
+#         f = s[i]
+#         if f.isnumeric():
+#             p = int(s[i])
+#             w = m * p
+#             zp.append(w)
+#         else:
+#             p = s[i]
+#             w = m + p
+#             zp.append(w)
+#         a += 2
+#         b += 2
+#         i += 1
+#     v = "".join(zp)
+#
+#     return v
+
+
 def Unzip(text: str) -> str:
-    z = int(len(text) / 2)
+    l = len(text)
     s = text
     zp = []
-    a = 0
-    b = 1
-    i = 1
-    while i <= z:
-        m = s[a]
-        f = s[b]
+    i = 0
+    p = ""
+    while i < l:
+        f = s[i]
         if f.isnumeric():
-            p = int(s[b])
-            w = m * p
+            s_int = ""
+            t = i
+            while "0" <= f <= "9":
+                s_int += f
+                t += 1
+                if t < l:
+                    f = s[t]
+                else:
+                    break
+            m = int(s_int)
+            w = p * (m - 1)
             zp.append(w)
         else:
-            p = s[b]
-            w = m + p
-            zp.append(w)
-        a += 2
-        b += 2
+            p = s[i]
+            zp.append(p)
         i += 1
     v = "".join(zp)
 
     return v
-
-
-
