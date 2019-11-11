@@ -6,7 +6,7 @@ def count_pnz(x):
     b = 0
     c = 0
     d = [""]
-    if x != []:
+    if s != 0:
         while i <= y:
             if x[i] > 0:
                 a += 1
