@@ -1,8 +1,8 @@
-import string
+import re
 
 
 def normalized(path):
-    if not ascii_letters in path:
+    if not re.search(r"\w", path):
         return ""
     normalized = path.replace("/./", "")
     normalized = normalized.split("/")
