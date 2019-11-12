@@ -30,12 +30,12 @@ def normalized(path: str) -> str:
     if back == "/":
         answer = ""
         return answer
-    # if back == "/" + end_text:
-    #     answer = "/" + end_text
-    #     return answer
+    if back == "/" + end_text:
+        answer = "/" + end_text
+        return answer
     # if back + "/" == "/" + end_text:
-    #     answer = "/" + end_text
-    #     return answer
+    # answer = "/" + end_text
+    # return answer
 
     if end_text != "/":
         answer = back + "/" + end_text
@@ -49,3 +49,4 @@ def normalized(path: str) -> str:
 # print(normalized("/xxx/./"))            # /xxx/
 # print(normalized("/a/b/./../c"))        # /a/c
 # print(normalized("../../../../../"))    #
+# print(normalized("../mrbi"))            # /mrbi
