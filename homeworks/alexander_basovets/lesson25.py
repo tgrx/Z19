@@ -21,21 +21,21 @@ def normalized(path: str) -> str:
         else:
             break
     end_text = end[::-1]
-    if end_text == "/" and back != "/":
-        answer = "/"
-        return answer
-    else:
-        answer = ""
-        return answer
-    if back == "/":
-        answer = ""
-        return answer
-    if back == "/" + end_text:
-        answer = "/" + end_text
-        return answer
-    if back + "/" == "/" + end_text:
-        answer = "/" + end_text
-        return answer
+    # if end_text == "/" and back != "/":
+    #     answer = "/"
+    #     return answer
+    # else:
+    #     answer = ""
+    #     return answer
+    # if back == "/":
+    #     answer = ""
+    #     return answer
+    # if back == "/" + end_text:
+    #     answer = "/" + end_text
+    #     return answer
+    # if back + "/" == "/" + end_text:
+    #     answer = "/" + end_text
+    #     return answer
 
     if end_text != "/":
         answer = back + "/" + end_text
@@ -44,8 +44,8 @@ def normalized(path: str) -> str:
     return answer
 
 
-# print(normalized("../dfgh/"))
-# print(normalized("/xxx/yyy/../zzz"))
-# print(normalized("/xxx/./"))
-# print(normalized("/a/b/./../c"))
-print(normalized("../../../../../"))
+# print(normalized("abc/def/"))           # abc/def/
+# print(normalized("/xxx/yyy/../zzz"))    # /xxx/zzz
+# print(normalized("/xxx/./"))            # /xxx/
+# print(normalized("/a/b/./../c"))        # /a/c
+# print(normalized("../../../../../"))    #
