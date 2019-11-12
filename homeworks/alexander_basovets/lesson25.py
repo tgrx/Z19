@@ -48,4 +48,4 @@ def normalized(path: str) -> str:
 # print(normalized("/xxx/yyy/../zzz"))    # /xxx/zzz
 # print(normalized("/xxx/./"))            # /xxx/
 # print(normalized("/a/b/./../c"))        # /a/c
-print(normalized("../../../../../"))    #
+#print(normalized("../../../../../"))    #
