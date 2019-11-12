@@ -2,8 +2,12 @@ def normalized(path: str) -> str:
     self = ""
     back = ""
     end = ""
+    z = len(path) - 1
     if path == "" or path == "." or path == "..":
         answer = ""
+        return answer
+    elif path[0] == "." and path[1] != "." and path[z] == "/":
+        answer = "/"
         return answer
     for i in range(0, len(path)):
         if path[i] == ".":
@@ -50,4 +54,5 @@ def normalized(path: str) -> str:
 # print(normalized("/a/b/./../c"))        # /a/c
 # print(normalized("../../../../../"))    #
 # print(normalized("../mrbi"))            # /mrbi
-# print(normalized("../movz/"))             # /movz/
+# print(normalized("../movz/"))           # /movz/
+# print(normalized("./../../../../"))     # /
