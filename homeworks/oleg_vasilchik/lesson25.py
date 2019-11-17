@@ -1,11 +1,12 @@
+import re
+
+
 def normalized(Text):
-    status = 0
-    for element in Text:
-        if element.isalnum():
-            status = 1
-    else:
-        if not status:
-            return ""
+    status = any(c.isalnum() for c in Text)
+    if not status:
+        return ""
+    if not "/" in Text:
+        return Text
 
     will_deleted = []
     index = -1
@@ -31,3 +32,6 @@ def normalized(Text):
         return slash + str(string[0])
     else:
         return slash.join(string)
+
+
+print(normalized("Oleg"))
