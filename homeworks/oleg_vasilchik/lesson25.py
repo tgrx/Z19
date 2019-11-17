@@ -27,4 +27,7 @@ def normalized(Text):
     string = list(filter(lambda z: z != "..", string))
     slash = "/"
 
-    return slash.join(string)
+    if len(string) == 1:
+        return slash + str(string[0])
+    else:
+        return slash.join(string)
