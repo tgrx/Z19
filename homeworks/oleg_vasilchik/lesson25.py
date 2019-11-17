@@ -25,8 +25,6 @@ def normalized(Text):
         string.pop(i)
 
     string = list(filter(lambda z: z != "..", string))
+    slash = "/"
 
-    return string
-
-
-print(normalized(""))
+    return slash.join(string)
