@@ -8,7 +8,7 @@ ipython = "*"
 pudb = "*"
 
 [packages]
-black = "==19.3b0"
+black = "==19.10b0"
 
 
 [requires]
